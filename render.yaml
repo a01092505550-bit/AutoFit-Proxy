@@ -2,9 +2,10 @@ services:
   - type: web
     name: autofit-proxy
     env: python
-    plan: free  # ✅ 이 줄 추가하면 무료 인스턴스 사용 가능
+    plan: free
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn proxy_server:app"
     envVars:
       - key: PORT
         value: 8080
+

@@ -9,6 +9,19 @@ app = Flask(
     template_folder=os.path.join(BASE_DIR, "templates")
 )
 
+def send_html(folder, filename="index.html"):
+    path = os.path.join(folder, filename)
+    if os.path.exists(path):
+        return send_from_directory(folder, filename)
+
+    return f"""
+    <html><head><meta charset="utf-8"></head>
+    <body style="font-family:Arial;padding:40px;">
+        <h2>파일 없음</h2>
+        <p>{path}</p>
+    </body></html>
+    """
+
 @app.route("/")
 def home():
     return """
@@ -19,16 +32,17 @@ def home():
         <style>
             body{font-family:Arial;background:#f5f7fb;margin:0;padding:40px;}
             .box{max-width:900px;margin:auto;background:white;padding:30px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.08);}
-            h1{margin-top:0;color:#0f172a;}
             a{display:block;margin:12px 0;padding:14px 18px;background:#0f172a;color:white;text-decoration:none;border-radius:10px;}
         </style>
     </head>
     <body>
         <div class="box">
             <h1>AutoFit Platform</h1>
-            <p>Render 외부 배포용 서버가 실행 중입니다.</p>
             <a href="/health">서버 상태 확인</a>
             <a href="/platform">오토피트 플랫폼</a>
+            <a href="/parts">PARTS</a>
+            <a href="/control">CONTROL</a>
+            <a href="/ledger">LEDGER</a>
         </div>
     </body>
     </html>
@@ -44,17 +58,19 @@ def health():
 
 @app.route("/platform")
 def platform():
-    web_dir = os.path.join(BASE_DIR, "templates")
-    target = "autofit_platform.html"
+    return send_html(os.path.join(BASE_DIR, "templates"), "autofit_platform.html")
 
-    if os.path.exists(os.path.join(web_dir, target)):
-        return send_from_directory(web_dir, target)
+@app.route("/parts")
+def parts():
+    return send_html(os.path.join(BASE_DIR, "modules", "PARTS", "templates"), "index.html")
 
-    return """
-    <h2>autofit_platform.html 파일이 아직 없습니다.</h2>
-    <p>기존 파일을 아래 위치에 복사하세요.</p>
-    <pre>오토피트플랫폼_RENDER/templates/autofit_platform.html</pre>
-    """
+@app.route("/control")
+def control():
+    return send_html(os.path.join(BASE_DIR, "modules", "CONTROL", "templates"), "index.html")
+
+@app.route("/ledger")
+def ledger():
+    return send_html(os.path.join(BASE_DIR, "modules", "LEDGER", "templates"), "index.html")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8790))

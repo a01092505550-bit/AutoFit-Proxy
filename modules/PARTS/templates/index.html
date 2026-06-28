@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YSM 윤성모터스 부품관리센터 R5</title>
+<style>
+:root{
+  --blue:#1263f1;--ink:#14213d;--muted:#667085;--line:#e4eaf2;--bg:#f6f9fd;--card:#fff;
+  --red:#e11d48;--green:#17b26a;--orange:#f79009;--purple:#7a5af8;--cyan:#0891b2;
+  --navy:#172554;--gray:#64748b;--shadow:0 12px 30px rgba(16,24,40,.075);
+  --side:216px;--top:84px
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,"Segoe UI","Noto Sans KR",Arial,sans-serif;color:var(--ink);font-size:14px}
+button,select,input,textarea{font-family:inherit}
+.topbar{height:var(--top);display:flex;align-items:center;padding:14px 22px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.brand{display:flex;gap:20px;align-items:center}
+.logo{font-size:56px;font-weight:1000;letter-spacing:-4px;color:#052f73;text-shadow:0 2px 0 #dbeafe,0 5px 12px rgba(5,47,115,.28);line-height:.85}
+.brand small{display:block;font-weight:1000;margin-bottom:6px;font-size:24px;letter-spacing:-1px;color:#0f2f5f}.brand span{font-size:14px;font-weight:900;color:#344767}
+.userbox{margin-left:auto;display:flex;align-items:center;gap:14px}.clock{text-align:right;font-weight:800;line-height:1.45}.avatar{width:34px;height:34px;border-radius:50%;background:#64748b;color:#fff;display:grid;place-items:center;font-weight:900}
+.main{display:flex}.sidebar{width:var(--side);height:calc(100vh - var(--top));position:sticky;top:var(--top);background:#fff;border-right:1px solid var(--line);padding:16px 10px;display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0}
+.sidebtn{width:100%;height:44px;padding:0 14px;border:0;background:#fff;border-radius:8px;margin-bottom:9px;text-align:left;display:flex;align-items:center;gap:10px;cursor:pointer;font-weight:1000;color:#24344d}
+.sidebtn.active{background:var(--blue);color:#fff;box-shadow:0 10px 22px rgba(18,99,241,.24)}.icon{font-size:18px;width:24px;text-align:center}.sidelogo{padding:18px;color:#06499f}.sidelogo b{font-size:30px;font-weight:1000;letter-spacing:-2px}.sidelogo p{margin:0;font-size:11px;font-weight:800}
+.content{flex:1;min-width:0;padding:18px}.view{display:none}.view.active{display:block}
+.panel{background:#fff;border:1px solid #eef2f7;border-radius:14px;box-shadow:var(--shadow);padding:14px 16px 18px;margin-bottom:16px}
+.panel h2{margin:4px 0 14px;font-size:20px}.panel h3{margin:4px 0 12px}
+.panel.dashboard{border-top:5px solid var(--blue)}.panel.partsP{border-top:5px solid var(--cyan)}.panel.auditP{border-top:5px solid var(--orange)}.panel.inoutP{border-top:5px solid var(--green)}.panel.histP{border-top:5px solid var(--purple)}.panel.stockP{border-top:5px solid var(--red)}.panel.setP{border-top:5px solid var(--gray)}
+.stats{display:grid;grid-template-columns:repeat(6,minmax(130px,1fr));gap:12px;margin-bottom:16px}
+.stat{height:126px;background:#fff;border:1px solid #eef2f7;border-radius:14px;box-shadow:var(--shadow);display:flex;align-items:center;gap:16px;padding:18px 20px;cursor:pointer;transition:.15s}
+.stat:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(16,24,40,.12)}
+.ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:23px}.i-blue{background:#eaf2ff;color:#1263f1}.i-green{background:#e9fbf1;color:#17b26a}.i-orange{background:#fff4df;color:#f79009}.i-red{background:#fff1f2;color:#e11d48}.i-purple{background:#f1e9ff;color:#7a5af8}.i-gray{background:#f1f5f9;color:#475569}.i-cyan{background:#ecfeff;color:#0891b2}
+.label{font-weight:1000}.num{font-size:25px;font-weight:1000;margin:6px 0 2px}.unit{font-size:12px;font-weight:800;color:#475467}
+.toolbar{display:grid;grid-template-columns:90px 110px 120px minmax(260px,1fr) 86px 86px 116px;gap:10px;align-items:center;margin-bottom:14px}
+.auditbar{display:grid;grid-template-columns:90px 110px minmax(260px,1fr) 86px 86px 94px 94px 112px;gap:10px;align-items:center;margin-bottom:14px}
+.search{height:40px;border:1px solid #d9e2ee;border-radius:8px;display:flex;align-items:center;padding:0 12px;background:#fff}.search input{border:0;outline:0;flex:1;min-width:0}
+.select,.btn,.inp{height:40px;border:1px solid #d9e2ee;border-radius:8px;background:#fff;padding:0 12px;color:#1d2939;min-width:0}.btn{font-weight:1000;cursor:pointer}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.green{background:#ecfdf3;border-color:#bbf7d0;color:#166534}.btn.orange{background:#fff7ed;border-color:#fed7aa;color:#c2410c}.btn.purple{background:#f4f0ff;border-color:#ddd6fe;color:#6d28d9}.btn.danger{background:#fff1f1;border-color:#fecaca;color:#e11d48}
+.tablewrap{overflow:auto;border:1px solid #edf1f7;border-radius:10px}
+table{width:100%;border-collapse:collapse}.parts{min-width:1950px}.audit{min-width:1580px}.mini{min-width:920px}
+.parts thead th,.audit thead th{height:48px;text-align:left;padding:0 8px;border-top:3px solid #e11d48;border-bottom:3px solid #e11d48;font-weight:1000;background:#fff;white-space:nowrap}
+.parts thead th:first-child,.audit thead th:first-child{border-left:3px solid #e11d48;padding-left:14px}.parts thead th:last-child,.audit thead th:last-child{border-right:3px solid #e11d48}
+.parts tbody td,.audit tbody td,.mini td,.mini th{height:45px;border-bottom:1px solid #e5eaf1;padding:6px 8px;font-weight:700;white-space:nowrap}.parts tbody tr:hover,.audit tbody tr:hover{background:#f8fbff}.parts tbody td:first-child,.audit tbody td:first-child{padding-left:14px;font-weight:1000}
+.badge{display:inline-block;border:1px solid #aed0ff;background:#e7f1ff;color:#0062ff;border-radius:6px;padding:3px 7px;font-size:12px;font-weight:1000}
+.bgray{background:#f1f5f9;border-color:#cbd5e1;color:#475569}.borange{background:#fff7ed;border-color:#fed7aa;color:#c2410c}.bpurple{background:#f4f0ff;border-color:#ddd6fe;color:#6d28d9}.bgreen{background:#ecfdf3;border-color:#bbf7d0;color:#166534}.bred{background:#fff1f2;border-color:#fecdd3;color:#be123c}.bcyan{background:#ecfeff;border-color:#a5f3fc;color:#0e7490}.bnavy{background:#eef2ff;border-color:#c7d2fe;color:#3730a3}
+.green{color:#059669!important}.red{color:#e11d48!important}.orange{color:#c2410c!important}.blue{color:#1263f1!important}
+.bgpri{background:#fff7ed}.zero{background:#fff1f2}.selectedRow{background:#e0f2fe!important}.savedRow{background:#ecfdf3!important}.auditMiss{background:#fff!important}.auditOk{background:#ecfdf3!important}.auditShort{background:#fff1f2!important}.auditMore{background:#fff7ed!important}
+.row{display:flex;gap:8px;align-items:center;margin:8px 0}.row label{width:120px;font-weight:1000;color:#344054;flex-shrink:0}.row input,.row select,.row textarea{flex:1;height:40px;border:1px solid #d9e2ee;border-radius:8px;padding:0 10px;background:#fff}.row textarea{height:82px;padding:10px}
+.cards2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.box{border:1px solid #e5eaf1;border-radius:14px;padding:14px;background:#fbfdff}.box.blueTop{border-top:4px solid var(--blue)}.box.orangeTop{border-top:4px solid var(--orange)}.box.greenTop{border-top:4px solid var(--green)}.box.purpleTop{border-top:4px solid var(--purple)}.box.redTop{border-top:4px solid var(--red)}
+.log{background:#0f172a;color:#dbeafe;border-radius:10px;padding:12px;height:170px;overflow:auto;font-family:Consolas,monospace;font-size:12px;white-space:pre-wrap}
+.sessionHead{display:grid;grid-template-columns:1.2fr .8fr .7fr .7fr .8fr .8fr;gap:10px;margin-bottom:12px}.sessionHead .box{min-height:86px}.historyActions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.clickable{cursor:pointer}.pendingRow{background:#fff7ed!important}.doneRow{background:#ecfdf3!important}.cancelRow{background:#f1f5f9!important}
+.chartbar{height:22px;border-radius:6px;background:#e2e8f0;overflow:hidden;min-width:160px}.chartbar span{display:block;height:100%;background:linear-gradient(90deg,#1263f1,#0ea5e9)}
+.pager{display:flex;align-items:center;justify-content:space-between;padding:12px 4px 0}.pages{display:flex;gap:7px}.pg{min-width:34px;height:34px;border:1px solid #dce4ef;border-radius:7px;background:#fff;display:grid;place-items:center;font-weight:900;cursor:pointer}.pg.active{background:var(--blue);color:#fff}.footer{text-align:center;color:#718096;padding:16px}
+.modal{position:fixed;inset:0;background:rgba(15,23,42,.35);display:none;align-items:center;justify-content:center;z-index:100}.modal.show{display:flex}.modalbox{width:min(1020px,94vw);max-height:88vh;overflow:auto;background:#fff;border-radius:18px;box-shadow:0 30px 80px rgba(15,23,42,.25)}.modalhead{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;border-bottom:1px solid var(--line)}.close{border:0;background:#f1f5f9;border-radius:8px;width:34px;height:34px;font-size:20px;cursor:pointer}.modalbody{padding:18px}.toast{position:fixed;right:20px;bottom:20px;background:#0f172a;color:#fff;padding:12px 15px;border-radius:10px;display:none;z-index:200;font-weight:900}.toast.show{display:block}
+.historyTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.historyFilter{display:flex;gap:8px;flex-wrap:wrap}.compactNote{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;color:#475569;font-weight:900}.statusPending{background:#fff7ed!important}.statusDone{background:#f8fafc!important;color:#64748b}.statusCancel{background:#fff1f2!important}.saveState{font-weight:1000;color:#166534}.saveState.bad{color:#be123c}.reviewBox{border:1px solid #dbe4f0;border-radius:14px;background:#fff;padding:12px;margin:10px 0}.reviewWarn{background:#fff7ed;border-color:#fed7aa}.detailLine{display:grid;grid-template-columns:1.2fr .9fr .9fr .6fr .6fr .6fr;gap:8px;align-items:center;border-bottom:1px solid #edf2f7;padding:8px 0;font-weight:800}
+.sysGrid{display:grid;grid-template-columns:repeat(2,minmax(320px,1fr));gap:14px}.sysCard{border:1px solid #e5eaf1;border-radius:14px;background:#fbfdff;padding:14px}.sysCard h3{margin:0 0 10px;font-size:16px}.sysList{margin:0;padding-left:18px;color:#24344d;font-weight:800;line-height:1.75}.sysCode{background:#0f172a;color:#dbeafe;border-radius:10px;padding:12px;font-family:Consolas,monospace;font-size:12px;white-space:pre-wrap;overflow:auto}.sysWarn{background:#fff7ed;border-color:#fed7aa}.sysOk{background:#ecfdf3;border-color:#bbf7d0}@media(max-width:900px){.sysGrid{grid-template-columns:1fr}}
+
+
+.dashTopLayout{display:grid;grid-template-columns:minmax(560px,1.35fr) minmax(340px,.65fr);gap:14px;align-items:stretch}.dashMainPanel,.dashWarnPanel{height:100%;min-height:286px}.dashWarnPanel{overflow:hidden}.kpiGrid{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:10px;margin-bottom:0}.kpiCard{border:1px solid #e7edf5;border-radius:14px;background:#fff;padding:12px 14px;box-shadow:var(--shadow);cursor:pointer;min-height:88px}.kpiCard b{display:block;font-size:12px;color:#64748b;margin-bottom:6px}.kpiCard strong{font-size:24px;color:#0f2f5f}.kpiCard span{display:block;font-size:12px;color:#667085;margin-top:4px;font-weight:800}.kpiCard.danger{border-top:4px solid var(--red)}.kpiCard.orange{border-top:4px solid var(--orange)}.kpiCard.green{border-top:4px solid var(--green)}.kpiCard.purple{border-top:4px solid var(--purple)}.kpiCard.blue{border-top:4px solid var(--blue)}.kpiCard.gray{border-top:4px solid var(--gray)}
+.dashGrid{display:grid;grid-template-columns:repeat(4,minmax(220px,1fr));gap:14px}.dashGrid .box{height:270px;overflow:auto}.warnGrid{display:grid;grid-template-columns:repeat(2,minmax(130px,1fr));gap:8px;max-height:210px;overflow:auto;padding-right:3px}.warnCard{border:1px solid #e5eaf1;border-left:6px solid #64748b;border-radius:12px;background:#fff;padding:10px;box-shadow:var(--shadow);cursor:pointer;min-height:74px}.warnCard.danger{border-left-color:var(--red);background:#fff7f8}.warnCard.orange{border-left-color:var(--orange);background:#fffaf0}.warnCard.blue{border-left-color:var(--blue);background:#f7fbff}.warnCard.purple{border-left-color:var(--purple);background:#fbf8ff}.warnCard.green{border-left-color:var(--green);background:#f6fffa}.warnCard b{display:block;font-size:12px}.warnCard strong{font-size:22px}.warnCard p{margin:3px 0 0;color:#667085;font-size:11px;font-weight:800}.analyticsLayout{display:grid;grid-template-columns:210px 1fr;gap:14px}.anaMenu button{width:100%;margin-bottom:8px}.anaHead{display:flex;justify-content:space-between;gap:10px;align-items:center}.mini tr.clickable{cursor:pointer}.mini tr.clickable:hover{background:#f8fbff}
+
+/* R8 UI PATCH: 대시보드 카드 중앙정렬 + 관리경고 스크롤 제거 */
+.stat{justify-content:center;text-align:center;padding:14px 12px;gap:10px}
+.stat>div:last-child{min-width:0;text-align:center}
+.dashTopLayout{grid-template-columns:minmax(500px,1.05fr) minmax(440px,.95fr)}
+.dashMainPanel,.dashWarnPanel{min-height:300px}
+.kpiGrid{grid-template-columns:repeat(4,minmax(105px,1fr));gap:8px}
+.kpiCard{min-height:78px;padding:10px 8px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.kpiCard b,.kpiCard strong,.kpiCard span{text-align:center}
+.warnGrid{grid-template-columns:repeat(3,minmax(110px,1fr));gap:7px;max-height:none;overflow:visible;padding-right:0}
+.warnCard{min-height:61px;padding:7px 8px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.warnCard b,.warnCard strong,.warnCard p{text-align:center}
+
+/* R8 PRIORITY PATCH: 우선관리 / 적용차종 축약 / 경고 깜박임 */
+@keyframes ysmBlinkWarn{0%,100%{box-shadow:0 0 0 rgba(225,29,72,0);filter:none}50%{box-shadow:0 0 0 3px rgba(225,29,72,.18),0 0 16px rgba(225,29,72,.36);filter:saturate(1.15)}}
+.blinkWarn{animation:ysmBlinkWarn 1.1s infinite;border-color:#e11d48!important;background:#fff1f2!important}
+.ellipsisCell{display:inline-block;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle}
+.parts{min-width:1550px}.audit{min-width:1400px}.mini{min-width:980px}.priorityTable{min-width:1180px}.priorityToolbar{grid-template-columns:150px 120px minmax(260px,1fr) 90px}.priorityState{font-weight:1000}.priorityZero{color:#be123c}.priorityLow{color:#c2410c}.priorityOk{color:#166534}
+
+/* R8 PRIORITY FULL LIST PATCH 2: 전체리스트 + 화면 이탈 방지 */
+.priorityTable{min-width:0!important;width:100%!important;table-layout:fixed}
+.priorityTable th,.priorityTable td{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.priorityTable th:nth-child(1),.priorityTable td:nth-child(1){width:74px}
+.priorityTable th:nth-child(2),.priorityTable td:nth-child(2){width:72px;text-align:center}
+.priorityTable th:nth-child(3),.priorityTable td:nth-child(3){width:88px}
+.priorityTable th:nth-child(4),.priorityTable td:nth-child(4){width:auto}
+.priorityTable th:nth-child(5),.priorityTable td:nth-child(5){width:120px}
+.priorityTable th:nth-child(6),.priorityTable td:nth-child(6){width:120px}
+.priorityTable th:nth-child(7),.priorityTable td:nth-child(7){width:122px}
+.priorityTable th:nth-child(8),.priorityTable td:nth-child(8){width:68px;text-align:center}
+.priorityTable th:nth-child(9),.priorityTable td:nth-child(9){width:68px;text-align:center}
+.priorityTable th:nth-child(10),.priorityTable td:nth-child(10){width:164px}
+.priorityTable .ellipsisCell{max-width:100%!important}
+.priorityTable .btn{height:32px;padding:0 8px}
+.priorityWrap{overflow-x:hidden}
+.priorityToolbar{grid-template-columns:130px 105px minmax(180px,1fr) 80px!important}
+@media(max-width:1300px){
+  .priorityTable{min-width:980px!important}
+  .priorityWrap{overflow-x:auto}
+}
+
+/* R8 FINAL UI PATCH: 헤더/좌측 포인트 + 운영판단 항목 압축 */
+body{background:linear-gradient(180deg,#f2f7ff 0%,#f6f9fd 220px,#f7faff 100%)}
+.topbar{
+  background:linear-gradient(90deg,#ffffff 0%,#eef6ff 56%,#dcecff 100%)!important;
+  border-bottom:0!important;
+  box-shadow:0 10px 28px rgba(18,99,241,.10);
+  position:sticky;
+}
+.topbar:after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:4px;
+  background:linear-gradient(90deg,#1263f1,#0ea5e9,#7a5af8);
+}
+.topbar:before{
+  content:"YSM";position:absolute;right:138px;top:6px;
+  font-size:54px;font-weight:1000;letter-spacing:-4px;
+  color:rgba(18,99,241,.055);pointer-events:none;
+}
+.sidebar{
+  background:linear-gradient(180deg,#f5f8fc 0%,#ffffff 48%,#f7fbff 100%)!important;
+  border-right:1px solid #dbe7f5!important;
+  box-shadow:8px 0 26px rgba(18,99,241,.045);
+}
+.sidebtn{position:relative;border:1px solid transparent}
+.sidebtn:hover{background:#eef6ff!important;color:#0f3f8a!important;border-color:#d8e9ff}
+.sidebtn:hover:before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:4px;border-radius:0 4px 4px 0;background:#1263f1}
+.sidebtn.active{background:linear-gradient(90deg,#1263f1,#0f67dc)!important;box-shadow:0 10px 22px rgba(18,99,241,.24)!important}
+.sidebtn.active:before{content:"";position:absolute;left:0;top:7px;bottom:7px;width:4px;border-radius:0 4px 4px 0;background:#ffffff}
+.sidelogo{border-radius:16px;background:linear-gradient(135deg,#eaf2ff,#ffffff);border:1px solid #dcecff;margin:8px 4px 0}
+.panel{overflow:hidden;border-color:#e7eef8!important}
+.panel>.anaHead:first-child,.panel>h2:first-child,.panel>h3:first-child{
+  background:linear-gradient(90deg,#f1f7ff 0%,#ffffff 100%);
+  margin:-14px -16px 12px!important;
+  padding:12px 16px!important;
+  border-bottom:1px solid #e6eef8;
+}
+.kpiCard strong{font-size:27px!important}
+.ico{box-shadow:inset 0 0 0 1px rgba(255,255,255,.85),0 8px 18px rgba(16,24,40,.08)}
+.stat{border-color:#e2ebf6!important}
+.stat:hover{border-color:#cfe2ff!important}
+
+/* 운영판단 항목: 카드 고정 + 내부 압축 + 스크롤 최소화 */
+#dashSummary.dashGrid{grid-template-columns:repeat(4,minmax(190px,1fr))!important;gap:10px!important}
+#dashSummary .box{height:238px!important;overflow:hidden!important;padding:8px 9px!important;border-radius:12px!important;background:#ffffff!important}
+#dashSummary .box h3{margin:0 0 5px!important;padding:0 0 5px!important;font-size:14px!important;line-height:1.15!important;border-bottom:1px solid #eef2f7}
+#dashSummary .unit{display:block;margin:0 0 5px!important;font-size:10.5px!important;line-height:1.25!important}
+#dashSummary .tablewrap{border-radius:8px!important;overflow:hidden!important}
+#dashSummary table.mini{min-width:0!important;width:100%!important;table-layout:fixed!important}
+#dashSummary .mini th,#dashSummary .mini td{height:26px!important;padding:3px 5px!important;font-size:11px!important;line-height:1.15!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+#dashSummary .mini th:nth-child(1),#dashSummary .mini td:nth-child(1){width:auto}
+#dashSummary .mini th:nth-child(2),#dashSummary .mini td:nth-child(2){width:52px;text-align:center}
+#dashSummary .mini th:nth-child(3),#dashSummary .mini td:nth-child(3){width:56px;text-align:center}
+#dashSummary .chartbar{height:10px!important;min-width:0!important}
+#dashSummary .btn{height:28px!important;padding:0 7px!important;font-size:11px!important}
+#dashSummary .ellipsisCell{max-width:100px!important}
+#dashSummary .moreLine{margin-top:5px;padding-top:5px;border-top:1px dashed #e4eaf2;color:#667085;font-size:11px;font-weight:900;text-align:center}
+@media(max-width:1300px){
+  #dashSummary.dashGrid{grid-template-columns:repeat(2,minmax(220px,1fr))!important}
+  #dashSummary .box{height:228px!important}
+}
+@media(max-width:1300px){.dashTopLayout{grid-template-columns:1fr}.dashGrid{grid-template-columns:repeat(2,1fr)}.warnGrid,.kpiGrid{grid-template-columns:repeat(2,1fr)}.analyticsLayout{grid-template-columns:1fr}}
+@media(max-width:1300px){.stats{grid-template-columns:repeat(3,1fr)}.toolbar{grid-template-columns:90px 110px 120px 1fr}.auditbar{grid-template-columns:90px 110px 1fr}.brand span{display:none}}@media(max-width:850px){.topbar{height:auto}.sidebar{display:none}.content{padding:10px}.stats,.cards2,.cards3,.toolbar,.auditbar{grid-template-columns:1fr}.stat{height:auto}.parts,.audit{min-width:1150px}}
+
+/* R8 MODULE HEADER LINK PATCH: 제조사 전용 모듈 바로가기 */
+.moduleLinks{display:flex;align-items:center;gap:8px;margin-left:18px;z-index:2}
+.moduleLogoBtn{height:38px;min-width:92px;border:1px solid #cfe2ff;border-radius:10px;background:linear-gradient(135deg,#ffffff,#eaf2ff);box-shadow:0 8px 18px rgba(18,99,241,.10);display:flex;align-items:center;justify-content:center;padding:0 14px;text-decoration:none;cursor:pointer;transition:.15s}
+.moduleLogoBtn:hover{transform:translateY(-1px);border-color:#9fc5ff;box-shadow:0 12px 24px rgba(18,99,241,.18);background:linear-gradient(135deg,#f7fbff,#dcecff)}
+.moduleLogoBtn .ivecoMark{font-size:22px;font-weight:1000;letter-spacing:-2px;line-height:1;color:#06499f}
+@media(max-width:850px){.moduleLinks{margin-left:6px}.moduleLogoBtn{height:34px;min-width:78px;padding:0 10px}.moduleLogoBtn .ivecoMark{font-size:19px}}
+
+</style>
+</head>
+<body>
+<header class="topbar"><div class="brand"><div class="logo">YSM</div><div><small>윤성모터스 부품관리센터</small><span>Parts Management Center · Platform Module R3</span></div></div><div class="moduleLinks"><a class="moduleLogoBtn" href="/parts/iveco" target="_blank" title="IVECO Parts Module"><span class="ivecoMark">IVECO</span></a></div><div class="userbox"><div class="clock"><div id="today"></div><div id="time"></div></div><div class="avatar">●</div><b>관리자</b></div></header>
+<div class="main"><aside class="sidebar"><div id="sidenav"></div><div class="sidelogo"><b>YSM</b><p>Parts Center</p></div></aside><main class="content">
+<section id="dashboard" class="view active"><div class="stats" id="stats"></div><div class="dashTopLayout"><div class="panel dashboard dashMainPanel"><div class="anaHead"><h2>대시보드</h2><b class="unit">현재 조치 판단용 · 통계표 제외</b></div><div class="kpiGrid" id="dashKpi"></div></div><div class="panel stockP dashWarnPanel"><div class="anaHead"><h2>관리 경고</h2><b class="unit">지금 조치해야 하는 항목</b></div><div id="warnSummary"></div></div></div><div class="panel dashboard"><div class="anaHead"><h2>운영 판단 항목</h2><b class="unit">동일규격 · 1행 4개 기준</b></div><div class="dashGrid" id="dashSummary"></div></div></section>
+<section id="priority" class="view"><div class="panel stockP"><div class="anaHead"><h2>우선관리</h2><b class="unit">중요부품 · 부족/재고없음 우선 확인</b></div><div class="kpiGrid" id="priorityKpi"></div><div class="toolbar priorityToolbar"><select id="priStatus" class="select" onchange="renderPriority()"><option value="all">전체부품</option><option value="priority">우선관리</option><option value="normal">일반</option><option value="low">부족</option><option value="zero">재고없음</option><option value="ok">정상</option><option value="suggest">추천</option></select><select id="priVehicle" class="select" onchange="renderPriority()"><option value="">F/K 전체</option><option value="F">F 수입</option><option value="K">K 국산</option></select><div class="search"><input id="priQ" placeholder="제작사 / 적용차종 / UID / 관리번호 / 품번 검색" oninput="renderPriority()"></div><button class="btn" onclick="resetPriority()">초기화</button></div><div class="tablewrap priorityWrap"><table class="mini priorityTable" id="priorityTable"></table></div></div></section>
+<section id="parts" class="view"><div class="panel partsP"><h2 id="partsTitle">부품조회</h2><div class="toolbar"><select id="fVehicle" class="select"><option value="">F/K 전체</option><option value="F">F 수입</option><option value="K">K 국산</option></select><select id="fGroup" class="select"><option value="">부품군 전체</option></select><select id="fMaker" class="select"><option value="">제작사 전체</option></select><div class="search"><input id="q" placeholder="윤성관리번호 / OEM / 대표품번 / 실입고품번 / 브랜드 / UID메모 검색"></div><button class="btn primary" onclick="searchParts()">검색</button><button class="btn" onclick="resetSearch()">초기화</button><button class="btn green" onclick="saveServerSnapshot('manual_parts_save')">서버저장</button></div><div class="tablewrap"><table class="parts"><thead><tr id="thead"></tr></thead><tbody id="tbody"></tbody></table></div><div class="pager"><div id="totalText"></div><div class="pages" id="pages"></div><select id="pageSize" class="select" style="width:96px"><option>20</option><option>50</option><option>100</option><option>300</option></select></div></div></section>
+<section id="audit" class="view"><div class="panel auditP"><h2>실사조사</h2><div class="auditbar"><select id="aVehicle" class="select"><option value="">F/K 전체</option><option value="F">F 수입</option><option value="K">K 국산</option></select><select id="aGroup" class="select"><option value="">부품군 전체</option></select><div class="search"><input id="aq" placeholder="005 / 제작사 / 윤성관리번호 / 대표품번 / 실입고품번 검색"></div><button class="btn primary" onclick="searchAudit()">검색</button><button class="btn" onclick="resetAudit()">초기화</button><button class="btn orange" onclick="selectAuditAll(true)">전체선택</button><button class="btn" onclick="selectAuditAll(false)">선택해제</button><button class="btn green" onclick="saveAuditSelected()">선택저장</button></div><div class="tablewrap"><table class="audit"><thead><tr id="auditHead"></tr></thead><tbody id="auditBody"></tbody></table></div><p class="unit">검색 → 실사수량 입력 → 확인한 항목만 체크 → 선택저장. 현재고는 변경하지 않고 이력관리의 실사대기 묶음으로 보낸다.</p></div></section>
+<section id="uid" class="view"><div class="panel uidP"><h2>UID 연동</h2><div class="kpiGrid"><div class="kpiCard purple"><b>UID 등록</b><strong id="uidRegCnt">-</strong><span>UID목록/메모 기준</span></div><div class="kpiCard gray"><b>UID 미등록</b><strong id="uidMissCnt">-</strong><span>연결 필요</span></div><div class="kpiCard blue"><b>UID 연동률</b><strong id="uidRateCnt">-</strong><span>오토피트 UID 선택연동</span></div><div class="kpiCard green"><b>역할</b><strong>연결</strong><span>생성은 오토피트</span></div></div><div class="compactNote">UID는 부품관리센터에서 생성하지 않는다. 오토피트 차량DB에서 생성된 UID를 읽고, 이곳에서는 부품과 연결/미등록 확인만 한다.</div><br><div class="toolbar"><div class="search"><input id="uidQ" placeholder="UID / 제작사 / 적용차종 / 품번 검색" oninput="renderUidPage()"></div><button class="btn" onclick="qs('uidQ').value='';renderUidPage()">초기화</button></div><div class="tablewrap"><table class="mini" id="uidTable"></table></div></div></section>
+<section id="inout" class="view"><div class="cards2"><div class="box greenTop"><h3>입고 등록</h3><div class="row"><label>검색품번</label><input id="inSearch" list="partsList"></div><div class="row"><label>수량</label><input id="inQty" type="number" value="1"></div><div class="row"><label>매입가</label><input id="inPrice" type="number"></div><div class="row"><label>거래처</label><input id="inVendor"></div><button class="btn primary" onclick="stockMove('IN')">입고 저장</button></div><div class="box orangeTop"><h3>출고 등록</h3><div class="row"><label>검색품번</label><input id="outSearch" list="partsList"></div><div class="row"><label>수량</label><input id="outQty" type="number" value="1"></div><div class="row"><label>출고가</label><input id="outPrice" type="number"></div><div class="row"><label>차량번호</label><input id="outCar"></div><button class="btn primary" onclick="stockMove('OUT')">출고 저장</button></div></div><datalist id="partsList"></datalist><div class="panel inoutP"><h3>최근 입출고</h3><div class="tablewrap"><table class="mini" id="historyMini"></table></div></div></section>
+<section id="history" class="view"><div class="panel histP"><div class="anaHead"><h2>이력관리</h2><b class="unit">실사대기 묶음 검토 후 재고반영</b></div><div id="auditSessionBox"></div><div class="tablewrap"><table class="mini" id="historyTable"></table></div></div></section>
+<section id="price" class="view"><div class="panel"><h2>가격관리</h2><div id="priceBox"></div></div></section>
+<section id="stock" class="view"><div class="panel stockP"><h2>재고현황</h2><div id="stockBox"></div></div></section>
+<section id="analytics" class="view"><div class="panel dashboard"><div class="anaHead"><h2>통계분석</h2><b class="unit">임의값 없음 · 현재 DB 기준</b></div><div class="analyticsLayout"><div class="anaMenu" id="analyticsMenu"></div><div id="analyticsBox"></div></div></div></section>
+<section id="warnings" class="view"><div class="panel stockP"><h2>관리경고 상세</h2><div id="warningDetail"></div></div></section>
+<section id="settings" class="view">
+  <div class="cards2">
+    <div class="box blueTop"><h3>데이터 연결</h3><div class="row"><label>JSON 업로드</label><input type="file" id="jsonFile" accept=".json"></div><div class="row"><label>Excel 업로드</label><input type="file" id="excelFile" accept=".xlsx,.xls"></div><div class="row"><button class="btn primary" onclick="saveServerSnapshot('manual_settings_save')">서버폴더 저장</button><button class="btn" onclick="downloadCsv()">CSV 내보내기</button></div><div class="log" id="dataLog">대기</div></div>
+    <div class="box purpleTop"><h3>코드/옵션 설정</h3><div id="settingsEditor"></div><div class="row"><button class="btn green" onclick="saveSettings()">설정 저장</button><button class="btn purple" onclick="addCodeRow()">코드 추가</button></div></div>
+  </div>
+  <div class="panel setP"><div class="anaHead"><h2>운영 구조 / 파일 전체정보</h2><b class="unit">이 웹페이지만 보더라도 서버·배치·JSON·백업 흐름을 확인할 수 있도록 고정 기록</b></div><div id="systemGuide"></div></div>
+</section>
+</main></div><footer class="footer">© Yoonsung Motors · AutoFit Parts Center</footer><div class="modal" id="modal"><div class="modalbox"><div class="modalhead"><h2 id="modalTitle">상세</h2><button class="close" onclick="closeModal()">×</button></div><div class="modalbody" id="modalBody"></div></div></div><div class="toast" id="toast"></div>
+<script>
+const HEADERS=["차량구분","부품군","제작사","윤성관리번호","OEM번호","대표품번","실입고품번","브랜드","적용차종","현재고","안전재고","우선관리","보관위치","최근매입가","최근출고가","거래처","상태","바코드","비고","최종입고일","최종출고일","최종실사일","사용횟수","UID연동여부","UID적용수","UID목록","UID메모"];
+const MENUS=[["dashboard","대시보드","▣"],["priority","우선관리","★"],["parts","부품조회","⌕"],["audit","실사조사","▤"],["inout","입출고","↕"],["history","이력관리","▥"],["price","가격관리","₩"],["stock","재고현황","▧"],["analytics","통계분석","◈"],["warnings","관리경고","!"],["uid","UID연동","U"],["settings","설정","⚙"]];
+let settings={vehicle_codes:{F:"IMPORT",K:"DOMESTIC"},ys_prefix:{YF:"수입차",YK:"국산차"},part_groups:{AF:"Air Filter",OF:"Oil Filter",CF:"Cabin Filter",MF:"Mission Filter",FF:"Fuel Filter",FP:"Front Brake Pad",RP:"Rear Brake Pad"},maker_codes:{AU:"AUDI",BM:"BMW",MB:"BENZ",ET:"ETC"},number_rule:"YF/YK + 부품군 + 제작사 + 3자리 일련번호",uid_files:{map:"uid_parts_map.json",settings:"uid_match_settings.json"}};
+let parts=[],filtered=[],auditList=[],histories=[],auditSessions=[],page=1, auditSelected=new Set(), auditDraft={}, historyFilter="전체";
+const qs=id=>document.getElementById(id);function norm(v){return (v??"").toString().trim()}function num(v){let n=Number(String(v??"").replace(/[^\d.-]/g,""));return isNaN(n)?0:n}function today(){return new Date().toISOString().slice(0,10)}function toast(t){let el=qs("toast");el.textContent=t;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),1700)}
+function inferVehicle(ys){ys=norm(ys);if(ys.startsWith("YF"))return"F";if(ys.startsWith("YK"))return"K";return""}
+function vehicleMatch(value,filter){
+  let v=norm(value).toUpperCase();
+  if(!filter)return true;
+  if(filter==="F")return v==="F"||v==="수입"||v==="IMPORT"||v==="수입차";
+  if(filter==="K")return v==="K"||v==="국산"||v==="DOMESTIC"||v==="국산차";
+  return v===String(filter).toUpperCase();
+}
+function vehicleBadgeClass(value){
+  let v=norm(value).toUpperCase();
+  return (v==="F"||v==="수입"||v==="IMPORT"||v==="수입차")?"bpurple":"bgreen";
+}
+function isImportPart(p){return vehicleMatch(p?.["차량구분"],"F")}
+function isDomesticPart(p){return vehicleMatch(p?.["차량구분"],"K")}
+function isPriorityPart(p){return norm(p?.["우선관리"]).toUpperCase()==="Y"}
+function isLowPart(p){return num(p?.["현재고"])<=num(p?.["안전재고"])}
+function isZeroPart(p){return num(p?.["현재고"])<=0}
+function priorityStatus(p){if(isZeroPart(p))return "재고없음"; if(isLowPart(p))return "부족"; return "정상"}
+function priorityStatusClass(p){if(isZeroPart(p))return "priorityZero"; if(isLowPart(p))return "priorityLow"; return "priorityOk"}
+function escHtml(v){return String(v??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function ellipsisText(v,max=180){let s=norm(v);return `<span class="ellipsisCell" style="max-width:${max}px" title="${escHtml(s)}">${escHtml(s)}</span>`}
+function partName(p){return norm(p?.["비고"])||norm(p?.["상태"])||"-"}
+function uidText(p){return norm(p?.["UID목록"])||norm(p?.["UID메모"])||(norm(p?.["UID연동여부"]).toUpperCase()==="Y"?"연동":"미등록")}
+function dashboardBlinkClass(kind,count){return (count>0 && (kind==="priLow"||kind==="priZero"))?" blinkWarn":""}
+function inferGroup(ys){let m=norm(ys).match(/^Y[FK]([A-Z]{2})/);return m?m[1]:""}function rowKey(p){return [p["윤성관리번호"],p["실입고품번"],p["브랜드"],p["대표품번"]].map(norm).join("|")}
+function normalize(p){let o={};HEADERS.forEach(h=>o[h]=p[h]??"");o["차량구분"]=o["차량구분"]||inferVehicle(o["윤성관리번호"]);o["부품군"]=o["부품군"]||inferGroup(o["윤성관리번호"]);o["현재고"]=num(o["현재고"]);o["안전재고"]=num(o["안전재고"]);o["우선관리"]=o["우선관리"]||"N";o["상태"]=o["상태"]||"정상";o["사용횟수"]=num(o["사용횟수"]);o["UID연동여부"]=o["UID연동여부"]||"N";o["UID적용수"]=num(o["UID적용수"]);if(!o["바코드"])o["바코드"]=rowKey(o).replace(/\|/g,"-");return o}
+function init(){qs("sidenav").innerHTML=MENUS.map((m,i)=>`<button class="sidebtn ${i==0?'active':''}" onclick="go('${m[0]}',this)"><span class="icon">${m[2]}</span>${m[1]}</button>`).join("");setInterval(()=>{let d=new Date();qs("today").textContent=d.toLocaleDateString("ko-KR");qs("time").textContent=d.toLocaleTimeString("ko-KR")},1000);["q","aq","inSearch","outSearch"].forEach(id=>qs(id)?.addEventListener("keydown",e=>{if(e.key==="Enter"){if(id==="q")searchParts();if(id==="aq")searchAudit();if(id==="inSearch")stockMove("IN");if(id==="outSearch")stockMove("OUT")}}));qs("pageSize").addEventListener("change",()=>{page=1;renderTable()});qs("jsonFile").addEventListener("change",readJson);qs("excelFile").addEventListener("change",()=>toast("엑셀 업로드는 EXE 서버 단계에서 연결"));loadSettings();loadData()}
+function loadSettings(){let s=localStorage.getItem("ysm_settings"); if(s) settings=JSON.parse(s)}
+async function loadData(){
+  let loaded=await loadFromServer();
+  if(!loaded){
+    try{let r=await fetch("/parts/parts_inventory.json",{cache:"no-store"});if(!r.ok)throw 0;let j=await r.json();parts=(Array.isArray(j)?j:j.items||[]).map(normalize);qs("dataLog").textContent="parts_inventory.json 로드 성공: "+parts.length+"건"}
+    catch(e){parts=JSON.parse(localStorage.getItem("ysm_parts")||"[]").map(normalize);qs("dataLog").textContent=parts.length?("브라우저 임시저장 로드: "+parts.length+"건"):"parts_inventory.json 없음. 설정에서 JSON 업로드 필요."}
+    histories=JSON.parse(localStorage.getItem("ysm_histories")||"[]");auditSessions=JSON.parse(localStorage.getItem("ysm_audit_sessions")||"[]");
+  }else{qs("dataLog").textContent="서버 폴더 데이터 로드: "+parts.length+"건"}
+  filtered=[...parts];auditList=[...parts];fillFilters();renderAll()
+}
+function saveLocal(){localStorage.setItem("ysm_parts",JSON.stringify(parts));localStorage.setItem("ysm_histories",JSON.stringify(histories));localStorage.setItem("ysm_audit_sessions",JSON.stringify(auditSessions))}
+function setSaveState(t,bad=false){let el=qs("saveState");if(el){el.textContent=t;el.className=bad?"saveState bad":"saveState"}}
+async function saveServerSnapshot(reason){
+  saveLocal();
+  if(location.protocol==="file:"){setSaveState("로컬임시저장 · 서버자동저장 아님",true);return false}
+  try{
+    let r=await fetch("/parts/api/save",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({reason,parts,histories,auditSessions})});
+    let j=await r.json();
+    if(!j.ok)throw new Error(j.error||"save failed");
+    setSaveState("서버폴더 자동저장 완료");
+    return true;
+  }catch(e){setSaveState("서버저장 실패 · 임시저장만 됨",true);console.error(e);return false}
+}
+async function loadFromServer(){
+  if(location.protocol==="file:")return false;
+  try{let r=await fetch("/parts/api/load",{cache:"no-store"});let j=await r.json();if(!j.ok)throw new Error(j.error||"load failed");
+    parts=(j.parts||[]).map(normalize);histories=j.histories||[];auditSessions=j.auditSessions||[];setSaveState("서버데이터 로드");return true;
+  }catch(e){console.warn(e);setSaveState("서버로드 실패",true);return false}
+}
+async function postServerApi(path,payload){
+  if(location.protocol==="file:"){setSaveState("로컬파일 실행 중 · 서버 API 사용 불가",true);throw new Error("서버 주소(http://127.0.0.1:8790/parts)로 접속해야 합니다")}
+  let r=await fetch(path,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload||{})});
+  let j=await r.json();
+  if(!j.ok)throw new Error(j.error||(`${path} failed`));
+  setSaveState("서버 DB 저장 완료");
+  return j;
+}
+async function reloadServerAndRender(msg){
+  let ok=await loadFromServer();
+  if(ok){filtered=[...parts];auditList=[...parts];fillFilters();}
+  renderAll();
+  if(qs("history")?.classList.contains("active"))renderHistory();
+  if(msg)toast(msg);
+  return ok;
+}
+
+function fillFilters(){let gs=[...new Set(parts.map(p=>p["부품군"]).filter(Boolean))].sort(), ms=[...new Set(parts.map(p=>p["제작사"]).filter(Boolean))].sort();qs("fGroup").innerHTML='<option value="">부품군 전체</option>'+gs.map(g=>`<option>${g}</option>`).join("");qs("aGroup").innerHTML='<option value="">부품군 전체</option>'+gs.map(g=>`<option>${g}</option>`).join("");qs("fMaker").innerHTML='<option value="">제작사 전체</option>'+ms.map(m=>`<option>${m}</option>`).join("");qs("partsList").innerHTML=parts.slice(0,2500).map(p=>`<option value="${p["윤성관리번호"]}">${p["대표품번"]} / ${p["실입고품번"]}</option>`).join("")}
+function go(id,btn){document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));qs(id).classList.add("active");document.querySelectorAll(".sidebtn").forEach(b=>b.classList.remove("active"));if(btn)btn.classList.add("active");if(id==="priority")renderPriority();if(id==="uid")renderUidPage();if(id==="history")renderHistory();if(id==="stock")renderStock();if(id==="price")renderPrice();if(id==="analytics")renderAnalytics();if(id==="settings"){renderSettings();renderSystemGuide()}}
+function renderAll(){renderStats();renderDashboard();renderTable();renderAudit();renderHistoryMini();if(qs("priority")?.classList.contains("active"))renderPriority();if(qs("uid")?.classList.contains("active"))renderUidPage();if(qs("history")?.classList.contains("active"))renderHistory();renderSettings()}
+function dashboardFilter(kind){
+  resetSearch();
+  if(kind==="all") filtered=[...parts];
+  if(kind==="stock") filtered=parts.filter(p=>num(p["현재고"])>0);
+  if(kind==="low") filtered=warningRows("low");
+  if(kind==="over") filtered=warningRows("over");
+  if(kind==="priority") filtered=parts.filter(p=>isPriorityPart(p));
+  if(kind==="priLow") filtered=warningRows("priLow");
+  if(kind==="priZero") filtered=warningRows("priZero");
+  if(kind==="import") filtered=parts.filter(isImportPart);
+  if(kind==="domestic") filtered=parts.filter(isDomesticPart);
+  if(kind==="importLow") filtered=warningRows("importLow");
+  if(kind==="domesticLow") filtered=warningRows("domesticLow");
+  if(kind==="minus") filtered=warningRows("minus");
+  if(kind==="missing") filtered=warningRows("missing");
+  if(kind==="uid") filtered=parts.filter(p=>p["UID연동여부"]==="Y");
+  if(["zero","uidMiss","noOem","noPart","noPrice","auditMiss","noOut","dup"].includes(kind)){filtered=warningRows(kind)}
+  if(kind==="price") {go("price",[...document.querySelectorAll(".sidebtn")].find(b=>b.textContent.includes("가격관리")));return}
+  if(kind==="maker") {go("analytics",[...document.querySelectorAll(".sidebtn")].find(b=>b.textContent.includes("통계분석")));return}
+  page=1; go("parts",[...document.querySelectorAll(".sidebtn")].find(b=>b.textContent.includes("부품조회"))); qs("partsTitle").textContent="부품조회 - 대시보드 필터"; renderTable()
+}
+function renderStats(){let total=parts.length, stock=parts.reduce((s,p)=>s+num(p["현재고"]),0), low=parts.filter(p=>num(p["현재고"])<=num(p["안전재고"])).length, pri=parts.filter(p=>p["우선관리"]==="Y").length, uid=parts.filter(p=>p["UID연동여부"]==="Y").length, makers=new Set(parts.map(p=>p["제작사"])).size;qs("stats").innerHTML=[["총부품",total,"건","i-blue","▧","all"],["현재고",stock,"EA","i-green","▣","stock"],["부족",low,"건","i-red","!","low"],["우선관리",pri,"건","i-orange","★","priority"],["UID연동",uid,"건","i-purple","U","uid"],["제작사",makers,"개","i-gray","M","maker"]].map(x=>`<div class="stat" onclick="dashboardFilter('${x[5]}')"><div class="ico ${x[3]}">${x[4]}</div><div><div class="label">${x[0]}</div><div class="num">${x[1]}</div><div class="unit">${x[2]} · 클릭</div></div></div>`).join("")}
+function groupByField(rows,field,qtyField="현재고"){let m={};rows.forEach(p=>{let k=norm(p[field])||"미분류";if(!m[k])m[k]={items:0,qty:0,stockValue:0};m[k].items++;m[k].qty+=num(p[qtyField]);m[k].stockValue+=num(p["현재고"])*num(p["최근매입가"])});return m}
+function money(v){return Math.round(num(v)).toLocaleString("ko-KR")}
+function daysSince(d){if(!d)return 99999;let t=new Date(d);if(isNaN(t))return 99999;return Math.floor((new Date()-t)/86400000)}
+function tableGroup(title,map,field){let arr=Object.entries(map).sort((a,b)=>b[1].qty-a[1].qty).slice(0,12);let max=Math.max(1,...arr.map(x=>x[1].qty));return `<div class="box blueTop"><h3>${title}</h3><table class="mini"><tr><th>구분</th><th>품목</th><th>수량</th><th>비율</th></tr>${arr.map(x=>`<tr class="clickable" onclick="filterField('${field}','${String(x[0]).replaceAll("'","&#39;")}')"><td><b>${x[0]}</b></td><td>${x[1].items}</td><td>${x[1].qty}</td><td><div class="chartbar"><span style="width:${Math.max(3,x[1].qty/max*100)}%"></span></div></td></tr>`).join("")}</table></div>`}
+function renderDashboard(){
+  let total=parts.length;
+  let stock=parts.reduce((s,p)=>s+num(p["현재고"]),0);
+  let lowRows=warningRows("low"), overRows=warningRows("over"), priRows=parts.filter(p=>isPriorityPart(p)), priLowRows=warningRows("priLow"), priZeroRows=warningRows("priZero"), missingRows=warningRows("missing");
+  let importRows=parts.filter(isImportPart), domesticRows=parts.filter(isDomesticPart), importLowRows=warningRows("importLow"), domesticLowRows=warningRows("domesticLow");
+  let cards=[
+    ["총 품목",total,"관리대상 전체","all","blue"],
+    ["총 재고",stock,"현재 보유 EA","stock","green"],
+    ["안전재고 이하",lowRows.length,"일반 부족 포함","low","orange"],
+    ["과재고 의심",overRows.length,"안전재고 초과","over","orange"],
+    ["우선관리",priRows.length,"중요 품목","priority","purple"],
+    ["우선관리 부족",priLowRows.length,"즉시 확인","priLow","danger"],
+    ["수입부품",importRows.length,"수입 대상","import","blue"],
+    ["국산부품",domesticRows.length,"국산 대상","domestic","green"],
+    ["수입부족",importLowRows.length,"수입 부족","importLow","orange"],
+    ["국산부족",domesticLowRows.length,"국산 부족","domesticLow","orange"],
+    ["우선관리 재고없음",priZeroRows.length,"최우선 조치","priZero","danger"],
+    ["누락/미정리",missingRows.length,"품번·가격·UID","missing","gray"]
+  ];
+  qs("dashKpi").innerHTML=cards.map(x=>`<div class="kpiCard ${x[4]}${dashboardBlinkClass(x[3],x[1])}" onclick="dashboardFilter('${x[3]}')"><b>${x[0]}</b><strong>${x[1]}</strong><span>${x[2]} · 클릭</span></div>`).join("");
+  let shortageByGroup=groupByField(lowRows,"부품군");
+  let overByGroup=groupByField(overRows,"부품군");
+  qs("dashSummary").innerHTML=
+    actionBox("안전재고 이하 부품 종류", shortageByGroup, "부품군", "redTop", "부족 부품군 없음")+
+    actionBox("과재고 의심 부품 종류", overByGroup, "부품군", "orangeTop", "과재고 의심 없음")+
+    `<div class="box purpleTop"><h3>우선관리 부족</h3><p class="unit">우선관리 Y이면서 안전재고 이하인 품목.</p>${partsMiniTable(priLowRows.slice(0,6))}</div>`+
+    `<div class="box blueTop"><h3>누락/미정리</h3><p class="unit">대표품번·OEM·가격·UID·실사일 누락.</p><table class="mini"><tr><th>항목</th><th>건수</th><th>처리</th></tr>${[["대표품번 누락","noPart"],["OEM 누락","noOem"],["가격 미등록","noPrice"],["UID 미등록","uidMiss"],["실사 미실시","auditMiss"]].map(x=>`<tr class="clickable" onclick="openWarning('${x[1]}')"><td>${x[0]}</td><td>${warningRows(x[1]).length}</td><td>보기</td></tr>`).join("")}</table></div>`;
+  renderWarnings();
+}
+function actionBox(title,map,field,cls,emptyText){let all=Object.entries(map).sort((a,b)=>b[1].items-a[1].items),arr=all.slice(0,6);return `<div class="box ${cls}"><h3>${title}</h3>${arr.length?`<table class="mini"><tr><th>구분</th><th>품목수</th><th>현재고</th></tr>${arr.map(x=>`<tr class="clickable" onclick="filterField('${field}','${String(x[0]).replaceAll("'","&#39;")}')"><td><b>${x[0]}</b></td><td>${x[1].items}</td><td>${x[1].qty}</td></tr>`).join("")}</table>${all.length>6?`<div class="moreLine">외 ${all.length-6}개 · 클릭해 상세 확인</div>`:""}`:`<p class="unit">${emptyText}</p>`}</div>`}
+function warningRows(type){
+  let seen=new Set(), dup=[];parts.forEach(p=>{let k=norm(p["대표품번"])||norm(p["실입고품번"]);if(!k)return;if(seen.has(k))dup.push(p);else seen.add(k)});
+  let zero=parts.filter(p=>num(p["현재고"])===0);
+  let low=parts.filter(p=>num(p["현재고"])<=num(p["안전재고"]));
+  let over=parts.filter(p=>num(p["안전재고"])>0 && num(p["현재고"])>num(p["안전재고"]));
+  let uidMiss=parts.filter(p=>p["UID연동여부"]!=="Y");
+  let noOem=parts.filter(p=>!norm(p["OEM번호"]));
+  let noPart=parts.filter(p=>!norm(p["대표품번"]));
+  let noPrice=parts.filter(p=>!num(p["최근매입가"])&&!num(p["최근출고가"]));
+  let auditMiss=parts.filter(p=>!norm(p["최종실사일"]));
+  const map={zero:zero,low:low,over:over,priLow:parts.filter(p=>isPriorityPart(p)&&isLowPart(p)),priZero:parts.filter(p=>isPriorityPart(p)&&isZeroPart(p)),importLow:parts.filter(p=>isImportPart(p)&&isLowPart(p)),domesticLow:parts.filter(p=>isDomesticPart(p)&&isLowPart(p)),minus:parts.filter(p=>num(p["현재고"])<0),auditMiss:auditMiss,uidMiss:uidMiss,noOem:noOem,noPart:noPart,noPrice:noPrice,noOut:parts.filter(p=>num(p["사용횟수"])===0),dup:dup,missing:[...new Set([...uidMiss,...noOem,...noPart,...noPrice,...auditMiss])]};return map[type]||[];
+}
+function renderWarnings(){let list=[
+  ["zero","재고 0","출고/판매 불가","danger"],["low","안전재고 이하","일반 부족 포함","orange"],["over","과재고 의심","보유 과다 검토","orange"],["priLow","우선관리 부족","최우선 확보","danger"],["priZero","우선관리 재고없음","즉시 조치","danger"],["minus","음수재고","입출고 오류","danger"],["auditMiss","실사 미실시","실사일 누락","green"],["uidMiss","UID 미등록","차량 연동 불가","purple"],["noOem","OEM 누락","검색 정확도 저하","purple"],["noPart","대표품번 누락","조회 기준 부족","purple"],["noPrice","가격 미등록","손익 계산 불가","blue"],["dup","중복품번 의심","품번 정리 필요","orange"]];
+  qs("warnSummary").innerHTML=`<div class="warnGrid">`+list.map(x=>{let c=warningRows(x[0]).length;let blink=dashboardBlinkClass(x[0],c);return `<div class="warnCard ${x[3]}${blink}" onclick="openWarning('${x[0]}')"><b>${x[1]}</b><strong>${c}</strong><p>${x[2]}</p></div>`}).join("")+`</div>`;
+}
+function openWarning(type){let rows=warningRows(type);go("warnings",[...document.querySelectorAll(".sidebtn")].find(b=>b.textContent.includes("관리경고")));qs("warningDetail").innerHTML=`<b>대상 ${rows.length}건</b><br><br>`+partsMiniTable(rows.slice(0,500));}
+function partsMiniTable(rows){return '<div class="tablewrap"><table class="mini"><tr><th>F/K</th><th>제작사</th><th>적용차종</th><th>UID</th><th>윤성관리번호</th><th>대표품번</th><th>현재고</th><th>안전재고</th><th>우선</th><th>수정</th></tr>'+rows.map(p=>`<tr><td>${p["차량구분"]}</td><td>${p["제작사"]}</td><td>${ellipsisText(p["적용차종"],170)}</td><td>${ellipsisText(uidText(p),130)}</td><td>${p["윤성관리번호"]}</td><td>${p["대표품번"]}</td><td>${p["현재고"]}</td><td>${p["안전재고"]}</td><td><span class="badge ${isPriorityPart(p)?"borange":"bgray"}">${p["우선관리"]}</span></td><td><button class="btn orange" onclick="openEdit('${rowKey(p)}')">수정</button> <button class="btn primary" onclick="openQtyAdjust('${rowKey(p)}')">수량</button></td></tr>`).join("")+'</table></div>'}
+function filterField(field,val){resetSearch();filtered=parts.filter(p=>(norm(p[field])||"미분류")===val);page=1;go("parts",document.querySelectorAll(".sidebtn")[1]);qs("partsTitle").textContent=`부품조회 - ${field}: ${val}`;renderTable()}
+function filterMaker(m){resetSearch(); qs("fMaker").value=m; searchParts(); go("parts",document.querySelectorAll(".sidebtn")[1])}
+function searchParts(){let q=norm(qs("q").value).toUpperCase(),v=qs("fVehicle").value,g=qs("fGroup").value,m=qs("fMaker").value;filtered=parts.filter(p=>vehicleMatch(p["차량구분"],v)&&(!g||p["부품군"]===g)&&(!m||p["제작사"]===m)&&(!q||HEADERS.some(h=>norm(p[h]).toUpperCase().includes(q))));page=1;renderTable();toast(filtered.length+"건 검색")}
+function resetSearch(){qs("q").value="";qs("fVehicle").value="";qs("fGroup").value="";qs("fMaker").value="";filtered=[...parts];page=1;qs("partsTitle").textContent="부품조회";renderTable()}
+function renderTable(){let cols=HEADERS.slice(0,19).concat(["UID","관리"]);qs("thead").innerHTML=cols.map(h=>`<th>${h}</th>`).join("");let size=Number(qs("pageSize").value||20),rows=filtered.slice((page-1)*size,page*size);qs("tbody").innerHTML=rows.map(p=>{let low=num(p["현재고"])<=num(p["안전재고"]),pri=p["우선관리"]==="Y";let cells=HEADERS.slice(0,19).map(h=>{let val=p[h]??"";if(h==="차량구분")val=`<span class="badge ${vehicleBadgeClass(val)}">${val}</span>`;if(h==="부품군")val=`<span class="badge bcyan">${val}</span>`;if(h==="윤성관리번호")val=`<b class="blue">${val}</b>`;if(h==="OEM번호")val=`<span class="badge bgray">${val}</span>`;if(h==="실입고품번")val=`<span class="badge bnavy">${val}</span>`;if(h==="브랜드")val=`<span class="badge bcyan">${val}</span>`;if(h==="현재고")val=`<span class="${low?'red':'green'}">${val}</span>`;if(h==="안전재고")val=`<span class="orange">${val}</span>`;if(h==="우선관리")val=`<span class="badge ${val==="Y"?"borange":"bgray"}">${val}</span>`;if(h==="적용차종")val=ellipsisText(val,180);return `<td onclick="openEdit('${rowKey(p)}')" style="cursor:pointer">${val}</td>`}).join("");let uid=`<td><span class="badge ${p["UID연동여부"]==="Y"?"bgreen":"bgray"}">${p["UID연동여부"]}</span> ${p["UID적용수"]||0}</td>`;return `<tr class="${low?'zero ':''}${pri?'bgpri ':''}">${cells}${uid}<td><button class="btn orange" onclick="openEdit('${rowKey(p)}')">수정</button> <button class="btn primary" onclick="openQtyAdjust('${rowKey(p)}')">수량</button></td></tr>`}).join("");let pages=Math.max(1,Math.ceil(filtered.length/size));qs("totalText").textContent=`총 ${filtered.length}건 / ${page}페이지`;qs("pages").innerHTML=[...Array(Math.min(pages,10))].map((_,i)=>`<button class="pg ${page===i+1?'active':''}" onclick="page=${i+1};renderTable()">${i+1}</button>`).join("")}
+function openEdit(key){let p=parts.find(x=>rowKey(x)===key);if(!p)return;qs("modalTitle").textContent="부품 수정";qs("modalBody").innerHTML=HEADERS.map(h=>`<div class="row"><label>${h}</label><input id="edit_${h}" value="${String(p[h]??"").replaceAll('"','&quot;')}"></div>`).join("")+`<button class="btn primary" onclick="saveEdit('${key}')">저장</button>`;qs("modal").classList.add("show")}
+async function saveEdit(key){
+  let i=parts.findIndex(x=>rowKey(x)===key);if(i<0)return;
+  let before=JSON.parse(JSON.stringify(parts[i]));
+  let p={};HEADERS.forEach(h=>p[h]=qs("edit_"+h).value);parts[i]=normalize(p);
+  let changes=[];HEADERS.forEach(h=>{if(norm(before[h])!==norm(parts[i][h]))changes.push(`${h}:${before[h]??""}→${parts[i][h]??""}`)});
+  histories.unshift({일자:nowText(),구분:"부품수정",윤성관리번호:parts[i]["윤성관리번호"],대표품번:parts[i]["대표품번"],실입고품번:parts[i]["실입고품번"],브랜드:parts[i]["브랜드"],이전수량:before["현재고"],수량:parts[i]["현재고"],차이:num(parts[i]["현재고"])-num(before["현재고"]),거래처:"부품조회",메모:changes.slice(0,8).join(" / ")});
+  filtered=[...parts];saveLocal();
+  let ok=await saveServerSnapshot("part_edit_saved");
+  closeModal();
+  if(ok) await reloadServerAndRender("부품 수정 저장 · 서버 DB 반영"); else renderAll();
+}
+
+function openQtyAdjust(key){
+  let p=parts.find(x=>rowKey(x)===key);if(!p)return;
+  qs("modalTitle").textContent="수량조정 - "+p["윤성관리번호"];
+  qs("modalBody").innerHTML=`
+  <div class="reviewBox"><b>${p["윤성관리번호"]}</b> / ${p["대표품번"]} / 현재고 <b>${p["현재고"]}</b></div>
+  <div class="row"><label>조정구분</label><select id="qty_type"><option value="IN">입고</option><option value="OUT">출고</option><option value="AUDIT">실사묶음</option><option value="ADMIN">관리자조정</option></select></div>
+  <div class="row"><label>수량</label><input id="qty_value" type="number" value="1"></div>
+  <div class="row"><label>단가</label><input id="qty_price" type="number" value="0"></div>
+  <div class="row"><label>거래처/차량/사유</label><input id="qty_ref" placeholder="입고처, 차량번호, 조정사유"></div>
+  <div class="row"><label>담당자</label><input id="qty_user" value="관리자"></div>
+  <div class="row"><label>메모</label><input id="qty_memo" placeholder="필요시 입력"></div>
+  <button class="btn primary" onclick="saveQtyAdjust('${key}')">확정 저장</button>`;
+  qs("modal").classList.add("show");
+}
+async function saveQtyAdjust(key){
+  let p=parts.find(x=>rowKey(x)===key);if(!p)return;
+  let type=qs("qty_type").value, qty=num(qs("qty_value").value), price=num(qs("qty_price").value), ref=qs("qty_ref").value, user=qs("qty_user").value||"관리자", memo=qs("qty_memo").value;
+  if(qty<0){toast("수량은 양수로 입력");return}
+  try{
+    if(type==="IN"||type==="OUT"||type==="ADMIN"){
+      let api=type==="IN"?"/api/inbound":type==="OUT"?"/api/outbound":"/api/admin_adjust";
+      await postServerApi(api,{key:rowKey(p),query:p["윤성관리번호"]||p["대표품번"]||p["실입고품번"],qty,price,ref,user,memo});
+      closeModal();
+      await reloadServerAndRender((type==="IN"?"입고":type==="OUT"?"출고":"관리자조정")+" 저장 · 서버 DB 반영");
+      return;
+    }
+    let before=num(p["현재고"]), now=nowText();
+    let session={id:makeSessionId(),일시:now,실사자:user,검색조건:{검색어:p["윤성관리번호"],차량구분:p["차량구분"],부품군:p["부품군"]},상태:"실사대기",항목수:1,items:[{key,차량구분:p["차량구분"],부품군:p["부품군"],제작사:p["제작사"],윤성관리번호:p["윤성관리번호"],대표품번:p["대표품번"],실입고품번:p["실입고품번"],브랜드:p["브랜드"],보관위치:p["보관위치"],조사시현재고:before,실사수량:qty,차이:qty-before,안전재고:num(p["안전재고"]),우선관리:p["우선관리"],메모:memo}]};
+    await postServerApi("/parts/api/audit_save",{session});
+    closeModal();
+    await reloadServerAndRender("실사대기 묶음 저장 · 서버 DB 반영");
+  }catch(e){console.error(e);setSaveState("서버저장 실패 · 수량 미반영",true);toast("서버저장 실패: "+e.message)}
+}
+function closeModal(){qs("modal").classList.remove("show")}
+function searchAudit(){let q=norm(qs("aq").value).toUpperCase(),v=qs("aVehicle").value,g=qs("aGroup").value;auditSelected.clear();auditDraft={};auditList=parts.filter(p=>vehicleMatch(p["차량구분"],v)&&(!g||p["부품군"]===g)&&(!q||["제작사","윤성관리번호","OEM번호","대표품번","실입고품번","브랜드","적용차종"].some(h=>norm(p[h]).toUpperCase().includes(q))));renderAudit();toast(auditList.length+"건 실사목록")}
+function resetAudit(){qs("aq").value="";qs("aVehicle").value="";qs("aGroup").value="";auditSelected.clear();auditDraft={};auditList=[...parts];renderAudit()}
+function selectAuditAll(flag){auditList.slice(0,500).forEach(p=>flag?auditSelected.add(rowKey(p)):auditSelected.delete(rowKey(p)));renderAudit()}
+function toggleAudit(key,i){
+  const el=qs("audit_"+i);
+  if(el && el.value!=="") auditDraft[key]=el.value;
+  auditSelected.has(key)?auditSelected.delete(key):auditSelected.add(key);
+  const tr=qs("atr_"+i);
+  if(tr){tr.classList.toggle("selectedRow",auditSelected.has(key));}
+}
+function renderAudit(){
+  let hs=["선택","차량구분","부품군","제작사","윤성관리번호","대표품번","실입고품번","브랜드","현재고","안전재고","실사수량","차이","상태","수정"];
+  qs("auditHead").innerHTML=hs.map(h=>`<th>${h}</th>`).join("");
+  qs("auditBody").innerHTML=auditList.slice(0,500).map((p,i)=>{
+    let key=rowKey(p),sel=auditSelected.has(key),draft=(auditDraft[key]??"");
+    return `<tr id="atr_${i}" class="${sel?'selectedRow':'auditMiss'}"><td><input type="checkbox" ${sel?'checked':''} onchange="toggleAudit('${key}',${i})"></td><td><span class="badge bpurple">${p["차량구분"]}</span></td><td><span class="badge bcyan">${p["부품군"]}</span></td><td>${p["제작사"]}</td><td><b class="blue">${p["윤성관리번호"]}</b></td><td>${p["대표품번"]}</td><td>${p["실입고품번"]}</td><td>${p["브랜드"]}</td><td id="cur_${i}">${p["현재고"]}</td><td class="orange">${p["안전재고"]}</td><td><input class="inp" style="width:78px" id="audit_${i}" type="number" value="${draft}" oninput="calcAudit(${i})"></td><td id="diff_${i}">-</td><td id="ast_${i}"><span class="badge bgray">미실사</span></td><td><button class="btn orange" onclick="openEdit('${key}')">수정</button></td></tr>`
+  }).join("");
+  auditList.slice(0,500).forEach((p,i)=>{let key=rowKey(p); if(auditDraft[key]!==undefined && auditDraft[key]!=="") calcAudit(i);});
+}
+function calcAudit(i){
+  let p=auditList[i]; if(!p)return; let key=rowKey(p);
+  let el=qs("audit_"+i); if(el) auditDraft[key]=el.value;
+  let now=num(qs("cur_"+i).textContent),val=num(el.value),diff=val-now;
+  qs("diff_"+i).textContent=diff;
+  qs("diff_"+i).className=diff<0?"red":diff>0?"green":"";
+  let tr=qs("atr_"+i);tr.classList.remove("auditOk","auditShort","auditMore");
+  if(diff===0){tr.classList.add("auditOk");qs("ast_"+i).innerHTML='<span class="badge bgreen">일치</span>'}
+  else if(diff<0){tr.classList.add("auditShort");qs("ast_"+i).innerHTML='<span class="badge bred">부족</span>'}
+  else{tr.classList.add("auditMore");qs("ast_"+i).innerHTML='<span class="badge borange">증가</span>'}
+}
+function makeSessionId(){let d=new Date();let pad=n=>String(n).padStart(2,"0");return `AUD-${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`}
+function nowText(){let d=new Date();let pad=n=>String(n).padStart(2,"0");return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`}
+async function saveAuditSelected(){
+  let items=[];
+  auditList.slice(0,500).forEach((p,i)=>{
+    let key=rowKey(p);
+    let el=qs("audit_"+i);
+    if(el && el.value!=="") auditDraft[key]=el.value;
+    if(!auditSelected.has(key))return;
+    let raw=auditDraft[key];
+    if(raw===undefined||raw==="")return;
+    let target=parts.find(x=>rowKey(x)===key);
+    if(!target)return;
+    let oldQty=num(target["현재고"]), auditQty=num(raw), diff=auditQty-oldQty;
+    items.push({
+      key,
+      차량구분:target["차량구분"],부품군:target["부품군"],제작사:target["제작사"],윤성관리번호:target["윤성관리번호"],대표품번:target["대표품번"],실입고품번:target["실입고품번"],브랜드:target["브랜드"],보관위치:target["보관위치"],
+      조사시현재고:oldQty,실사수량:auditQty,차이:diff,안전재고:num(target["안전재고"]),우선관리:target["우선관리"]
+    });
+  });
+  if(!items.length){toast("저장할 실사수량이 없습니다. 체크 선택과 수량 입력을 확인");return}
+  let session={id:makeSessionId(),일시:nowText(),실사자:"관리자",검색조건:{검색어:qs("aq").value,차량구분:qs("aVehicle").value,부품군:qs("aGroup").value},상태:"실사대기",항목수:items.length,items};
+  try{
+    await postServerApi("/parts/api/audit_save",{session});
+    auditSelected.clear();auditDraft={};
+    await reloadServerAndRender(`${items.length}건 실사대기 묶음 저장 · 서버 DB 반영`);
+  }catch(e){console.error(e);setSaveState("실사 저장 실패 · 서버 DB 미반영",true);toast("실사 저장 실패: "+e.message)}
+}
+function findPart(v){v=norm(v).toUpperCase();return parts.find(p=>["윤성관리번호","대표품번","실입고품번","OEM번호","바코드"].some(h=>norm(p[h]).toUpperCase()===v))||parts.find(p=>HEADERS.some(h=>norm(p[h]).toUpperCase().includes(v)))}
+async function stockMove(type){
+  let p=findPart(type==="IN"?qs("inSearch").value:qs("outSearch").value);
+  if(!p){toast("부품 없음");return}
+  let qty=num(type==="IN"?qs("inQty").value:qs("outQty").value),price=num(type==="IN"?qs("inPrice").value:qs("outPrice").value);
+  if(qty<=0){toast("수량을 입력하세요");return}
+  let ref=type==="IN"?qs("inVendor").value:qs("outCar").value;
+  try{
+    await postServerApi(type==="IN"?"/parts/api/inbound":"/parts/api/outbound",{key:rowKey(p),query:p["윤성관리번호"]||p["대표품번"]||p["실입고품번"],qty,price,ref,user:"관리자",memo:"입출고 화면"});
+    if(type==="IN"){qs("inQty").value=1;qs("inPrice").value="";}else{qs("outQty").value=1;qs("outPrice").value="";}
+    await reloadServerAndRender((type==="IN"?"입고":"출고")+" 저장 · 서버 DB 수량 반영");
+  }catch(e){console.error(e);setSaveState("입출고 저장 실패 · 서버 DB 미반영",true);toast("입출고 저장 실패: "+e.message)}
+}
+function renderHistoryMini(){
+  let pending=auditSessions.filter(s=>s.상태==="실사대기").length;
+  qs("historyMini").innerHTML="<tr><th>일자</th><th>구분</th><th>대상</th><th>수량</th><th>상태</th></tr>"+
+  histories.slice(0,10).map(h=>`<tr><td>${h.일자||""}</td><td>${h.구분||""}</td><td>${h.윤성관리번호||""}</td><td>${h.수량??""}</td><td>${h.sessionId?"묶음":""}</td></tr>`).join("")+
+  `<tr><td colspan="5"><b>실사대기 묶음 ${pending}건</b></td></tr>`;
+}
+function renderHistory(){
+  renderAuditSessions();
+  let rows=[...histories];
+  if(historyFilter!=="전체") rows=rows.filter(h=>h.구분===historyFilter);
+  qs("historyTable").innerHTML="<tr><th>일자</th><th>구분</th><th>묶음ID</th><th>윤성관리번호</th><th>대표품번</th><th>실입고품번</th><th>이전수량</th><th>수량</th><th>차이</th><th>출처</th></tr>"+
+  rows.slice(0,300).map(h=>`<tr><td>${h.일자||""}</td><td>${h.구분||""}</td><td>${h.sessionId||""}</td><td>${h.윤성관리번호||""}</td><td>${h.대표품번||""}</td><td>${h.실입고품번||""}</td><td>${h.이전수량??""}</td><td>${h.수량??""}</td><td class="${num(h.차이)<0?'red':num(h.차이)>0?'green':''}">${h.차이??""}</td><td>${h.거래처||h.구분||""}</td></tr>`).join("");
+}
+function renderAuditSessions(){
+  let box=qs("auditSessionBox"); if(!box)return;
+  let pending=auditSessions.filter(s=>s.상태==="실사대기");
+  box.innerHTML=`<div class="compactNote">실사조사에서 선택저장한 묶음은 이곳에 대기한다. 재고반영이 끝난 묶음은 아래 최근 처리 이력에서만 확인한다.</div>`+
+  `<br><div class="tablewrap"><table class="mini"><tr><th>상태</th><th>실사일시</th><th>묶음ID</th><th>항목수</th><th>검색조건</th><th>검토</th><th>처리</th></tr>`+
+  (pending.length?pending.map(s=>`<tr class="statusPending clickable" ondblclick="openAuditSession('${s.id}')"><td><span class="badge borange">실사대기</span></td><td>${s.일시}</td><td><b>${s.id}</b></td><td>${s.항목수}</td><td>${[s.검색조건?.검색어,s.검색조건?.차량구분,s.검색조건?.부품군].filter(Boolean).join(" / ")||"전체"}</td><td><button class="btn" onclick="openAuditSession('${s.id}')">묶음보기</button></td><td><button class="btn primary" onclick="reviewApplyAuditSession('${s.id}')">재고반영</button> <button class="btn danger" onclick="cancelAuditSession('${s.id}')">반영취소</button></td></tr>`).join(""):`<tr><td colspan="7" style="text-align:center;color:#64748b">재고반영 대기 묶음 없음</td></tr>`)+
+  `</table></div>`;
+}
+function openAuditSession(id){
+  let s=auditSessions.find(x=>x.id===id); if(!s)return;
+  qs("modalTitle").textContent=`실사묶음 보기 - ${id}`;
+  qs("modalBody").innerHTML=`<div class="reviewBox"><b>상태:</b> ${s.상태} &nbsp; <b>실사일시:</b> ${s.일시} &nbsp; <b>항목:</b> ${s.항목수}건</div>`+
+  `<div class="historyActions"><button class="btn primary" ${s.상태!=="실사대기"?"disabled":""} onclick="reviewApplyAuditSession('${id}')">재고반영 검토</button><button class="btn danger" ${s.상태!=="실사대기"?"disabled":""} onclick="cancelAuditSession('${id}')">반영취소</button></div>`+
+  `<table class="mini"><tr><th>윤성관리번호</th><th>대표품번</th><th>실입고품번</th><th>브랜드</th><th>조사시재고</th><th>현재고</th><th>실사수량</th><th>차이</th></tr>`+
+  s.items.map(it=>{let p=parts.find(x=>rowKey(x)===it.key);let cur=p?num(p["현재고"]):"부품없음";return `<tr><td>${it.윤성관리번호}</td><td>${it.대표품번}</td><td>${it.실입고품번}</td><td>${it.브랜드}</td><td>${it.조사시현재고}</td><td>${cur}</td><td><b>${it.실사수량}</b></td><td class="${it.차이<0?'red':it.차이>0?'green':''}">${it.차이}</td></tr>`}).join("")+
+  `</table>`;
+  qs("modal").classList.add("show");
+}
+function reviewApplyAuditSession(id){
+  let s=auditSessions.find(x=>x.id===id); if(!s||s.상태!=="실사대기"){toast("반영 가능한 실사대기가 아닙니다");return}
+  let rows=s.items.map(it=>{let p=parts.find(x=>rowKey(x)===it.key);let before=p?num(p["현재고"]):it.조사시현재고;let after=num(it.실사수량);let diff=after-before;return {...it,현재고:before,반영후:after,반영차이:diff}});
+  qs("modalTitle").textContent=`재고반영 전 검토 - ${id}`;
+  qs("modalBody").innerHTML=`<div class="reviewBox reviewWarn"><b>${rows.length}건 재고를 변경한다.</b> 아래 변경값을 확인 후 최종 반영한다.</div>`+
+  `<table class="mini"><tr><th>윤성관리번호</th><th>대표품번</th><th>실입고품번</th><th>현재고</th><th>반영후</th><th>차이</th></tr>`+
+  rows.map(r=>`<tr><td>${r.윤성관리번호}</td><td>${r.대표품번}</td><td>${r.실입고품번}</td><td>${r.현재고}</td><td><b>${r.반영후}</b></td><td class="${r.반영차이<0?'red':r.반영차이>0?'green':''}">${r.반영차이}</td></tr>`).join("")+
+  `</table><div class="historyActions"><button class="btn primary" onclick="applyAuditSession('${id}')">확인 후 재고반영</button><button class="btn" onclick="closeModal()">닫기</button></div>`;
+  qs("modal").classList.add("show");
+}
+async function applyAuditSession(id){
+  let s=auditSessions.find(x=>x.id===id); if(!s||s.상태!=="실사대기"){toast("반영 가능한 실사대기가 아닙니다");return}
+  try{
+    let j=await postServerApi("/parts/api/audit_apply",{sessionId:id});
+    await reloadServerAndRender(`${j.applied||0}건 재고 반영 완료 · 서버 DB 수량 반영`);
+    closeModal();
+  }catch(e){console.error(e);setSaveState("실사반영 실패 · 서버 DB 미반영",true);toast("실사반영 실패: "+e.message)}
+}
+async function cancelAuditSession(id){
+  let s=auditSessions.find(x=>x.id===id); if(!s||s.상태!=="실사대기")return;
+  s.상태="반영취소";s.취소일시=nowText();
+  histories.unshift({일자:s.취소일시,구분:"실사취소",sessionId:s.id,윤성관리번호:`${s.항목수}개 항목`,대표품번:"실사묶음 취소",실입고품번:"",브랜드:"",이전수량:"",수량:"",차이:"",거래처:"이력관리"});
+  await saveServerSnapshot("audit_session_cancelled");renderHistory();closeModal();toast("실사묶음 취소 처리 · 서버폴더 저장");
+}
+function downloadAuditSessionsJson(){downloadObj({schema:"ysm_parts_audit_sessions_v1",updated_at:new Date().toISOString(),sessions:auditSessions},"parts_audit_sessions.json")}
+function downloadOneAuditSessionJson(id){let s=auditSessions.find(x=>x.id===id); if(s)downloadObj({schema:"ysm_parts_audit_session_v1",updated_at:new Date().toISOString(),session:s},`${id}.json`)}
+function priorityRows(mode=""){
+  let rows=parts.filter(p=>isPriorityPart(p));
+  if(mode==="low")rows=rows.filter(p=>isLowPart(p)&&!isZeroPart(p));
+  if(mode==="zero")rows=rows.filter(p=>isZeroPart(p));
+  if(mode==="ok")rows=rows.filter(p=>!isLowPart(p));
+  if(mode==="suggest")rows=parts.filter(p=>!isPriorityPart(p)&&num(p["사용횟수"])>=5);
+  return rows;
+}
+function resetPriority(){qs("priStatus").value="";qs("priVehicle").value="";qs("priQ").value="";renderPriority()}
+
+function priorityRowsAll(){
+  return [...parts].sort((a,b)=>{
+    let ap=isPriorityPart(a)?0:1, bp=isPriorityPart(b)?0:1;
+    if(ap!==bp)return ap-bp;
+    let ar=isZeroPart(a)?0:(isLowPart(a)?1:2), br=isZeroPart(b)?0:(isLowPart(b)?1:2);
+    if(ar!==br)return ar-br;
+    return norm(a["제작사"]).localeCompare(norm(b["제작사"]),"ko");
+  });
+}
+function renderPriority(){
+  if(!qs("priorityTable"))return;
+  let status=qs("priStatus")?.value||"all";
+  let v=qs("priVehicle")?.value||"";
+  let q=norm(qs("priQ")?.value).toUpperCase();
+
+  let rows=priorityRowsAll().filter(p=>{
+    let ok=true;
+    if(status==="priority")ok=ok&&isPriorityPart(p);
+    if(status==="normal")ok=ok&&!isPriorityPart(p);
+    if(status==="low")ok=ok&&isLowPart(p);
+    if(status==="zero")ok=ok&&isZeroPart(p);
+    if(status==="ok")ok=ok&&!isLowPart(p)&&!isZeroPart(p);
+    if(status==="suggest")ok=ok&&!isPriorityPart(p)&&(num(p["사용횟수"])>=3||isLowPart(p));
+    if(v)ok=ok&&vehicleMatch(p["차량구분"],v);
+    if(q)ok=ok&&["제작사","적용차종","UID목록","UID메모","윤성관리번호","대표품번","실입고품번","브랜드","비고"].some(h=>norm(p[h]).toUpperCase().includes(q));
+    return ok;
+  });
+
+  let pri=parts.filter(isPriorityPart);
+  let priLow=parts.filter(p=>isPriorityPart(p)&&isLowPart(p));
+  let priZero=parts.filter(p=>isPriorityPart(p)&&isZeroPart(p));
+  let priOk=parts.filter(p=>isPriorityPart(p)&&!isLowPart(p)&&!isZeroPart(p));
+
+  qs("priorityKpi").innerHTML=[
+    ["전체부품",parts.length,"우선 지정 후보","all","blue"],
+    ["우선관리",pri.length,"지정된 품목","priority","purple"],
+    ["우선 부족",priLow.length,"안전재고 이하","low","danger"],
+    ["우선 재고없음",priZero.length,"즉시 조치","zero","danger"]
+  ].map(x=>`<div class="kpiCard ${x[4]}${(x[1]>0&&(x[3]==="low"||x[3]==="zero"))?" blinkWarn":""}" onclick="qs('priStatus').value='${x[3]==="all"?"all":x[3]==="priority"?"priority":x[3]}';renderPriority()"><b>${x[0]}</b><strong>${x[1]}</strong><span>${x[2]}</span></div>`).join("");
+
+  qs("priorityTable").innerHTML=`<tr><th>상태</th><th>우선</th><th>제작사</th><th>적용차종</th><th>UID</th><th>윤성관리번호</th><th>대표품번</th><th>현재고</th><th>안전</th><th>관리</th></tr>`+
+  rows.slice(0,700).map(p=>{
+    let key=rowKey(p), st=priorityStatus(p), stc=priorityStatusClass(p), priFlag=isPriorityPart(p);
+    return `<tr class="${priFlag?'bgpri ':''}${isZeroPart(p)?'zero ':''}">
+      <td><b class="priorityState ${stc}" title="${st}">${st}</b></td>
+      <td><span class="badge ${priFlag?'borange':'bgray'}">${priFlag?'Y':'N'}</span></td>
+      <td title="${escHtml(p["제작사"])}">${escHtml(p["제작사"])}</td>
+      <td>${ellipsisText(p["적용차종"],150)}</td>
+      <td>${ellipsisText(uidText(p),120)}</td>
+      <td title="${escHtml(p["윤성관리번호"])}"><b class="blue">${escHtml(p["윤성관리번호"])}</b></td>
+      <td title="${escHtml(p["대표품번"])}">${escHtml(p["대표품번"])}</td>
+      <td>${p["현재고"]}</td>
+      <td>${p["안전재고"]}</td>
+      <td>
+        <button class="btn ${priFlag?'danger':'purple'}" onclick="togglePriority('${key}')">${priFlag?'해제':'지정'}</button>
+        <button class="btn orange" onclick="openEdit('${key}')">수정</button>
+      </td>
+    </tr>`;
+  }).join("");
+}
+function resetPriority(){qs("priStatus").value="all";qs("priVehicle").value="";qs("priQ").value="";renderPriority()}
+async function togglePriority(key){
+  let i=parts.findIndex(x=>rowKey(x)===key); if(i<0)return;
+  let before=parts[i]["우선관리"];
+  parts[i]["우선관리"]=isPriorityPart(parts[i])?"N":"Y";
+  histories.unshift({일자:nowText(),구분:parts[i]["우선관리"]==="Y"?"우선관리지정":"우선관리해제",윤성관리번호:parts[i]["윤성관리번호"],대표품번:parts[i]["대표품번"],실입고품번:parts[i]["실입고품번"],브랜드:parts[i]["브랜드"],이전수량:before,수량:parts[i]["우선관리"],차이:"",거래처:"우선관리",메모:`우선관리 ${before}→${parts[i]["우선관리"]}`});
+  saveLocal();
+  let ok=await saveServerSnapshot("priority_toggle");
+  if(ok) await reloadServerAndRender("우선관리 변경 · 서버 DB 반영"); else renderAll();
+}
+function renderStock(){let lows=parts.filter(p=>num(p["현재고"])<=num(p["안전재고"]));qs("stockBox").innerHTML=`부족/안전재고 이하 ${lows.length}건<br><br>`+'<table class="mini"><tr><th>F/K</th><th>제작사</th><th>적용차종</th><th>UID</th><th>윤성관리번호</th><th>대표품번</th><th>현재고</th><th>안전재고</th><th>우선</th><th>수정</th></tr>'+lows.map(p=>`<tr><td>${p["차량구분"]}</td><td>${p["제작사"]}</td><td>${ellipsisText(p["적용차종"],190)}</td><td>${ellipsisText(uidText(p),130)}</td><td>${p["윤성관리번호"]}</td><td>${p["대표품번"]}</td><td class="red">${p["현재고"]}</td><td>${p["안전재고"]}</td><td><span class="badge ${isPriorityPart(p)?"borange":"bgray"}">${p["우선관리"]}</span></td><td><button class="btn orange" onclick="openEdit('${rowKey(p)}')">수정</button> <button class="btn" onclick="openPriorityEdit('${rowKey(p)}')">우선</button> <button class="btn primary" onclick="openQtyAdjust('${rowKey(p)}')">수량</button></td></tr>`).join("")+"</table>"}
+function renderPrice(){qs("priceBox").innerHTML='<table class="mini"><tr><th>윤성관리번호</th><th>실입고품번</th><th>브랜드</th><th>최근매입가</th><th>최근출고가</th><th>수정</th></tr>'+parts.filter(p=>p["최근매입가"]||p["최근출고가"]).slice(0,200).map(p=>`<tr><td>${p["윤성관리번호"]}</td><td>${p["실입고품번"]}</td><td>${p["브랜드"]}</td><td>${p["최근매입가"]}</td><td>${p["최근출고가"]}</td><td><button class="btn orange" onclick="openEdit('${rowKey(p)}')">수정</button> <button class="btn primary" onclick="openQtyAdjust('${rowKey(p)}')">수량</button></td></tr>`).join("")+"</table>"}
+let currentAnalytics="재고";
+function renderAnalytics(){
+  let menus=["재고","입고","출고","차종","제작사","부품군","브랜드","UID","실사","가격","사용빈도","재고회전율"];
+  qs("analyticsMenu").innerHTML=menus.map(m=>`<button class="btn ${currentAnalytics===m?'primary':''}" onclick="currentAnalytics='${m}';renderAnalytics()">${m}</button>`).join("");
+  let html="";
+  if(currentAnalytics==="재고"){html=analyticsGroup("재고 분석",groupByField(parts,"부품군"),"부품군")+partsMiniTable([...parts].sort((a,b)=>num(b["현재고"])-num(a["현재고"])).slice(0,50));}
+  if(currentAnalytics==="차종"){html=analyticsGroup("차종/적용차종별",groupByField(parts,"적용차종"),"적용차종");}
+  if(currentAnalytics==="제작사"){html=analyticsGroup("제작사별",groupByField(parts,"제작사"),"제작사");}
+  if(currentAnalytics==="부품군"){html=analyticsGroup("부품군별",groupByField(parts,"부품군"),"부품군");}
+  if(currentAnalytics==="브랜드"){html=analyticsGroup("브랜드별",groupByField(parts,"브랜드"),"브랜드");}
+  if(currentAnalytics==="출고"||currentAnalytics==="사용빈도"){let top=[...parts].sort((a,b)=>num(b["사용횟수"])-num(a["사용횟수"]));html=`<div class="box greenTop"><h3>많이 나가는 부품 TOP50</h3>${partsMiniTable(top.slice(0,50))}</div><div class="box orangeTop"><h3>출고 없는 부품</h3>${partsMiniTable(parts.filter(p=>num(p["사용횟수"])===0).slice(0,50))}</div>`;}
+  if(currentAnalytics==="입고"){html=`<div class="box greenTop"><h3>최근 입고일 기준</h3>${partsMiniTable([...parts].filter(p=>p["최종입고일"]).sort((a,b)=>String(b["최종입고일"]).localeCompare(String(a["최종입고일"]))).slice(0,50))}</div>`;}
+  if(currentAnalytics==="UID"){html=analyticsGroup("UID 연동 상태",groupByField(parts,"UID연동여부"),"UID연동여부")+partsMiniTable(parts.filter(p=>p["UID연동여부"]!=="Y").slice(0,50));}
+  if(currentAnalytics==="실사"){html=`<div class="box orangeTop"><h3>실사 미실시</h3>${partsMiniTable(warningRows("auditMiss").slice(0,100))}</div>`;}
+  if(currentAnalytics==="가격"){let val=parts.reduce((s,p)=>s+num(p["현재고"])*num(p["최근매입가"]),0);html=`<div class="kpiGrid"><div class="kpiCard"><b>총 재고자산</b><strong>${money(val)}</strong><span>최근매입가 기준</span></div><div class="kpiCard"><b>가격 미등록</b><strong>${warningRows("noPrice").length}</strong><span>손익 계산 불가</span></div></div>`+partsMiniTable(warningRows("noPrice").slice(0,100));}
+  if(currentAnalytics==="재고회전율"){html=`<div class="box purpleTop"><h3>재고회전 참고</h3><p class="unit">현재는 사용횟수/현재고 기준의 참고값이다. 정확한 회전율은 기간별 출고 이력 누적 후 계산한다.</p><table class="mini"><tr><th>관리번호</th><th>대표품번</th><th>현재고</th><th>사용횟수</th><th>참고회전값</th></tr>${[...parts].map(p=>[p,num(p["사용횟수"])/(num(p["현재고"])+1)]).sort((a,b)=>b[1]-a[1]).slice(0,50).map(x=>`<tr class="clickable" onclick="openEdit('${rowKey(x[0])}')"><td>${x[0]["윤성관리번호"]}</td><td>${x[0]["대표품번"]}</td><td>${x[0]["현재고"]}</td><td>${x[0]["사용횟수"]}</td><td>${x[1].toFixed(2)}</td></tr>`).join("")}</table></div>`;}
+  qs("analyticsBox").innerHTML=html||"데이터 없음";
+}
+function analyticsGroup(title,map,field){let arr=Object.entries(map).sort((a,b)=>b[1].qty-a[1].qty);let max=Math.max(1,...arr.map(x=>x[1].qty));return `<div class="box blueTop"><h3>${title}</h3><table class="mini"><tr><th>구분</th><th>품목수</th><th>재고수량</th><th>재고금액</th><th>그래프</th></tr>${arr.map(x=>`<tr class="clickable" onclick="filterField('${field}','${String(x[0]).replaceAll("'","&#39;")}')"><td><b>${x[0]}</b></td><td>${x[1].items}</td><td>${x[1].qty}</td><td>${money(x[1].stockValue)}</td><td><div class="chartbar"><span style="width:${Math.max(3,x[1].qty/max*100)}%"></span></div></td></tr>`).join("")}</table></div><br>`}
+function renderSystemGuide(){
+  let protocol = location.protocol === "file:" ? "파일 직접실행(file://)" : "서버실행(http://)";
+  let current = location.href;
+  let htmlName = (location.pathname.split("/").pop()||"index.html");
+  qs("systemGuide").innerHTML=`
+  <div class="sysGrid">
+    <div class="sysCard sysOk"><h3>1. 실행 기준</h3><ul class="sysList"><li>정상 운영 접속: <b>http://127.0.0.1:8788</b></li><li>현재 실행상태: <b>${protocol}</b></li><li>현재 HTML: <b>${htmlName}</b></li><li>파일 직접실행 시: 화면 확인 및 브라우저 임시저장만 가능</li><li>자동저장 필요 시: 반드시 배치파일로 서버 실행 후 접속</li></ul></div>
+    <div class="sysCard"><h3>2. 필수 파일 구성</h3><div class="sysCode">부품관리센터/
+├─ index.html                         ← 메인 웹페이지
+├─ ysmt_parts_center_R5_auto_save.html ← 동일 기능 보관본
+├─ ysm_parts_storage_engine_R8.py          ← Python 저장서버
+├─ START_YSM_PARTS_SERVER.bat        ← 서버 실행 배치파일
+├─ parts_inventory.json        ← 메인 부품 DB
+├─ parts_inventory.json                 ← 보조/호환 DB
+├─ parts_history.json                   ← 입출고/실사/반영 이력
+├─ parts_audit_sessions.json            ← 실사대기 묶음
+└─ backup/                              ← 자동 백업 폴더</div></div>
+    <div class="sysCard"><h3>3. 배치파일 역할</h3><ul class="sysList"><li>파일명: START_YSM_PARTS_SERVER.bat</li><li>위치: index.html과 같은 폴더</li><li>작동: 현재 폴더로 이동 후 Python 서버 실행</li><li>주소: http://127.0.0.1:8788</li><li>주의: 폴더를 옮기면 bat, py, html, json을 반드시 같은 폴더에 둔다</li></ul></div>
+    <div class="sysCard"><h3>4. Python 저장서버 역할</h3><ul class="sysList"><li>파일명: ysm_parts_storage_engine_R8.py</li><li>포트: 8788</li><li>로드 API: GET /api/load</li><li>저장 API: POST /api/save</li><li>저장 위치: Python 파일이 있는 폴더 기준</li><li>자동백업 위치: 같은 폴더의 backup 폴더</li></ul></div>
+    <div class="sysCard sysWarn"><h3>5. 실사조사 흐름</h3><div class="sysCode">실사조사
+→ 조건 검색
+→ 실사수량 입력
+→ 확인한 항목만 체크
+→ 선택저장
+→ 현재고는 아직 변경하지 않음
+→ parts_audit_sessions.json에 실사대기 묶음 저장
+→ parts_history.json에 실사대기 기록 생성</div></div>
+    <div class="sysCard sysWarn"><h3>6. 이력관리 재고반영 흐름</h3><div class="sysCode">이력관리
+→ 실사대기 묶음 선택
+→ 묶음보기
+→ 변경 예정 수량 확인
+→ 재고반영
+→ parts_inventory.json 저장
+→ parts_inventory.json 저장
+→ parts_history.json 저장
+→ parts_audit_sessions.json 상태 반영완료
+→ backup 폴더에 시간별 백업 생성</div></div>
+    <div class="sysCard"><h3>7. 저장되는 JSON</h3><ul class="sysList"><li>parts_inventory.json: 실제 운영 메인 DB</li><li>parts_inventory.json: 호환용 DB, 메인과 같이 저장</li><li>parts_history.json: 입고/출고/실사대기/실사반영 누적</li><li>parts_audit_sessions.json: 실사 묶음과 상태값 보관</li><li>backup/*.json: 저장 시점별 자동 백업</li></ul></div>
+    <div class="sysCard"><h3>8. 백업 규칙</h3><div class="sysCode">저장반영 또는 서버폴더 저장 시 자동 생성:
+backup/YYYYMMDD_HHMMSS_parts_inventory.json
+backup/YYYYMMDD_HHMMSS_parts_history.json
+backup/YYYYMMDD_HHMMSS_parts_audit_sessions.json
+
+기존 파일도 before_ 형태로 보관됨.</div></div>
+    <div class="sysCard sysWarn"><h3>9. 절대 흔들리면 안 되는 기준</h3><ul class="sysList"><li>01 WEB, 02 SERVER, 03 DATA, 04 BACKUP 구조 기준</li><li>HTML 이름만 바꿔도 가능하지만 메인 운영명은 index.html 권장</li><li>Python 포트는 8788 고정</li><li>서버주소는 http://127.0.0.1:8788 기준</li><li>file:/// 로 열면 해당 폴더 자동저장 불가</li><li>서버 저장 실패 시 브라우저 localStorage에만 남는다</li></ul></div>
+    <div class="sysCard"><h3>10. 현재 페이지 정보</h3><div class="sysCode">현재 주소: ${current}
+현재 저장상태 표시: 상단/작업 후 메시지 확인
+서버 저장 성공 문구: 서버폴더 자동저장 완료
+서버 저장 실패 문구: 서버저장 실패 · 임시저장만 됨</div></div>
+  </div>`;
+}
+function renderUidPage(){let q=norm(qs("uidQ")?.value).toUpperCase();let registered=parts.filter(p=>norm(p["UID목록"])||norm(p["UID메모"])||p["UID연동여부"]==="Y");let missing=parts.filter(p=>!registered.includes(p));if(q){missing=missing.filter(p=>["제작사","적용차종","UID목록","UID메모","윤성관리번호","대표품번","실입고품번","브랜드"].some(h=>norm(p[h]).toUpperCase().includes(q)));registered=registered.filter(p=>["제작사","적용차종","UID목록","UID메모","윤성관리번호","대표품번","실입고품번","브랜드"].some(h=>norm(p[h]).toUpperCase().includes(q)))}let rate=parts.length?Math.round(registered.length/parts.length*100):0;if(qs("uidRegCnt")){qs("uidRegCnt").textContent=registered.length;qs("uidMissCnt").textContent=missing.length;qs("uidRateCnt").textContent=rate+"%"}let rows=[...missing,...registered].slice(0,400);if(qs("uidTable"))qs("uidTable").innerHTML='<tr><th>상태</th><th>제작사</th><th>적용차종</th><th>UID</th><th>윤성관리번호</th><th>대표품번</th><th>수정</th></tr>'+rows.map(p=>`<tr><td><span class="badge ${registered.includes(p)?"bgreen":"bgray"}">${registered.includes(p)?"등록":"미등록"}</span></td><td>${p["제작사"]}</td><td>${ellipsisText(p["적용차종"],230)}</td><td>${ellipsisText(uidText(p),190)}</td><td>${p["윤성관리번호"]}</td><td>${p["대표품번"]}</td><td><button class="btn orange" onclick="openEdit('${rowKey(p)}')">수정</button></td></tr>`).join("")}
+function renderSettings(){let rows=[];Object.entries(settings.vehicle_codes).forEach(x=>rows.push(["차량구분",x[0],x[1]]));Object.entries(settings.ys_prefix).forEach(x=>rows.push(["윤성접두",x[0],x[1]]));Object.entries(settings.part_groups).forEach(x=>rows.push(["부품군",x[0],x[1]]));Object.entries(settings.maker_codes).forEach(x=>rows.push(["제작사",x[0],x[1]]));qs("settingsEditor").innerHTML='<table class="mini" id="setTable"><tr><th>분류</th><th>코드</th><th>설명</th><th>삭제</th></tr>'+rows.map((r,i)=>`<tr><td><input class="inp" value="${r[0]}"></td><td><input class="inp" value="${r[1]}"></td><td><input class="inp" value="${r[2]}"></td><td><button class="btn danger" onclick="this.closest('tr').remove()">삭제</button></td></tr>`).join("")+'</table><div class="row"><label>번호규칙</label><input id="numberRule" value="'+settings.number_rule+'"></div><div class="row"><label>UID Map</label><input id="uidMap" value="'+settings.uid_files.map+'"></div><div class="row"><label>UID 설정</label><input id="uidSet" value="'+settings.uid_files.settings+'"></div>'}
+function addCodeRow(){
+  qs("setTable").insertAdjacentHTML("beforeend",
+    `<tr>
+      <td><input class="inp" value="부품군"></td>
+      <td><input class="inp"></td>
+      <td><input class="inp"></td>
+      <td><button class="btn danger" onclick="this.closest('tr').remove()">삭제</button></td>
+    </tr>`
+  )
+}
+function saveSettings(){let next={vehicle_codes:{},ys_prefix:{},part_groups:{},maker_codes:{},number_rule:qs("numberRule").value,uid_files:{map:qs("uidMap").value,settings:qs("uidSet").value}};document.querySelectorAll("#setTable tr").forEach((tr,i)=>{if(i===0)return;let inp=tr.querySelectorAll("input");let type=inp[0].value.trim(),code=inp[1].value.trim(),desc=inp[2].value.trim();if(!code)return;if(type==="차량구분")next.vehicle_codes[code]=desc;else if(type==="윤성접두")next.ys_prefix[code]=desc;else if(type==="제작사")next.maker_codes[code]=desc;else next.part_groups[code]=desc});settings=next;localStorage.setItem("ysm_settings",JSON.stringify(settings));toast("설정 저장")}
+function readJson(e){let f=e.target.files[0];if(!f)return;let rd=new FileReader();rd.onload=()=>{let j=JSON.parse(rd.result);parts=(Array.isArray(j)?j:j.items||[]).map(normalize);filtered=[...parts];auditList=[...parts];saveLocal();fillFilters();renderAll();toast("JSON 업로드 완료")};rd.readAsText(f,"utf-8")}
+function downloadObj(data,filename){let blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=filename;a.click()}
+function downloadJson(){let data={schema:"ysm_parts_center_v3_complete",updated_at:new Date().toISOString(),items:parts};let blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="parts_inventory.json";a.click()}
+function downloadCsv(){let csv=[HEADERS.join(",")].concat(parts.map(p=>HEADERS.map(h=>`"${String(p[h]??"").replaceAll('"','""')}"`).join(","))).join("\n");let blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8"});let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="부품정보_다운로드.csv";a.click()}
+init();
+</script>
+</body></html>

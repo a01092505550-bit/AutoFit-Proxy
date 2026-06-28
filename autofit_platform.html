@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoFit Platform</title>
+<style>
+:root{
+  --bg:#04070d;
+  --bg2:#071527;
+  --panel:rgba(8,20,36,.78);
+  --panel2:rgba(13,32,55,.86);
+  --line:rgba(92,210,255,.24);
+  --line2:rgba(255,255,255,.10);
+  --text:#f1f8ff;
+  --muted:#9fb5c9;
+  --blue:#269dff;
+  --cyan:#44f0ff;
+  --green:#42e889;
+  --gold:#ffd46b;
+  --red:#ff6b83;
+  --shadow:0 30px 90px rgba(0,0,0,.52);
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic",sans-serif;color:var(--text)}
+body{
+  background:
+    radial-gradient(circle at 50% -12%, rgba(68,240,255,.22), transparent 34%),
+    radial-gradient(circle at 16% 18%, rgba(38,157,255,.16), transparent 28%),
+    radial-gradient(circle at 86% 82%, rgba(255,212,107,.08), transparent 30%),
+    linear-gradient(135deg,#03050a 0%,#071527 48%,#040b14 100%);
+  overflow-x:hidden;
+}
+body:before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.032) 1px, transparent 1px);
+  background-size:44px 44px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.92),transparent 94%);
+}
+body:after{
+  content:"";
+  position:fixed;inset:-25%;pointer-events:none;
+  background:conic-gradient(from 180deg at 50% 50%, transparent, rgba(38,157,255,.08), transparent, rgba(68,240,255,.08), transparent);
+  animation:spin 45s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hidden{display:none!important}
+.wrap{position:relative;z-index:1;min-height:100vh}
+
+/* Logo */
+.af-logo{
+  position:relative;
+  width:118px;height:118px;
+  border-radius:32px;
+  display:grid;place-items:center;
+  background:
+    linear-gradient(145deg,rgba(38,157,255,.95),rgba(68,240,255,.82));
+  box-shadow:0 0 52px rgba(68,240,255,.22), inset 0 0 30px rgba(255,255,255,.25);
+}
+.af-logo:before{
+  content:"";
+  position:absolute;
+  width:78px;height:78px;
+  border-radius:50%;
+  border:7px solid rgba(5,12,22,.92);
+  border-top-color:rgba(255,255,255,.86);
+  border-right-color:rgba(255,255,255,.30);
+  transform:rotate(-35deg);
+}
+.af-logo:after{
+  content:"AF";
+  position:absolute;
+  font-size:31px;
+  font-weight:1000;
+  letter-spacing:-4px;
+  color:#06111d;
+  transform:translateX(-1px);
+}
+.af-logo .cut{
+  position:absolute;
+  width:28px;height:8px;border-radius:10px;
+  background:#06111d;
+  right:18px;top:54px;
+  transform:rotate(-28deg);
+  box-shadow:0 0 0 2px rgba(255,255,255,.10);
+}
+.af-logo.small{width:58px;height:58px;border-radius:17px}
+.af-logo.small:before{width:38px;height:38px;border-width:4px}
+.af-logo.small:after{font-size:16px;letter-spacing:-2px}
+.af-logo.small .cut{width:15px;height:4px;right:9px;top:27px}
+
+/* Login */
+.login{
+  min-height:100vh;
+  padding:38px;
+  display:grid;
+  grid-template-columns:1.1fr 430px;
+  gap:30px;
+  align-items:stretch;
+}
+.cover{
+  min-height:720px;
+  border:1px solid var(--line);
+  border-radius:36px;
+  background:
+    linear-gradient(145deg,rgba(12,29,50,.78),rgba(4,10,18,.78));
+  box-shadow:var(--shadow);
+  padding:48px;
+  position:relative;
+  overflow:hidden;
+}
+.cover:before{
+  content:"";
+  position:absolute;
+  inset:24px;
+  border-radius:28px;
+  border:1px solid rgba(255,255,255,.06);
+  pointer-events:none;
+}
+.cover:after{
+  content:"AUTOFIT";
+  position:absolute;
+  left:42px;
+  bottom:-28px;
+  font-size:128px;
+  line-height:1;
+  font-weight:1000;
+  letter-spacing:-10px;
+  color:rgba(255,255,255,.035);
+  white-space:nowrap;
+}
+.hero-head{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+.brand-label{
+  font-size:12px;
+  font-weight:1000;
+  letter-spacing:4px;
+  color:#bff8ff;
+  text-transform:uppercase;
+}
+.hero-title{
+  margin:8px 0 0;
+  font-size:76px;
+  line-height:.9;
+  letter-spacing:-4px;
+  font-weight:1000;
+}
+.hero-line{
+  width:260px;height:3px;
+  margin:38px 0;
+  background:linear-gradient(90deg,var(--cyan),transparent);
+  border-radius:99px;
+}
+.access-info{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:24px;
+}
+.access-card{
+  border:1px solid var(--line2);
+  border-radius:22px;
+  background:rgba(255,255,255,.045);
+  padding:18px;
+  min-height:130px;
+}
+.access-card b{
+  display:block;
+  font-size:14px;
+  color:#dffbff;
+  margin-bottom:10px;
+  letter-spacing:.6px;
+}
+.access-card span{
+  display:block;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.55;
+}
+
+.network-access-panel{
+  position:relative;
+  z-index:1;
+  margin-top:22px;
+  max-width:760px;
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:18px;
+  border:1px solid rgba(68,240,255,.28);
+  border-radius:26px;
+  background:linear-gradient(135deg,rgba(255,255,255,.075),rgba(68,240,255,.045));
+  padding:18px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.035);
+}
+.qr-box{
+  background:#fff;
+  border-radius:20px;
+  padding:14px;
+  display:grid;
+  place-items:center;
+  box-shadow:0 16px 40px rgba(0,0,0,.25);
+}
+.qr-box img{width:100%;max-width:190px;height:auto;display:block}
+.network-copy b{
+  display:block;
+  color:#dffbff;
+  font-size:15px;
+  letter-spacing:.8px;
+  margin-bottom:8px;
+}
+.network-copy .main-url{
+  display:inline-block;
+  margin:3px 0 12px;
+  padding:8px 11px;
+  border-radius:12px;
+  background:rgba(0,0,0,.30);
+  color:#8df5ff;
+  font-size:18px;
+  font-weight:1000;
+  letter-spacing:.2px;
+}
+.link-list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px 12px;
+  margin-top:4px;
+}
+.link-list span{
+  display:block;
+  color:#dcefff;
+  font-size:12px;
+  line-height:1.35;
+  padding:8px 10px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:12px;
+  background:rgba(255,255,255,.045);
+}
+.link-list em{font-style:normal;color:#7feeff;font-weight:900}
+.server-note{
+  margin-top:12px;
+  color:#9fb5c9;
+  font-size:12px;
+  line-height:1.55;
+}
+.quick-access-main{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:1.2fr 2fr;
+  gap:18px;
+  align-items:stretch;
+}
+.main-qr-card,.main-link-card{
+  border:1px solid var(--line);
+  border-radius:28px;
+  background:rgba(8,20,36,.74);
+  padding:20px;
+  box-shadow:0 20px 62px rgba(0,0,0,.24);
+}
+.main-qr-card{display:flex;gap:18px;align-items:center}
+.main-qr-card img{width:132px;height:132px;background:#fff;border-radius:18px;padding:10px}
+.main-qr-card b,.main-link-card b{display:block;color:#dffbff;font-size:16px;margin-bottom:8px}
+.main-qr-card span,.main-link-card span{display:block;color:var(--muted);font-size:13px;line-height:1.55}
+.main-link-card .main-url{color:#8df5ff;font-size:19px;font-weight:1000;margin:6px 0 12px}
+.main-link-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.main-link-grid button{
+  cursor:pointer;border:1px solid rgba(68,240,255,.18);border-radius:14px;
+  background:rgba(255,255,255,.055);color:#eaf6ff;padding:11px 10px;font-weight:900;
+}
+@media(max-width:760px){
+  .network-access-panel,.quick-access-main{grid-template-columns:1fr}
+  .link-list,.main-link-grid{grid-template-columns:1fr}
+  .main-qr-card{flex-direction:column;align-items:flex-start}
+}
+
+.signature{
+  position:absolute;
+  z-index:1;
+  left:48px;
+  bottom:36px;
+  color:rgba(240,248,255,.76);
+  font-size:12px;
+  letter-spacing:1.4px;
+  line-height:1.75;
+}
+.signature strong{
+  display:block;
+  font-size:15px;
+  color:#fff;
+  letter-spacing:1.8px;
+}
+.login-panel{
+  border:1px solid var(--line);
+  border-radius:36px;
+  background:
+    linear-gradient(180deg,rgba(14,36,62,.92),rgba(5,12,22,.94));
+  box-shadow:var(--shadow);
+  padding:34px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.login-panel h2{
+  margin:0 0 6px;
+  font-size:38px;
+  font-weight:1000;
+  letter-spacing:-1.7px;
+}
+.login-panel .code{
+  color:var(--muted);
+  margin:0 0 26px;
+  line-height:1.55;
+  font-size:14px;
+}
+.field{margin:15px 0}
+label{
+  display:block;
+  margin-bottom:8px;
+  font-size:12px;
+  font-weight:1000;
+  letter-spacing:1.7px;
+  color:#bfd9ee;
+}
+input{
+  width:100%;
+  border:1px solid rgba(92,210,255,.24);
+  background:rgba(1,8,15,.68);
+  color:var(--text);
+  outline:none;
+  border-radius:16px;
+  padding:16px 17px;
+  font-size:16px;
+}
+input:focus{
+  border-color:var(--cyan);
+  box-shadow:0 0 0 4px rgba(68,240,255,.10);
+}
+.btn{
+  border:0;
+  cursor:pointer;
+  border-radius:17px;
+  padding:16px 18px;
+  background:linear-gradient(135deg,var(--blue),var(--cyan));
+  color:#03111d;
+  font-size:15px;
+  font-weight:1000;
+  letter-spacing:.4px;
+  box-shadow:0 16px 42px rgba(38,157,255,.22);
+}
+.login-panel .btn{width:100%;margin-top:18px}
+.err{min-height:22px;color:#ff91a4;font-size:13px;margin-top:12px}
+.access-code-box{
+  margin-top:26px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.045);
+  border-radius:18px;
+  padding:16px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.65;
+}
+.access-code-box b{color:#fff}
+
+/* Main */
+.main{
+  min-height:100vh;
+  padding:28px;
+}
+.topbar{
+  border:1px solid var(--line);
+  border-radius:30px;
+  background:rgba(8,20,36,.74);
+  backdrop-filter:blur(16px);
+  box-shadow:0 20px 62px rgba(0,0,0,.34);
+  padding:22px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+.top-left{display:flex;align-items:center;gap:17px}
+.top-title{
+  font-size:30px;
+  font-weight:1000;
+  letter-spacing:-1.2px;
+}
+.top-sub{
+  margin-top:2px;
+  color:var(--muted);
+  font-size:13px;
+  letter-spacing:.5px;
+}
+.top-right{display:flex;gap:12px;align-items:center}
+.ready{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(66,232,137,.08);
+  border:1px solid rgba(66,232,137,.24);
+  color:#c8ffdc;
+  font-size:12px;
+  font-weight:1000;
+}
+.ready i{
+  width:9px;height:9px;border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 16px var(--green);
+}
+.logout{
+  box-shadow:none;
+  color:var(--text);
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+  padding:11px 15px;
+}
+.stage{
+  margin:22px 0;
+  border:1px solid var(--line);
+  border-radius:34px;
+  background:
+    linear-gradient(135deg,rgba(13,32,55,.80),rgba(5,12,22,.78));
+  min-height:230px;
+  padding:30px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 22px 70px rgba(0,0,0,.26);
+}
+.stage:before{
+  content:"";
+  position:absolute;
+  right:44px;
+  top:38px;
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  border:1px solid rgba(68,240,255,.18);
+  box-shadow:inset 0 0 60px rgba(68,240,255,.10);
+}
+.stage:after{
+  content:"PLATFORM";
+  position:absolute;
+  right:20px;
+  bottom:-26px;
+  font-size:92px;
+  font-weight:1000;
+  letter-spacing:-7px;
+  color:rgba(255,255,255,.035);
+}
+.stage h1{
+  position:relative;
+  z-index:1;
+  margin:0;
+  font-size:54px;
+  letter-spacing:-2.8px;
+}
+.stage p{
+  position:relative;
+  z-index:1;
+  margin:14px 0 0;
+  color:var(--muted);
+  font-size:15px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+.card{
+  min-height:235px;
+  border:1px solid var(--line);
+  border-radius:30px;
+  background:
+    linear-gradient(145deg,rgba(14,36,62,.86),rgba(5,12,22,.90));
+  box-shadow:0 24px 66px rgba(0,0,0,.28);
+  padding:24px;
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  transition:.18s ease;
+}
+.card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(68,240,255,.60);
+  box-shadow:0 28px 78px rgba(38,157,255,.18);
+}
+.card:before{
+  content:"";
+  position:absolute;
+  right:-54px;
+  bottom:-68px;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(38,157,255,.12);
+}
+.card-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  color:#c8f7ff;
+  font-size:12px;
+  font-weight:1000;
+  letter-spacing:1.5px;
+}
+.card-icon{
+  width:46px;
+  height:46px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  background:rgba(68,240,255,.10);
+  border:1px solid rgba(68,240,255,.18);
+  color:#e6fcff;
+  font-weight:1000;
+}
+.card h2{
+  margin:24px 0 9px;
+  font-size:30px;
+  letter-spacing:-1.5px;
+}
+.card p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.5;
+  font-size:14px;
+}
+.card .open{
+  position:absolute;
+  left:24px;
+  bottom:24px;
+  color:#d5fbff;
+  font-size:12px;
+  font-weight:1000;
+  letter-spacing:1px;
+}
+.footer{
+  margin-top:22px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.035);
+  border-radius:22px;
+  padding:16px 20px;
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  color:var(--muted);
+  font-size:12px;
+  letter-spacing:1px;
+}
+.footer b{color:#fff}
+@media(max-width:1120px){
+  .login{grid-template-columns:1fr;padding:24px}
+  .cover{min-height:620px}
+  .access-info,.cards{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .login,.main{padding:18px}
+  .hero-head{align-items:flex-start;flex-direction:column}
+  .hero-title{font-size:52px}
+  .cover:after{font-size:72px}
+  .access-info,.cards{grid-template-columns:1fr}
+  .topbar,.footer{align-items:flex-start;flex-direction:column}
+  .stage h1{font-size:40px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<section id="loginPage" class="login">
+  <div class="cover">
+    <div class="hero-head">
+      <div class="af-logo"><span class="cut"></span></div>
+      <div>
+        <div class="brand-label">YOONSUNG MOTORS SYSTEM</div>
+        <div class="hero-title">AutoFit<br>Platform</div>
+      </div>
+    </div>
+
+    <div class="hero-line"></div>
+
+    <div class="access-info">
+      <div class="access-card">
+        <b>ACCESS CODE</b>
+        <span>Authorized user only. Enter the assigned access code to open the platform.</span>
+      </div>
+      <div class="access-card">
+        <b>LOCAL SYSTEM</b>
+        <span>Designed for workshop network operation and module-based expansion.</span>
+      </div>
+      <div class="access-card">
+        <b>MODULE READY</b>
+        <span>Parts, Control, Ledger, InOut, UID, Settings / Docs.</span>
+      </div>
+    </div>
+
+    <div class="network-access-panel">
+      <div class="qr-box">
+        <img src="data:image/png;base64,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" alt="AutoFit Platform QR">
+      </div>
+      <div class="network-copy">
+        <b>NETWORK ACCESS QR</b>
+        <div class="main-url">http://10.10.10.60:8790</div>
+        <div class="link-list">
+          <span><em>MAIN</em><br>http://10.10.10.60:8790</span>
+          <span><em>PARTS</em><br>http://10.10.10.60:8790/parts</span>
+          <span><em>IVECO</em><br>http://10.10.10.60:8790/parts/iveco</span>
+          <span><em>CONTROL</em><br>http://10.10.10.60:8790/control</span>
+        </div>
+        <div class="server-note">같은 내부 네트워크에서 QR로 접속합니다. 서버 포트는 8790입니다.</div>
+      </div>
+    </div>
+
+    <div class="signature">
+      AUTOFIT PLATFORM · RELEASE R4<br>
+      <strong>DESIGNED & DEVELOPED BY YOONSUNG MOTORS</strong>
+      BIGBOSS LEE KWAN HEUNG
+    </div>
+  </div>
+
+  <div class="login-panel">
+    <h2>Access Code</h2>
+    <p class="code">Enter platform access information.</p>
+
+    <div class="field">
+      <label>USER ID</label>
+      <input id="userId" value="admin" autocomplete="username">
+    </div>
+
+    <div class="field">
+      <label>ACCESS CODE</label>
+      <input id="userPw" type="password" value="1234" autocomplete="current-password">
+    </div>
+
+    <button class="btn" onclick="login()">ENTER AUTOFIT PLATFORM</button>
+    <div id="err" class="err"></div>
+
+    <div class="access-code-box">
+      <b>Test Access</b><br>
+      USER ID: admin<br>
+      ACCESS CODE: 1234
+    </div>
+  </div>
+</section>
+
+<section id="mainPage" class="main hidden">
+  <header class="topbar">
+    <div class="top-left">
+      <div class="af-logo small"><span class="cut"></span></div>
+      <div>
+        <div class="top-title">AutoFit Platform</div>
+        <div class="top-sub">YOONSUNG MOTORS SYSTEM · RELEASE R4</div>
+      </div>
+    </div>
+    <div class="top-right">
+      <div class="ready"><i></i> 시스템 준비됨</div>
+      <button class="btn logout" onclick="logout()">LOGOUT</button>
+    </div>
+  </header>
+
+  <section class="stage">
+    <h1>System Main</h1>
+    <p>사용할 센터를 선택하세요. 제조사별 페이지는 부품관리센터 내부에서 관리합니다.</p>
+  </section>
+
+
+  <section class="quick-access-main">
+    <div class="main-qr-card">
+      <img src="data:image/png;base64,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" alt="AutoFit Platform QR">
+      <div>
+        <b>QR 접속 안내</b>
+        <span>타 PC와 모바일은 같은 내부 네트워크에서 QR을 스캔하여 접속합니다.</span>
+      </div>
+    </div>
+    <div class="main-link-card">
+      <b>현재 접속 기준</b>
+      <div class="main-url">http://10.10.10.60:8790</div>
+      <div class="main-link-grid">
+        <button onclick="go('/')">MAIN</button>
+        <button onclick="go('/parts')">PARTS</button>
+        <button onclick="go('/parts/iveco')">IVECO</button>
+        <button onclick="go('/control')">CONTROL</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="cards">
+    <div class="card" onclick="go('/parts')">
+      <div class="card-head">MODULE 01 <span class="card-icon">P</span></div>
+      <h2>Parts Center</h2>
+      <p>부품마스터, 제조사별 모듈, 재고조회, 실사조사, 재고분석을 관리합니다.</p>
+      <div class="open">센터 열기</div>
+    </div>
+
+    <div class="card" onclick="go('/control')">
+      <div class="card-head">MODULE 02 <span class="card-icon">C</span></div>
+      <h2>Control Center</h2>
+      <p>차량접수, 작업현황, 스케줄, 완료처리, 장부전송 흐름을 관리합니다.</p>
+      <div class="open">센터 열기</div>
+    </div>
+
+    <div class="card" onclick="go('/ledger')">
+      <div class="card-head">MODULE 03 <span class="card-icon">L</span></div>
+      <h2>Ledger Center</h2>
+      <p>매출장부, 입금예정, 결제상태, 정산 및 완결 데이터를 관리합니다.</p>
+      <div class="open">센터 열기</div>
+    </div>
+
+    <div class="card" onclick="go('/inout')">
+      <div class="card-head">MODULE 04 <span class="card-icon">I</span></div>
+      <h2>InOut Center</h2>
+      <p>부품 입고, 출고, 수량조정, 재고 이동 이력을 관리합니다.</p>
+      <div class="open">센터 열기</div>
+    </div>
+
+    <div class="card" onclick="go('/uid')">
+      <div class="card-head">MODULE 05 <span class="card-icon">U</span></div>
+      <h2>UID Center</h2>
+      <p>차량 식별, 차종 매칭, 부품 추천 연결 기준을 관리합니다.</p>
+      <div class="open">센터 열기</div>
+    </div>
+
+    <div class="card" onclick="go('/docs')">
+      <div class="card-head">MODULE 06 <span class="card-icon">D</span></div>
+      <h2>Settings / Docs</h2>
+      <p>시스템 설정, 경로 정보, 운영 문서, 개발 기록을 관리합니다.</p>
+      <div class="open">센터 열기</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div><b>AutoFit Platform</b> · Version R4.0 · Build 2026.06.28 · Server http://10.10.10.60:8790</div>
+    <div>Designed & Developed by <b>YOONSUNG MOTORS · BIGBOSS LEE KWAN HEUNG</b></div>
+  </footer>
+</section>
+
+</div>
+
+<script>
+function login(){
+  const id=document.getElementById('userId').value.trim();
+  const pw=document.getElementById('userPw').value.trim();
+  if(id==="admin" && pw==="1234"){
+    document.getElementById('loginPage').classList.add('hidden');
+    document.getElementById('mainPage').classList.remove('hidden');
+    document.getElementById('err').textContent="";
+  }else{
+    document.getElementById('err').textContent="Access denied.";
+  }
+}
+function logout(){
+  document.getElementById('mainPage').classList.add('hidden');
+  document.getElementById('loginPage').classList.remove('hidden');
+}
+function go(path){
+  window.location.href=path;
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==="Enter" && !document.getElementById('loginPage').classList.contains('hidden')) login();
+});
+</script>
+</body>
+</html>

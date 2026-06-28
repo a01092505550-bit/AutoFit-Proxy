@@ -222,13 +222,44 @@ function partName(p){return norm(p?.["비고"])||norm(p?.["상태"])||"-"}
 function uidText(p){return norm(p?.["UID목록"])||norm(p?.["UID메모"])||(norm(p?.["UID연동여부"]).toUpperCase()==="Y"?"연동":"미등록")}
 function dashboardBlinkClass(kind,count){return (count>0 && (kind==="priLow"||kind==="priZero"))?" blinkWarn":""}
 function inferGroup(ys){let m=norm(ys).match(/^Y[FK]([A-Z]{2})/);return m?m[1]:""}function rowKey(p){return [p["윤성관리번호"],p["실입고품번"],p["브랜드"],p["대표품번"]].map(norm).join("|")}
+
+function extractArrayPayload(j){
+  if(Array.isArray(j)) return j;
+  if(!j || typeof j !== "object") return [];
+  if(Array.isArray(j.parts)) return j.parts;
+  if(Array.isArray(j.inventory)) return j.inventory;
+  if(Array.isArray(j.items)) return j.items;
+  if(Array.isArray(j.data)) return j.data;
+  if(j.parts && Array.isArray(j.parts.items)) return j.parts.items;
+  if(j.inventory && Array.isArray(j.inventory.items)) return j.inventory.items;
+  if(j.data && Array.isArray(j.data.items)) return j.data.items;
+  if(j.result && Array.isArray(j.result.items)) return j.result.items;
+  console.error("알 수 없는 부품 JSON 구조", j);
+  return [];
+}
+function extractHistoryPayload(j){
+  if(!j || typeof j !== "object") return [];
+  if(Array.isArray(j.histories)) return j.histories;
+  if(Array.isArray(j.history)) return j.history;
+  if(j.histories && Array.isArray(j.histories.items)) return j.histories.items;
+  if(j.history && Array.isArray(j.history.items)) return j.history.items;
+  return [];
+}
+function extractAuditPayload(j){
+  if(!j || typeof j !== "object") return [];
+  if(Array.isArray(j.auditSessions)) return j.auditSessions;
+  if(Array.isArray(j.audit)) return j.audit;
+  if(j.auditSessions && Array.isArray(j.auditSessions.items)) return j.auditSessions.items;
+  if(j.audit && Array.isArray(j.audit.items)) return j.audit.items;
+  return [];
+}
 function normalize(p){let o={};HEADERS.forEach(h=>o[h]=p[h]??"");o["차량구분"]=o["차량구분"]||inferVehicle(o["윤성관리번호"]);o["부품군"]=o["부품군"]||inferGroup(o["윤성관리번호"]);o["현재고"]=num(o["현재고"]);o["안전재고"]=num(o["안전재고"]);o["우선관리"]=o["우선관리"]||"N";o["상태"]=o["상태"]||"정상";o["사용횟수"]=num(o["사용횟수"]);o["UID연동여부"]=o["UID연동여부"]||"N";o["UID적용수"]=num(o["UID적용수"]);if(!o["바코드"])o["바코드"]=rowKey(o).replace(/\|/g,"-");return o}
 function init(){qs("sidenav").innerHTML=MENUS.map((m,i)=>`<button class="sidebtn ${i==0?'active':''}" onclick="go('${m[0]}',this)"><span class="icon">${m[2]}</span>${m[1]}</button>`).join("");setInterval(()=>{let d=new Date();qs("today").textContent=d.toLocaleDateString("ko-KR");qs("time").textContent=d.toLocaleTimeString("ko-KR")},1000);["q","aq","inSearch","outSearch"].forEach(id=>qs(id)?.addEventListener("keydown",e=>{if(e.key==="Enter"){if(id==="q")searchParts();if(id==="aq")searchAudit();if(id==="inSearch")stockMove("IN");if(id==="outSearch")stockMove("OUT")}}));qs("pageSize").addEventListener("change",()=>{page=1;renderTable()});qs("jsonFile").addEventListener("change",readJson);qs("excelFile").addEventListener("change",()=>toast("엑셀 업로드는 EXE 서버 단계에서 연결"));loadSettings();loadData()}
 function loadSettings(){let s=localStorage.getItem("ysm_settings"); if(s) settings=JSON.parse(s)}
 async function loadData(){
   let loaded=await loadFromServer();
   if(!loaded){
-    try{let r=await fetch("/parts/parts_inventory.json",{cache:"no-store"});if(!r.ok)throw 0;let j=await r.json();parts=(Array.isArray(j)?j:j.items||[]).map(normalize);qs("dataLog").textContent="parts_inventory.json 로드 성공: "+parts.length+"건"}
+    try{let r=await fetch("/parts/parts_inventory.json",{cache:"no-store"});if(!r.ok)throw 0;let j=await r.json();parts=extractArrayPayload(j).map(normalize);qs("dataLog").textContent="parts_inventory.json 로드 성공: "+parts.length+"건"}
     catch(e){parts=JSON.parse(localStorage.getItem("ysm_parts")||"[]").map(normalize);qs("dataLog").textContent=parts.length?("브라우저 임시저장 로드: "+parts.length+"건"):"parts_inventory.json 없음. 설정에서 JSON 업로드 필요."}
     histories=JSON.parse(localStorage.getItem("ysm_histories")||"[]");auditSessions=JSON.parse(localStorage.getItem("ysm_audit_sessions")||"[]");
   }else{qs("dataLog").textContent="서버 폴더 데이터 로드: "+parts.length+"건"}
@@ -249,13 +280,22 @@ async function saveServerSnapshot(reason){
 }
 async function loadFromServer(){
   if(location.protocol==="file:")return false;
-  try{let r=await fetch("/parts/api/load",{cache:"no-store"});let j=await r.json();if(!j.ok)throw new Error(j.error||"load failed");
-    parts=(j.parts||j.inventory||[]).map(normalize);
-histories=j.histories||j.history||[];
-auditSessions=j.auditSessions||j.audit||[];
-setSaveState("서버데이터 로드");
-return true;
-  }catch(e){console.warn(e);setSaveState("서버로드 실패",true);return false}
+  try{
+    let r=await fetch("/parts/api/load",{cache:"no-store"});
+    let j=await r.json();
+    if(!j.ok)throw new Error(j.error||"load failed");
+
+    parts=extractArrayPayload(j).map(normalize);
+    histories=extractHistoryPayload(j);
+    auditSessions=extractAuditPayload(j);
+
+    setSaveState("서버데이터 로드");
+    return true;
+  }catch(e){
+    console.warn(e);
+    setSaveState("서버로드 실패",true);
+    return false;
+  }
 }
 async function postServerApi(path,payload){
   if(location.protocol==="file:"){setSaveState("로컬파일 실행 중 · 서버 API 사용 불가",true);throw new Error("서버 주소(http://127.0.0.1:8790/parts)로 접속해야 합니다")}

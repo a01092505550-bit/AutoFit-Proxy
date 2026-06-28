@@ -1,5 +1,6 @@
 ﻿from flask import Flask, send_from_directory, jsonify
 import os
+import json
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -21,6 +22,14 @@ def send_html(folder, filename="index.html"):
         <p>{path}</p>
     </body></html>
     """
+
+def load_json(path, default=None):
+    if default is None:
+        default = []
+    if not os.path.exists(path):
+        return default
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
 
 @app.route("/")
 def home():
@@ -63,6 +72,30 @@ def platform():
 @app.route("/parts")
 def parts():
     return send_html(os.path.join(BASE_DIR, "modules", "PARTS", "templates"), "index.html")
+
+@app.route("/parts/api/load")
+def parts_api_load():
+    data_dir = os.path.join(BASE_DIR, "data", "PARTS")
+
+    return jsonify({
+        "ok": True,
+        "inventory": load_json(os.path.join(data_dir, "parts_inventory.json"), []),
+        "history": load_json(os.path.join(data_dir, "parts_history.json"), []),
+        "audit": load_json(os.path.join(data_dir, "parts_audit_sessions.json"), []),
+        "settings": load_json(os.path.join(data_dir, "settings.json"), {})
+    })
+
+@app.route("/parts/parts_inventory.json")
+def parts_inventory_json():
+    return send_from_directory(os.path.join(BASE_DIR, "data", "PARTS"), "parts_inventory.json")
+
+@app.route("/parts/parts_history.json")
+def parts_history_json():
+    return send_from_directory(os.path.join(BASE_DIR, "data", "PARTS"), "parts_history.json")
+
+@app.route("/parts/settings.json")
+def parts_settings_json():
+    return send_from_directory(os.path.join(BASE_DIR, "data", "PARTS"), "settings.json")
 
 @app.route("/control")
 def control():

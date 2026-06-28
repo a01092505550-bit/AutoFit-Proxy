@@ -250,7 +250,11 @@ async function saveServerSnapshot(reason){
 async function loadFromServer(){
   if(location.protocol==="file:")return false;
   try{let r=await fetch("/parts/api/load",{cache:"no-store"});let j=await r.json();if(!j.ok)throw new Error(j.error||"load failed");
-    parts=(j.parts||[]).map(normalize);histories=j.histories||[];auditSessions=j.auditSessions||[];setSaveState("서버데이터 로드");return true;
+    parts=(j.parts||j.inventory||[]).map(normalize);
+histories=j.histories||j.history||[];
+auditSessions=j.auditSessions||j.audit||[];
+setSaveState("서버데이터 로드");
+return true;
   }catch(e){console.warn(e);setSaveState("서버로드 실패",true);return false}
 }
 async function postServerApi(path,payload){

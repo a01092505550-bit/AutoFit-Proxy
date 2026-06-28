@@ -82,6 +82,63 @@ def parts_api_load():
         "settings": load_json(os.path.join(data_dir, "settings.json"), {})
     })
 
+
+@app.route("/parts/api/save", methods=["POST"])
+@app.route("/api/save", methods=["POST"])
+def parts_api_save():
+    data_dir = os.path.join(BASE_DIR, "data", "PARTS")
+    os.makedirs(data_dir, exist_ok=True)
+
+    payload = request.get_json(silent=True) or {}
+
+    inv_path = os.path.join(data_dir, "parts_inventory.json")
+    history_path = os.path.join(data_dir, "parts_history.json")
+    audit_path = os.path.join(data_dir, "parts_audit_sessions.json")
+    settings_path = os.path.join(data_dir, "settings.json")
+
+    parts = payload.get("parts") or payload.get("inventory") or payload.get("items")
+    histories = payload.get("histories") or payload.get("history")
+    audit_sessions = payload.get("auditSessions") or payload.get("audit")
+    settings = payload.get("settings")
+
+    if parts is not None:
+        old = load_json(inv_path, {"schema": "ysm_parts_inventory_render", "items": []})
+        if isinstance(old, dict):
+            old["items"] = parts
+            old["updated_at"] = now_text()
+            save_json(inv_path, old)
+        else:
+            save_json(inv_path, {
+                "schema": "ysm_parts_inventory_render",
+                "updated_at": now_text(),
+                "items": parts
+            })
+
+    if histories is not None:
+        if isinstance(histories, dict):
+            histories["updated_at"] = now_text()
+            save_json(history_path, histories)
+        else:
+            save_json(history_path, {
+                "updated_at": now_text(),
+                "histories": histories
+            })
+
+    if audit_sessions is not None:
+        if isinstance(audit_sessions, dict):
+            audit_sessions["updated_at"] = now_text()
+            save_json(audit_path, audit_sessions)
+        else:
+            save_json(audit_path, {
+                "updated_at": now_text(),
+                "audit_sessions": audit_sessions
+            })
+
+    if settings is not None:
+        save_json(settings_path, settings)
+
+    return jsonify({"ok": True, "saved": True, "updated_at": now_text()})
+
 @app.route("/parts/parts_inventory.json")
 def parts_inventory_json():
     return send_from_directory(os.path.join(BASE_DIR, "data", "PARTS"), "parts_inventory.json")

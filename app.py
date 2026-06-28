@@ -96,6 +96,20 @@ def parts_history_json():
 @app.route("/parts/settings.json")
 def parts_settings_json():
     return send_from_directory(os.path.join(BASE_DIR, "data", "PARTS"), "settings.json")
+@app.route("/iveco")
+@app.route("/iveco/")
+def iveco():
+    return send_html(
+        os.path.join(BASE_DIR, "modules", "PARTS", "06 MODULES", "IVECO", "01 APP"),
+        "index.html"
+    )
+
+@app.route("/api/iveco/load")
+def iveco_api_load():
+    data_dir = os.path.join(BASE_DIR, "modules", "PARTS", "06 MODULES", "IVECO", "03 DATA")
+    data = load_json(os.path.join(data_dir, "iveco_parts_master_unified_sheets1_9.json"), [])
+    items = data.get("items", data) if isinstance(data, dict) else data
+    return jsonify({"ok": True, "data": data, "items": items})
 
 @app.route("/control")
 def control():
@@ -104,6 +118,7 @@ def control():
 @app.route("/ledger")
 def ledger():
     return send_html(os.path.join(BASE_DIR, "modules", "LEDGER", "templates"), "index.html")
+
 @app.route("/iveco")
 def iveco():
     return send_html(

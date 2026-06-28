@@ -104,7 +104,19 @@ def control():
 @app.route("/ledger")
 def ledger():
     return send_html(os.path.join(BASE_DIR, "modules", "LEDGER", "templates"), "index.html")
-
+@app.route("/iveco")
+def iveco():
+    return send_html(
+        os.path.join(
+            BASE_DIR,
+            "modules",
+            "PARTS",
+            "06 MODULES",
+            "IVECO",
+            "01 APP"
+        ),
+        "index.html"
+    )
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8790))
     app.run(host="0.0.0.0", port=port)

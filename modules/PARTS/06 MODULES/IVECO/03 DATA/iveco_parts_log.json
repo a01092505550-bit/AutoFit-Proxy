@@ -1,0 +1,22 @@
+[
+  {
+    "action": "auto_save",
+    "after": "saved",
+    "before": "",
+    "field": "db",
+    "part_no": "",
+    "pc": "DESKTOP-FK68DOE",
+    "time": "2026-06-27 02:00:49",
+    "user": "관리자"
+  },
+  {
+    "action": "auto_save",
+    "after": "saved",
+    "before": "",
+    "field": "db",
+    "part_no": "",
+    "pc": "DESKTOP-FK68DOE",
+    "time": "2026-06-27 02:01:04",
+    "user": "관리자"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "system": "YSM Parts Center R7",
+  "port": 8788,
+  "main_file": "index.html",
+  "parts": "parts_inventory.json",
+  "history": "parts_history.json",
+  "audit": "parts_audit_sessions.json",
+  "backup": "backup"
+}

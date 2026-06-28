@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>AutoFit Mobile DB Linked R4 UI</title>
+<style>
+:root{
+  --bg:#f4f7fb;--card:#fff;--ink:#0f172a;--muted:#64748b;--line:#dbe5f2;
+  --blue:#075fc7;--blue2:#0b78e3;--green:#16a34a;--red:#dc2626;--soft:#f8fafc;
+}
+*{box-sizing:border-box;min-width:0}
+html,body{width:100%;overflow-x:hidden}
+body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,Segoe UI,Noto Sans KR,sans-serif;color:var(--ink)}
+.app{width:100%;max-width:560px;margin:0 auto;min-height:100vh;background:#fff;overflow-x:hidden}
+.top{position:sticky;top:0;z-index:5;background:linear-gradient(135deg,#063264,#0b78e3);color:#fff;padding:12px 12px 10px;box-shadow:0 6px 18px rgba(15,23,42,.18)}
+.brand{font-size:22px;font-weight:1000;letter-spacing:.2px;line-height:1.1}
+.sub{font-size:11px;opacity:.92;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.searchBox{margin-top:10px;display:grid;grid-template-columns:minmax(0,1fr) 66px;gap:7px}
+#q{width:100%;font-size:20px;font-weight:950;padding:13px 12px;border:0;border-radius:13px;text-transform:uppercase;letter-spacing:.3px}
+button{border:0;border-radius:13px;padding:11px 8px;font-weight:950;touch-action:manipulation}
+.search{background:#002f75;color:white}
+.main{padding:10px;width:100%;overflow-x:hidden}
+.mode{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-bottom:9px}
+.mode button{background:#fff;border:1px solid var(--line);font-size:12px;padding:10px 2px;white-space:nowrap}
+.mode .on{background:#0b63ce;color:white;border-color:#0b63ce}
+.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:11px;margin-bottom:10px;box-shadow:0 6px 14px rgba(15,23,42,.045);width:100%;overflow:hidden}
+h2{font-size:16px;margin:0 0 9px;line-height:1.2}
+.hint{font-size:12px;color:var(--muted);line-height:1.45;margin:7px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;width:100%}
+.chip{background:#f8fafc;border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-size:12px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.select{width:100%;font-size:14px;padding:11px;border:1px solid var(--line);border-radius:12px;background:#fff;margin-bottom:7px}
+.keypad{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.keypad button{font-size:21px;padding:14px 0;background:#f8fafc;border:1px solid var(--line)}
+.wide{grid-column:span 2!important;background:#eaf2ff!important;color:#075fc7!important}
+.resultCard{border:1px solid var(--line);border-radius:15px;padding:11px;margin-top:9px;background:#fff;width:100%;overflow:hidden}
+.partno{font-size:22px;font-weight:1000;color:#16a34a;word-break:break-all;overflow-wrap:anywhere;line-height:1.15}
+.name{font-size:16px;font-weight:950;margin-top:5px;line-height:1.3;word-break:keep-all;overflow-wrap:anywhere}
+.meta{font-size:12px;color:#475569;line-height:1.55;margin-top:7px;overflow-wrap:anywhere;word-break:break-word}
+.badgeWrap{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+.badge{display:inline-block;border-radius:999px;padding:4px 7px;font-size:11px;font-weight:900;background:#eef4ff;color:#075fc7;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hidden{display:none!important}
+.status{font-size:12px;background:#eef4ff;color:#075fc7;border-radius:11px;padding:7px 9px;margin-top:9px;line-height:1.35;overflow:hidden;text-overflow:ellipsis}
+.err{background:#fef2f2;color:#991b1b}.ok{background:#ecfdf5;color:#166534}
+details{margin-top:0}
+summary{font-size:13px;font-weight:950;cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+pre{white-space:pre-wrap;font-size:11px;background:#f8fafc;border:1px solid var(--line);border-radius:11px;padding:8px;color:#334155;max-height:120px;overflow:auto}
+.footer{font-size:11px;color:#64748b;text-align:center;padding:8px 0 20px}
+.resultTop{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;align-items:start}
+.smallBtn{font-size:11px;padding:6px 8px;background:#f1f5f9;color:#334155;border:1px solid var(--line)}
+@media(max-width:380px){
+  .brand{font-size:20px}
+  #q{font-size:18px;padding:12px 10px}
+  .searchBox{grid-template-columns:minmax(0,1fr) 60px}
+  .mode button{font-size:11px}
+  .partno{font-size:20px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+ <div class="top">
+  <div class="brand">AUTOFIT MOBILE</div>
+  <div class="sub">DB 연동 R4 UI · 모바일 화면 정리</div>
+  <div class="searchBox">
+    <input id="q" placeholder="품번·부품명·차종 검색" oninput="liveSearch()" autocomplete="off">
+    <button class="search" onclick="liveSearch(true)">검색</button>
+  </div>
+  <div id="dbStatus" class="status">DB 로딩 중...</div>
+ </div>
+
+ <div class="main">
+  <div class="mode">
+   <button id="bQuick" class="on" onclick="show('quick')">빠른검색</button>
+   <button id="bSelect" onclick="show('select')">선택검색</button>
+   <button id="bKey" onclick="show('key')">숫자키</button>
+   <button id="bFav" onclick="show('fav')">즐겨찾기</button>
+  </div>
+
+  <section id="quick" class="card">
+   <h2>빠른 품번 검색</h2>
+   <div class="chips">
+    <button class="chip" onclick="setQ('5802')">5802</button>
+    <button class="chip" onclick="setQ('5803')">5803</button>
+    <button class="chip" onclick="setQ('5040')">5040</button>
+    <button class="chip" onclick="setQ('오일필터')">오일필터</button>
+    <button class="chip" onclick="setQ('DAILY')">Daily</button>
+   </div>
+   <p class="hint">품번, 대체품번, 부품명, 차종을 통합 검색합니다.</p>
+   <h2 style="margin-top:12px">최근검색</h2>
+   <div id="recent" class="chips"></div>
+  </section>
+
+  <section id="select" class="card hidden">
+   <h2>선택검색</h2>
+   <select id="maker" class="select" onchange="buildSelects()"></select>
+   <select id="model" class="select" onchange="buildSelects()"></select>
+   <select id="category" class="select" onchange="buildSelects()"></select>
+   <select id="partname" class="select" onchange="selectSearch()"></select>
+   <button class="search" style="width:100%" onclick="selectSearch()">조건 검색</button>
+  </section>
+
+  <section id="key" class="card hidden">
+   <h2>숫자키</h2>
+   <div class="keypad">
+    <button onclick="addKey('7')">7</button><button onclick="addKey('8')">8</button><button onclick="addKey('9')">9</button>
+    <button onclick="addKey('4')">4</button><button onclick="addKey('5')">5</button><button onclick="addKey('6')">6</button>
+    <button onclick="addKey('1')">1</button><button onclick="addKey('2')">2</button><button onclick="addKey('3')">3</button>
+    <button onclick="backKey()">←</button><button onclick="addKey('0')">0</button><button onclick="clearQ()">C</button>
+    <button class="wide" onclick="liveSearch(true)">검색</button><button onclick="addFav()">★저장</button>
+   </div>
+  </section>
+
+  <section id="fav" class="card hidden">
+   <h2>즐겨찾기</h2>
+   <div id="favorites" class="chips"></div>
+  </section>
+
+  <section id="results" class="card hidden">
+   <h2>검색결과 <span id="count" class="hint"></span></h2>
+   <div id="resultList"></div>
+  </section>
+
+  <section class="card">
+   <details>
+    <summary>DB 진단 보기</summary>
+    <pre id="debugBox">진단 대기</pre>
+   </details>
+  </section>
+
+  <div class="footer">mobile.html로 이름 변경 후 서버 폴더에 덮어쓰기</div>
+ </div>
+</div>
+
+<script>
+let PARTS=[];
+const DB_FILE='iveco_parts_master_unified_sheets1_9.json';
+
+function isObj(x){return x && typeof x==='object' && !Array.isArray(x)}
+function val(x){
+ if(x===undefined||x===null) return '';
+ if(typeof x==='string'||typeof x==='number'||typeof x==='boolean') return String(x).trim();
+ if(Array.isArray(x)) return x.map(val).filter(Boolean).join(' / ');
+ if(isObj(x)){
+   const preferred=['value','text','name','label','v','w','result','display','품번','부품명','품명','제작사품번','실품번','원형품번'];
+   for(const k of preferred){ if(x[k]!==undefined && val(x[k])) return val(x[k]); }
+   return Object.entries(x).map(([k,v])=>val(v)).filter(Boolean).join(' / ');
+ }
+ return String(x).trim();
+}
+function clean(s){return val(s).toUpperCase().replace(/[\\s\\-_.]/g,'').trim();}
+function keynorm(s){return String(s).toLowerCase().replace(/[\\s_\\-\\.]/g,'')}
+function pick(o, keys){
+ const lower={}; Object.keys(o||{}).forEach(k=>lower[keynorm(k)]=k);
+ for(const k of keys){
+  if(o && o[k]!==undefined && val(o[k])) return val(o[k]);
+  const hit=lower[keynorm(k)];
+  if(hit && val(o[hit])) return val(o[hit]);
+ }
+ return '';
+}
+function anyPartLikeValue(o){
+ const vals=Object.values(o||{}).map(val).filter(Boolean);
+ const numeric=vals.find(v=>/[0-9]{6,}/.test(v));
+ return numeric||vals[0]||'';
+}
+function normalizeRecord(o){
+ const no=pick(o,['품번','부품번호','부품코드','part_no','partNo','partnumber','PartNumber','PARTNO','NO','원형품번','제작사품번','실품번','OE','OEM','PN','품목코드','코드','part']);
+ const alt=pick(o,['대체품번','호환품번','대체','alt','alternate','replace','cross','cross_no','CrossNo']);
+ const name=pick(o,['부품명','품명','품목명','name','part_name','PartName','DESCRIPTION','Description','desc','ITEM','item_name','title']);
+ const maker=pick(o,['제작사','메이커','maker','Maker','brand','BRAND','차량제작사','manufacturer']);
+ const model=pick(o,['차량명','차종','model','Model','vehicle','차량','적용차종','car']);
+ const category=pick(o,['계통','구분','카테고리','category','Category','system','System','분류','대분류','중분류']);
+ const stock=pick(o,['재고','현재고','stock','Stock','qty','수량','보유수량']);
+ const loc=pick(o,['위치','보관위치','location','Location','loc','창고위치']);
+ const price=pick(o,['단가','가격','price','Price','매입가','판매가']);
+ const memo=pick(o,['메모','비고','memo','Memo','remark','Remark','설명']);
+ return {raw:o,no:no||(/[0-9]{6,}/.test(anyPartLikeValue(o))?anyPartLikeValue(o):''),alt,name:name||(!no?anyPartLikeValue(o):''),maker,model,category,stock,loc,price,memo};
+}
+function rowArrayToObjects(rows){
+ if(!Array.isArray(rows)||!Array.isArray(rows[0]))return[];
+ const header=rows[0].map(val);
+ return rows.slice(1).map(r=>{let o={};header.forEach((h,i)=>{if(h)o[h]=r[i]});return o});
+}
+function collectArrays(node,path='',out=[]){
+ if(Array.isArray(node)){
+  if(node.length){
+   if(isObj(node[0])) out.push({path,arr:node,type:'objects'});
+   else if(Array.isArray(node[0])) out.push({path,arr:rowArrayToObjects(node),type:'rows'});
+  }
+ }else if(isObj(node)){for(const[k,v]of Object.entries(node))collectArrays(v,path?path+'.'+k:k,out)}
+ return out;
+}
+function scoreRecord(p){let s=0;if(p.no)s+=8;if(/[0-9]{6,}/.test(p.no))s+=8;if(p.name)s+=4;if(p.alt)s+=2;if(p.maker||p.model||p.category)s+=1;return s}
+async function loadDB(){
+ try{
+  const res=await fetch(DB_FILE+'?v='+Date.now(),{cache:'no-store'});
+  if(!res.ok)throw new Error('HTTP '+res.status);
+  const data=await res.json();
+  const arrays=collectArrays(data);
+  let best=[],bestInfo='없음',bestScore=-1;
+  for(const item of arrays){
+   const norm=item.arr.map(normalizeRecord).filter(p=>p.no||p.name||p.alt);
+   const score=norm.slice(0,80).reduce((a,p)=>a+scoreRecord(p),0)+norm.length;
+   if(score>bestScore){bestScore=score;best=norm;bestInfo=item.path+' / '+item.type+' / '+norm.length+'건'}
+  }
+  PARTS=best;
+  dbStatus.className=PARTS.length?'status ok':'status err';
+  dbStatus.textContent=PARTS.length?'DB 연결 성공: '+PARTS.length+'건':'DB는 읽었지만 부품행 0건';
+  debugBox.textContent='선택된 배열: '+bestInfo+'\\n탐색 배열 수: '+arrays.length+'\\n첫 변환값:\\n'+JSON.stringify(PARTS[0]||{},null,2).slice(0,1200);
+  buildSelects();drawRecent();drawFav();
+ }catch(e){
+  dbStatus.className='status err';dbStatus.textContent='DB 연결 실패: '+DB_FILE+' 위치/이름 확인';debugBox.textContent=String(e);PARTS=[];buildSelects();
+ }
+}
+function blob(p){return [p.no,p.alt,p.name,p.maker,p.model,p.category,p.loc,p.memo,JSON.stringify(p.raw)].map(clean).join('|')}
+function setQ(v){q.value=v;liveSearch(true)}
+function show(id){['quick','select','key','fav'].forEach(x=>document.getElementById(x).classList.toggle('hidden',x!==id));['bQuick','bSelect','bKey','bFav'].forEach(x=>document.getElementById(x).classList.remove('on'));document.getElementById({quick:'bQuick',select:'bSelect',key:'bKey',fav:'bFav'}[id]).classList.add('on')}
+function liveSearch(){
+ const code=clean(q.value);
+ if(q.value!==code&&/^[0-9A-Za-z\\-\\s_.]+$/.test(q.value))q.value=code;
+ if(!code){results.classList.add('hidden');return}
+ const exact=[],starts=[],contains=[];
+ for(const p of PARTS){
+  const n=clean(p.no),a=clean(p.alt),b=blob(p);
+  if(n===code||a===code)exact.push(p);
+  else if(n.startsWith(code)||a.startsWith(code))starts.push(p);
+  else if(b.includes(code))contains.push(p)
+ }
+ render([...exact,...starts,...contains].slice(0,100),code);saveRecent(code)
+}
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function rawSummary(o){
+ const lines=[]; 
+ for(const [k,v] of Object.entries(o||{})){
+   const vv=val(v); 
+   if(vv) lines.push(`${esc(k)}: ${esc(vv)}`); 
+   if(lines.length>=6)break
+ }
+ return lines.join('<br>');
+}
+function render(list,label){
+ results.classList.remove('hidden');count.textContent='('+list.length+'건)';
+ if(!list.length){resultList.innerHTML=`<div class="resultCard"><div class="partno">${esc(label)}</div><div class="name">검색 결과 없음</div><div class="meta">DB 연결 건수: ${PARTS.length}</div></div>`;return}
+ resultList.innerHTML=list.map(p=>`<div class="resultCard">
+  <div class="resultTop"><div class="partno">${esc(p.no||'-')}</div><button class="smallBtn" onclick="event.stopPropagation();setQ('${esc(p.no||'')}')">재검색</button></div>
+  <div class="name">${esc(p.name||'-')}</div>
+  <div class="badgeWrap"><span class="badge">${esc(p.maker||'-')}</span><span class="badge">${esc(p.model||'-')}</span><span class="badge">${esc(p.category||'-')}</span></div>
+  <div class="meta">대체품번: ${esc(p.alt||'-')}<br>재고: ${esc(p.stock||'-')} / 위치: <b>${esc(p.loc||'-')}</b><br>가격: ${esc(p.price||'-')}<br>${esc(p.memo||'')}</div>
+  <div class="meta">${rawSummary(p.raw)}</div>
+ </div>`).join('');
+}
+function unique(a){return [...new Set(a.map(val).filter(Boolean))].sort()}
+function fill(el,vals,label){const old=el.value;el.innerHTML='<option value="">'+label+'</option>'+vals.slice(0,400).map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');if(vals.includes(old))el.value=old}
+function buildSelects(){let b=PARTS;fill(maker,unique(PARTS.map(p=>p.maker)),'제작사 선택');if(maker.value)b=b.filter(p=>p.maker===maker.value);fill(model,unique(b.map(p=>p.model)),'차종 선택');if(model.value)b=b.filter(p=>p.model===model.value);fill(category,unique(b.map(p=>p.category)),'계통/구분 선택');if(category.value)b=b.filter(p=>p.category===category.value);fill(partname,unique(b.map(p=>p.name)),'부품명 선택')}
+function selectSearch(){let l=PARTS;if(maker.value)l=l.filter(p=>p.maker===maker.value);if(model.value)l=l.filter(p=>p.model===model.value);if(category.value)l=l.filter(p=>p.category===category.value);if(partname.value)l=l.filter(p=>p.name===partname.value);render(l.slice(0,100),'선택검색')}
+function addKey(v){q.value=clean(q.value+v);liveSearch()}function backKey(){q.value=q.value.slice(0,-1);liveSearch()}function clearQ(){q.value='';results.classList.add('hidden')}function ls(k){try{return JSON.parse(localStorage.getItem(k)||'[]')}catch(e){return[]}}function sls(k,v){localStorage.setItem(k,JSON.stringify(v.slice(0,12)))}function saveRecent(v){let a=ls('af_recent').filter(x=>x!==v);a.unshift(v);sls('af_recent',a);drawRecent()}function drawRecent(){let a=ls('af_recent');recent.innerHTML=a.length?a.map(x=>`<button class="chip" onclick="setQ('${esc(x)}')">${esc(x)}</button>`).join(''):'<span class="hint">아직 없음</span>'}function addFav(){let v=clean(q.value);if(!v)return;let a=ls('af_fav').filter(x=>x!==v);a.unshift(v);sls('af_fav',a);drawFav()}function drawFav(){let a=ls('af_fav');favorites.innerHTML=a.length?a.map(x=>`<button class="chip" onclick="setQ('${esc(x)}')">★ ${esc(x)}</button>`).join(''):'<span class="hint">숫자키에서 ★저장</span>'}
+loadDB();
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+﻿AutoFit Render static folder

@@ -1,0 +1,34 @@
+YSM Parts Center R7 저장엔진 탑재판
+
+목적
+- 실사조사, 입고, 출고, 부품수정이 서버 저장엔진을 통해 JSON에 저장되도록 구성한 버전.
+- 저장 시 backup 폴더에 시점별 백업을 자동 생성한다.
+
+운영 고정 파일
+- index.html : 화면
+- parts_inventory.json : 메인 재고 DB
+- parts_history.json : 입고/출고/실사/수정 이력
+- parts_audit_sessions.json : 실사조사 묶음
+- backup : 자동 백업 폴더
+- ysm_parts_storage_engine_R7.py : 저장엔진 원본
+
+저장 흐름
+1) 입고 저장
+   화면 현재고 증가 → parts_inventory.json 저장 → parts_history.json 기록 → backup 생성
+2) 출고 저장
+   화면 현재고 감소 → parts_inventory.json 저장 → parts_history.json 기록 → backup 생성
+3) 실사조사 선택저장
+   현재고 즉시 변경 안 함 → parts_audit_sessions.json에 실사대기 묶음 저장 → parts_history.json에 실사대기 기록 → backup 생성
+4) 이력관리 재고반영
+   실사묶음 검토 → parts_inventory.json 현재고 변경 → parts_history.json 실사반영 기록 → parts_audit_sessions.json 상태 반영완료 → backup 생성
+
+주의
+- file:/// 방식으로 index.html을 직접 열면 서버 저장이 되지 않는다.
+- 반드시 저장엔진 실행 후 http://127.0.0.1:8788 로 접속해야 한다.
+- 네트워크 폴더 운영 시 서버 PC 1대에서만 저장엔진 또는 EXE를 실행한다.
+- 실제 운영 DB가 parts_inventory_final_R3.json이면 이름을 parts_inventory.json으로 바꿔 사용한다.
+
+EXE 운영
+- 이 패키지는 저장엔진 소스와 HTML을 제공한다.
+- 실제 Windows 실행파일이 준비되면 파일명은 YSM_Parts_Server.exe로 고정한다.
+- EXE가 있으면 START bat/Python 없이 YSM_Parts_Server.exe만 실행하면 된다.

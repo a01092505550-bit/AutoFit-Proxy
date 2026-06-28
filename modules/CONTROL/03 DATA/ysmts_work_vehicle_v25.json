@@ -1,0 +1,4695 @@
+{
+  "version": "2.8E-R3",
+  "vehicles": [
+    {
+      "id": "2f99e065-a8f3-43da-9380-46f96db11af0",
+      "jobNo": "2026-0622-01",
+      "date": "2026-06-22",
+      "time": "14:08",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "1234",
+      "maker": "BMW",
+      "model": "522145",
+      "worker": "",
+      "priority": "보통",
+      "due": "",
+      "work": "",
+      "updatedAt": "2026. 6. 22. 오후 2:49:16",
+      "createdAt": "2026. 6. 22. 오후 2:09:14",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오후 2:09:14",
+          "from": "",
+          "to": "접수대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 2:14:54",
+          "from": "접수대기",
+          "to": "점검중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 2:45:56",
+          "from": "점검중",
+          "to": "출고대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 2:49:16",
+          "from": "출고대기",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {},
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": false
+    },
+    {
+      "id": "8a09aeca-bd3f-41c1-babf-5164fac53b81",
+      "jobNo": "2026-0622-02",
+      "date": "2026-06-22",
+      "time": "14:09",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "5484",
+      "maker": "AUDI",
+      "model": "565665",
+      "worker": "",
+      "priority": "보통",
+      "due": "",
+      "work": "",
+      "updatedAt": "2026. 6. 22. 오후 2:49:19",
+      "createdAt": "2026. 6. 22. 오후 2:09:25",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오후 2:09:25",
+          "from": "",
+          "to": "접수대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 2:14:58",
+          "from": "접수대기",
+          "to": "작업중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 2:19:32",
+          "from": "작업중",
+          "to": "작업대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 2:46:40",
+          "from": "작업대기",
+          "to": "작업중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 2:49:19",
+          "from": "작업중",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {},
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": false
+    },
+    {
+      "id": "94fa49a3-7369-477f-8de3-b0448280680e",
+      "jobNo": "2026-0622-03",
+      "date": "2026-06-22",
+      "time": "14:11",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "2547",
+      "maker": "",
+      "model": "7855",
+      "worker": "",
+      "priority": "보통",
+      "due": "",
+      "work": "",
+      "updatedAt": "2026. 6. 22. 오후 2:49:21",
+      "createdAt": "2026. 6. 22. 오후 2:12:12",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오후 2:12:12",
+          "from": "",
+          "to": "접수대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 2:15:02",
+          "from": "접수대기",
+          "to": "점검대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 2:49:21",
+          "from": "점검대기",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {},
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": false
+    },
+    {
+      "id": "ce05c00b-517a-42e6-935c-62c572def03c",
+      "jobNo": "2026-0622-04",
+      "date": "2026-06-22",
+      "time": "14:40",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "2584",
+      "maker": "BENZ",
+      "model": "ㅇㄹㄹㄹ",
+      "worker": "",
+      "priority": "보통",
+      "due": "",
+      "work": "",
+      "updatedAt": "2026. 6. 22. 오후 2:49:22",
+      "createdAt": "2026. 6. 22. 오후 2:42:12",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오후 2:42:12",
+          "from": "",
+          "to": "접수대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 2:49:22",
+          "from": "접수대기",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {},
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": false
+    },
+    {
+      "id": "1782107182281a13d6c4613d7a",
+      "jobNo": "2026-0622-05",
+      "date": "2026-06-22",
+      "time": "14:42",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "5884",
+      "maker": "VW",
+      "model": "222",
+      "worker": "",
+      "priority": "보통",
+      "due": "",
+      "work": "",
+      "updatedAt": "2026. 6. 22. 오후 2:49:25",
+      "createdAt": "2026. 6. 22. 오후 2:46:22",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오후 2:46:22",
+          "from": "",
+          "to": "접수대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 2:49:25",
+          "from": "접수대기",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {},
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": false
+    },
+    {
+      "id": "17821074923902f63ad5610eaa8",
+      "jobNo": "2026-0623-01",
+      "date": "2026-06-23",
+      "time": "09:59",
+      "kind": "예약입고",
+      "status": "작업중",
+      "carNo": "98너7997",
+      "maker": "IVECO",
+      "model": "제일모빌캠핑카",
+      "worker": "이부장님",
+      "priority": "보통",
+      "due": "",
+      "work": "시동불량\n주행하다가 엔진체크등 점등 시동껐다가 재시동시 시동불량 \n에어서스 하강버튼이 잘안됨 \n전체적인점검",
+      "updatedAt": "2026. 6. 23. 오후 1:28:39",
+      "createdAt": "2026. 6. 22. 오후 2:51:32",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오후 2:51:32",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오전 7:49:06",
+          "from": "미입고",
+          "to": "접수대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오전 9:02:26",
+          "from": "접수대기",
+          "to": "점검중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오후 1:28:27",
+          "from": "점검중",
+          "to": "작업중",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "workStartAt": "2026. 6. 23. 오후 1:28:27"
+      },
+      "updatedMs": 1782188919725,
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": false
+    },
+    {
+      "id": "1782107561661481aa92620e248",
+      "jobNo": "2026-0622-06",
+      "date": "2026-06-23",
+      "time": "07:00",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "45우5450",
+      "maker": "BMW",
+      "model": "520D",
+      "worker": "이부장님",
+      "priority": "보통",
+      "due": "2026-06-23T17:20",
+      "work": "#3749\n엔진미션마운트 \n플렉시블조인트 \n특별히 문제가 있지않고 예방적 차원에서 교환원함 \nBMOF020\nBMAF041\n6/17 선입금 40만원 완료",
+      "updatedAt": "2026. 6. 24. 오전 9:15:06",
+      "createdAt": "2026. 6. 22. 오후 2:52:41",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오후 2:52:41",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오전 7:08:02",
+          "from": "미입고",
+          "to": "접수대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오전 7:08:25",
+          "from": "접수대기",
+          "to": "점검대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오전 9:16:50",
+          "from": "점검대기",
+          "to": "점검중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오전 9:17:12",
+          "from": "점검중",
+          "to": "작업중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오후 5:59:08",
+          "from": "작업중",
+          "to": "출고대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 24. 오전 9:15:06",
+          "from": "출고대기",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "workStartAt": "2026. 6. 23. 오전 9:17:12",
+        "releaseWaitAt": "2026. 6. 23. 오후 5:59:08",
+        "completedAt": "2026. 6. 24. 오전 9:15:06"
+      },
+      "updatedMs": 1782260106193,
+      "expectedSales": 1101000,
+      "partsCost": 331000,
+      "paymentMethod": "현금",
+      "ledgerTransferred": true,
+      "ledgerTransferredAt": "2026. 6. 24. 오전 9:15:06",
+      "ledgerTransferId": "LT-2026-0622-06"
+    },
+    {
+      "id": "1782107656062bbfa1d175e66d",
+      "jobNo": "2026-0624-01",
+      "date": "2026-06-24",
+      "time": "10:00",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "45저0910",
+      "maker": "AUDI",
+      "model": "A7",
+      "worker": "이부장님",
+      "priority": "보통",
+      "due": "",
+      "work": "#3750\n엔진헤드쪽에 상부누유있고 \n엔진노크 증상 있다고함\n엔진쪽 종합점검 \n점검비용 8만원부터~ 안내함",
+      "updatedAt": "2026. 6. 24. 오후 6:00:37",
+      "createdAt": "2026. 6. 22. 오후 2:54:16",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오후 2:54:16",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 24. 오후 6:00:37",
+          "from": "미입고",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "completedAt": "2026. 6. 24. 오후 6:00:37"
+      },
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": false,
+      "updatedMs": 1782291637657
+    },
+    {
+      "id": "178210769754758e99f991cb89",
+      "jobNo": "2026-0624-02",
+      "date": "2026-06-24",
+      "time": "09:00",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "42러5637",
+      "maker": "VW",
+      "model": "CC",
+      "worker": "이부장님",
+      "priority": "보통",
+      "due": "",
+      "work": "전후패드교환",
+      "updatedAt": "2026. 6. 24. 오후 6:00:18",
+      "createdAt": "2026. 6. 22. 오후 2:54:57",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오후 2:54:57",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 24. 오전 8:10:01",
+          "from": "미입고",
+          "to": "점검대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 24. 오전 8:33:36",
+          "from": "점검대기",
+          "to": "작업중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 24. 오전 10:42:14",
+          "from": "작업중",
+          "to": "작업완료",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 24. 오후 6:00:18",
+          "from": "작업완료",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "workStartAt": "2026. 6. 24. 오전 8:33:36",
+        "workDoneAt": "2026. 6. 24. 오전 10:42:14",
+        "completedAt": "2026. 6. 24. 오후 6:00:18"
+      },
+      "expectedSales": 396000,
+      "partsCost": 89000,
+      "paymentMethod": "카드",
+      "ledgerTransferred": true,
+      "updatedMs": 1782291618216,
+      "ledgerTransferredAt": "2026. 6. 24. 오후 6:00:18",
+      "ledgerTransferId": "LT-2026-0624-02"
+    },
+    {
+      "id": "1782107765155e140b19a3cfc48",
+      "jobNo": "2026-0625-01",
+      "date": "2026-06-25",
+      "time": "09:00",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "160조2097",
+      "maker": "볼보",
+      "model": "볼보XC90D5",
+      "worker": "이부장님",
+      "priority": "보통",
+      "due": "",
+      "work": "엔진오일교환,펄스누설,ETOF057,ETAF090",
+      "updatedAt": "2026. 6. 25. 오후 6:04:26",
+      "createdAt": "2026. 6. 22. 오후 2:56:05",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오후 2:56:05",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오후 2:11:45",
+          "from": "미입고",
+          "to": "작업중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오후 6:04:26",
+          "from": "작업중",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "workStartAt": "2026. 6. 25. 오후 2:11:45",
+        "completedAt": "2026. 6. 25. 오후 6:04:26"
+      },
+      "expectedSales": 198000,
+      "partsCost": 70000,
+      "paymentMethod": "카드",
+      "ledgerTransferred": true,
+      "updatedMs": 1782378266042,
+      "ledgerTransferredAt": "2026. 6. 25. 오후 6:04:26",
+      "ledgerTransferId": "LT-2026-0625-01"
+    },
+    {
+      "id": "178210786290691763e93c80e7",
+      "jobNo": "2026-0619-01",
+      "date": "2026-06-19",
+      "time": "15:56",
+      "kind": "현장입고",
+      "status": "완료",
+      "carNo": "29러3702",
+      "maker": "BMW",
+      "model": "X6",
+      "worker": "이부장님",
+      "priority": "보통",
+      "due": "",
+      "work": "냉각수누,앞쇼바교환문의",
+      "updatedAt": "2026. 6. 24. 오후 5:00:58",
+      "createdAt": "2026. 6. 22. 오후 2:57:42",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오후 2:57:42",
+          "from": "",
+          "to": "작업중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 24. 오후 5:00:58",
+          "from": "작업중",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "completedAt": "2026. 6. 24. 오후 5:00:58"
+      },
+      "expectedSales": 1000000,
+      "partsCost": 241000,
+      "paymentMethod": "카드",
+      "ledgerTransferred": true,
+      "updatedMs": 1782288058436,
+      "ledgerTransferredAt": "2026. 6. 24. 오후 5:00:58",
+      "ledgerTransferId": "LT-2026-0619-01"
+    },
+    {
+      "id": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "date": "2026-06-17",
+      "time": "09:00",
+      "kind": "현장입고",
+      "status": "완료",
+      "carNo": "68라0847",
+      "maker": "쉐보레",
+      "model": "트랙스",
+      "worker": "이부장님",
+      "priority": "보통",
+      "due": "2026-06-24T17:30",
+      "work": "엔진오일교환, 벨트소음,전체점검, 외판수리 견적 필요\n핸들이 오른쪽으로 기우는 증상있음 \n*** 스프린터 차주의 세컨카****\n엔진오일\n하체점검\n시운전",
+      "updatedAt": "2026. 6. 26. 오전 10:13:08",
+      "createdAt": "2026. 6. 22. 오후 2:58:54",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오후 2:58:54",
+          "from": "",
+          "to": "작업중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오후 1:20:02",
+          "from": "작업중",
+          "to": "작업완료",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 26. 오전 7:08:11",
+          "from": "작업완료",
+          "to": "출고대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 26. 오전 10:13:08",
+          "from": "출고대기",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "workDoneAt": "2026. 6. 25. 오후 1:20:02",
+        "releaseWaitAt": "2026. 6. 26. 오전 7:08:11",
+        "completedAt": "2026. 6. 26. 오전 10:13:08"
+      },
+      "updatedMs": 1782436388285,
+      "expectedSales": 1479500,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": true,
+      "ledgerTransferredAt": "2026. 6. 26. 오전 10:13:08",
+      "ledgerTransferId": "LT-2026-0617-01"
+    },
+    {
+      "id": "1782108025800ea068e39e1e028",
+      "jobNo": "2026-0618-01",
+      "date": "2026-06-18",
+      "time": "21:00",
+      "kind": "현장입고",
+      "status": "출고",
+      "carNo": "981구2911",
+      "maker": "VW",
+      "model": "폭스바겐그랜드켈리포니아캠핑카",
+      "worker": "이부장님",
+      "priority": "보통",
+      "due": "",
+      "work": "접지선불량",
+      "updatedAt": "2026. 6. 22. 오후 8:47:02",
+      "createdAt": "2026. 6. 22. 오후 3:00:25",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오후 3:00:25",
+          "from": "",
+          "to": "작업중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 3:17:37",
+          "from": "작업중",
+          "to": "출고대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 3:18:02",
+          "from": "출고대기",
+          "to": "작업완료",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 8:47:02",
+          "from": "작업완료",
+          "to": "출고",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "releasedAt": "2026. 6. 22. 오후 8:47:02"
+      },
+      "updatedMs": 1782128822523,
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": false
+    },
+    {
+      "id": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "date": "2026-05-20",
+      "time": "15:00",
+      "kind": "현장입고",
+      "status": "완료",
+      "carNo": "85더0575",
+      "maker": "HYUNDAI",
+      "model": "포터2냉동탑차",
+      "worker": "이부장님",
+      "priority": "보통",
+      "due": "",
+      "work": "브레이크 밟을때 마지막에 밟으면 확 서버리는 느낌이 있음\n브레이등 안나옴",
+      "updatedAt": "2026. 6. 25. 오후 2:11:05",
+      "createdAt": "2026. 6. 22. 오후 3:01:39",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오후 3:01:39",
+          "from": "",
+          "to": "작업중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오후 1:20:30",
+          "from": "작업중",
+          "to": "작업완료",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오후 2:11:05",
+          "from": "작업완료",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "workDoneAt": "2026. 6. 25. 오후 1:20:30",
+        "completedAt": "2026. 6. 25. 오후 2:11:05"
+      },
+      "expectedSales": 572000,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": true,
+      "updatedMs": 1782364265071,
+      "ledgerTransferredAt": "2026. 6. 25. 오후 2:11:05",
+      "ledgerTransferId": "LT-2026-0520-01"
+    },
+    {
+      "id": "11105dfd-742a-427d-9aca-0efac46cc0d9",
+      "jobNo": "2026-0622-01",
+      "date": "2026-06-22",
+      "time": "09:00",
+      "kind": "예약입고",
+      "status": "미입고",
+      "carNo": "98구0757",
+      "maker": "IVECO",
+      "model": "Daily",
+      "worker": "대표",
+      "priority": "보통",
+      "due": "",
+      "work": "DPF 점검 예정",
+      "createdAt": "2026. 6. 22. 오전 10:30:43",
+      "updatedAt": "2026. 6. 23. 오전 7:10:56",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오전 10:30:43",
+          "from": "",
+          "to": "점검대기",
+          "by": "시스템"
+        },
+        {
+          "at": "2026. 6. 23. 오전 7:08:40",
+          "from": "점검대기",
+          "to": "미입고",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {},
+      "updatedMs": 1782166256812,
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": false
+    },
+    {
+      "id": "34c8cde7-aedb-4ec4-a462-8d59be4c814a",
+      "jobNo": "2026-0622-02",
+      "date": "2026-06-22",
+      "time": "10:30",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "1234",
+      "maker": "BMW",
+      "model": "520",
+      "worker": "",
+      "priority": "보통",
+      "due": "",
+      "work": "",
+      "updatedAt": "2026. 6. 23. 오전 5:57:53",
+      "createdAt": "2026. 6. 22. 오전 10:31:09",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오전 10:31:09",
+          "from": "",
+          "to": "접수대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 8:47:56",
+          "from": "접수대기",
+          "to": "완료",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 8:48:10",
+          "from": "완료",
+          "to": "접수대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오전 5:57:53",
+          "from": "접수대기",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "completedAt": "2026. 6. 23. 오전 5:57:53"
+      },
+      "updatedMs": 1782161873205,
+      "deleted": true,
+      "deletedAt": "2026. 6. 23. 오전 6:36:55",
+      "deletedBy": "ysmts",
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": false
+    },
+    {
+      "id": "d4b52527-62e3-451b-b490-469edc34b3ee",
+      "jobNo": "2026-0622-03",
+      "date": "2026-06-22",
+      "time": "13:21",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "1458",
+      "maker": "AUDI",
+      "model": "1111",
+      "worker": "",
+      "priority": "보통",
+      "due": "",
+      "work": "",
+      "updatedAt": "2026. 6. 22. 오후 3:42:51",
+      "createdAt": "2026. 6. 22. 오후 1:22:17",
+      "statusHistory": [
+        {
+          "at": "2026. 6. 22. 오후 1:22:17",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 22. 오후 3:42:51",
+          "from": "미입고",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {},
+      "deleted": true,
+      "deletedAt": "2026. 6. 23. 오전 6:37:10",
+      "deletedBy": "ysmts",
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": false
+    },
+    {
+      "id": "17821767802217eb8854e65c9f",
+      "jobNo": "2026-0623-02",
+      "date": "2026-06-23",
+      "time": "10:05",
+      "kind": "예약입고",
+      "status": "출고",
+      "carNo": "15주2148",
+      "maker": "KIA",
+      "model": "모닝",
+      "worker": "이부장",
+      "priority": "보통",
+      "due": "",
+      "work": "운전석 문이 밖에서만 안열림",
+      "updatedAt": "2026. 6. 23. 오전 11:27:14",
+      "updatedMs": 1782181634957,
+      "createdAt": "2026. 6. 23. 오전 10:06:20",
+      "createdMs": 1782176780221,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 23. 오전 10:06:20",
+          "from": "",
+          "to": "점검대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오전 10:59:54",
+          "from": "점검대기",
+          "to": "작업완료",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오전 11:27:14",
+          "from": "작업완료",
+          "to": "출고",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "workDoneAt": "2026. 6. 23. 오전 10:59:54",
+        "releasedAt": "2026. 6. 23. 오전 11:27:14"
+      },
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": false
+    },
+    {
+      "id": "17821791309498e4f3991135ba8",
+      "jobNo": "2026-0623-03",
+      "date": "2026-06-23",
+      "time": "10:44",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "41조1272",
+      "maker": "VW",
+      "model": "티구안",
+      "worker": "대표",
+      "priority": "보통",
+      "due": "",
+      "work": "문의\n비가오면 운전석쪽이랑 운전석뒷쪽 트렁크 스페어타이어 있는쪽에 물이 많다고함 \n010-3829-6580",
+      "updatedAt": "2026. 6. 25. 오전 9:25:25",
+      "updatedMs": 1782347125143,
+      "createdAt": "2026. 6. 23. 오전 10:45:30",
+      "createdMs": 1782179130949,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 23. 오전 10:45:30",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오전 9:25:25",
+          "from": "미입고",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "completedAt": "2026. 6. 25. 오전 9:25:25"
+      },
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": false
+    },
+    {
+      "id": "1782181046186072707de216e8",
+      "jobNo": "2026-0623-04",
+      "date": "2026-06-23",
+      "time": "11:15",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "53구4190",
+      "maker": "HYUNDAI",
+      "model": "제네시스",
+      "worker": "대표",
+      "priority": "보통",
+      "due": "",
+      "work": "오일류 교환 \n엔진 미션 브레이크, tc , 디퍼런셜 전후 \n운전석쪽에서 바람소리가남 \n고무몰딩교환원함\n견적문의",
+      "updatedAt": "2026. 6. 25. 오후 1:04:09",
+      "updatedMs": 1782360249685,
+      "createdAt": "2026. 6. 23. 오전 11:17:26",
+      "createdMs": 1782181046187,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 23. 오전 11:17:26",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오후 2:01:47",
+          "from": "미입고",
+          "to": "점검대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 24. 오후 3:37:49",
+          "from": "점검대기",
+          "to": "작업중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오후 1:04:09",
+          "from": "작업중",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "workStartAt": "2026. 6. 24. 오후 3:37:49",
+        "completedAt": "2026. 6. 25. 오후 1:04:09"
+      },
+      "expectedSales": 775500,
+      "partsCost": 220500,
+      "paymentMethod": "카드",
+      "ledgerTransferred": true,
+      "ledgerTransferredAt": "2026. 6. 25. 오후 1:04:09",
+      "ledgerTransferId": "LT-2026-0623-04"
+    },
+    {
+      "id": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "date": "2026-06-24",
+      "time": "16:37",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "06수6418",
+      "maker": "BENZ",
+      "model": "c220d",
+      "worker": "대표",
+      "priority": "보통",
+      "due": "",
+      "work": "엔진오일누유 금일 점검문의\n오후4시 점검",
+      "updatedAt": "2026. 6. 24. 오후 5:52:25",
+      "updatedMs": 1782291145371,
+      "createdAt": "2026. 6. 23. 오전 11:38:05",
+      "createdMs": 1782182285831,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 23. 오전 11:38:05",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오후 2:48:47",
+          "from": "미입고",
+          "to": "점검중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오후 2:49:18",
+          "from": "점검중",
+          "to": "작업대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오후 2:49:20",
+          "from": "작업대기",
+          "to": "작업중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오후 2:56:25",
+          "from": "작업중",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 24. 오후 3:51:51",
+          "from": "미입고",
+          "to": "점검대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 24. 오후 5:52:25",
+          "from": "점검대기",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "workStartAt": "2026. 6. 23. 오후 2:49:20",
+        "completedAt": "2026. 6. 24. 오후 5:52:25"
+      },
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "ledgerTransferred": false
+    },
+    {
+      "id": "c08dfdf9-be06-429a-9846-da63ad89d504",
+      "jobNo": "2026-0622-07",
+      "date": "2026-06-22",
+      "time": "12:50",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "1234",
+      "maker": "BENZ",
+      "model": "1234",
+      "worker": "",
+      "priority": "보통",
+      "due": "2026-06-23T12:50",
+      "work": "",
+      "expectedSales": 1200000,
+      "partsCost": 22222,
+      "paymentMethod": "카드",
+      "updatedAt": "2026. 6. 23. 오후 12:51:17",
+      "updatedMs": 1782186677574,
+      "createdAt": "2026. 6. 23. 오후 12:50:30",
+      "createdMs": 1782186630968,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 23. 오후 12:50:30",
+          "from": "",
+          "to": "접수대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오후 12:51:17",
+          "from": "접수대기",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "completedAt": "2026. 6. 23. 오후 12:51:17"
+      },
+      "ledgerTransferred": true,
+      "ledgerTransferredAt": "2026. 6. 23. 오후 12:51:17",
+      "ledgerTransferId": "LT-2026-0622-07"
+    },
+    {
+      "id": "17821938112449db03bcd14bb1",
+      "jobNo": "2026-0623-06",
+      "date": "2026-06-25",
+      "time": "07:54",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "66머9383",
+      "maker": "BENZ",
+      "model": "c200",
+      "worker": "이부장",
+      "priority": "보통",
+      "due": "",
+      "work": "엔진오일교환\n에어컨안나옴 점검\n에어컨필터교환\nofmb007 ,afmb015,cfmb002 / 실내 에어컨필터 재고없음 (MBCF008)",
+      "expectedSales": 457600,
+      "partsCost": 221000,
+      "paymentMethod": "카드",
+      "updatedAt": "2026. 6. 25. 오후 6:09:11",
+      "updatedMs": 1782378551111,
+      "createdAt": "2026. 6. 23. 오후 2:50:11",
+      "createdMs": 1782193811244,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 23. 오후 2:50:11",
+          "from": "",
+          "to": "작업대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오후 2:53:48",
+          "from": "작업대기",
+          "to": "작업중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 23. 오후 3:38:41",
+          "from": "작업중",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오후 4:17:31",
+          "from": "미입고",
+          "to": "작업중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오후 5:51:21",
+          "from": "작업중",
+          "to": "작업완료",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오후 5:51:29",
+          "from": "작업완료",
+          "to": "출고대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오후 6:09:11",
+          "from": "출고대기",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "workStartAt": "2026. 6. 25. 오후 4:17:31",
+        "workDoneAt": "2026. 6. 25. 오후 5:51:21",
+        "releaseWaitAt": "2026. 6. 25. 오후 5:51:29",
+        "completedAt": "2026. 6. 25. 오후 6:09:11"
+      },
+      "ledgerTransferred": true,
+      "ledgerTransferredAt": "2026. 6. 25. 오후 6:09:11",
+      "ledgerTransferId": "LT-2026-0623-06"
+    },
+    {
+      "id": "1782200463082ed37ad2052c158",
+      "jobNo": "2026-0624-03",
+      "date": "2026-06-24",
+      "time": "08:00",
+      "kind": "예약입고",
+      "status": "출고",
+      "carNo": "경기80자2085",
+      "maker": "IVECO",
+      "model": "바다특장3.5톤카고",
+      "worker": "이부장",
+      "priority": "보통",
+      "due": "",
+      "work": "에어컨가스누설 , 에어컨가스충전 오전8시 입고 하신다고함",
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "updatedAt": "2026. 6. 24. 오전 8:41:17",
+      "updatedMs": 1782258077074,
+      "createdAt": "2026. 6. 23. 오후 4:41:03",
+      "createdMs": 1782200463082,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 23. 오후 4:41:03",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 24. 오전 8:41:17",
+          "from": "미입고",
+          "to": "출고",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "releasedAt": "2026. 6. 24. 오전 8:41:17"
+      },
+      "ledgerTransferred": false
+    },
+    {
+      "id": "1782200526427ea3b082849448",
+      "jobNo": "2026-0625-02",
+      "date": "2026-06-25",
+      "time": "14:00",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "98너7323",
+      "maker": "IVECO",
+      "model": "지씨티캠핑카",
+      "worker": "이부장",
+      "priority": "보통",
+      "due": "",
+      "work": "요소수 센서 경고등점등으로 차량 주행하다가 리밋이 걸리더니 20km 밖에 안나감 청주에서 해제를함 \n경고등재점등/ 수요일 저녁에 차량 세워두기로함",
+      "expectedSales": 914155,
+      "partsCost": 270621,
+      "paymentMethod": "카드",
+      "updatedAt": "2026. 6. 26. 오후 2:55:32",
+      "updatedMs": 1782453332860,
+      "createdAt": "2026. 6. 23. 오후 4:42:06",
+      "createdMs": 1782200526427,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 23. 오후 4:42:06",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오전 9:17:49",
+          "from": "미입고",
+          "to": "점검중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 26. 오후 2:55:32",
+          "from": "점검중",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "completedAt": "2026. 6. 26. 오후 2:55:32"
+      },
+      "ledgerTransferred": true,
+      "ledgerTransferredAt": "2026. 6. 26. 오후 2:55:32",
+      "ledgerTransferId": "LT-2026-0625-02"
+    },
+    {
+      "id": "17822738306892baa52c71624c8",
+      "jobNo": "2026-0624-04",
+      "date": "2026-06-24",
+      "time": "13:03",
+      "kind": "예약입고",
+      "status": "작업대기",
+      "carNo": "85오0904",
+      "maker": "IVECO",
+      "model": "뉴데일리",
+      "worker": "대표",
+      "priority": "보통",
+      "due": "",
+      "work": "출발시 악셀밟아도 차량이 안나가고 PRM만 올름 그리고 탄내가 난다고함",
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "updatedAt": "2026. 6. 25. 오후 5:51:05",
+      "updatedMs": 1782377465954,
+      "createdAt": "2026. 6. 24. 오후 1:03:50",
+      "createdMs": 1782273830689,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 24. 오후 1:03:50",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오후 2:45:50",
+          "from": "미입고",
+          "to": "점검중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오후 5:51:05",
+          "from": "점검중",
+          "to": "작업대기",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {},
+      "ledgerTransferred": false
+    },
+    {
+      "id": "17822738668880591d1bd3075",
+      "jobNo": "2026-0624-04",
+      "date": "2026-06-24",
+      "time": "13:03",
+      "kind": "예약입고",
+      "status": "점검중",
+      "carNo": "984도7252",
+      "maker": "IVECO",
+      "model": "뉴데일리",
+      "worker": "대표",
+      "priority": "보통",
+      "due": "",
+      "work": "기어 수동으로 변경하는방법 문의",
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "updatedAt": "2026. 6. 25. 오후 4:17:42",
+      "updatedMs": 1782371862443,
+      "createdAt": "2026. 6. 24. 오후 1:04:26",
+      "createdMs": 1782273866888,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 24. 오후 1:04:26",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오후 4:17:42",
+          "from": "미입고",
+          "to": "점검중",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {},
+      "ledgerTransferred": false
+    },
+    {
+      "id": "17822825300749e565460918348",
+      "jobNo": "2026-0624-05",
+      "date": "2026-06-24",
+      "time": "13:25",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "36두3815",
+      "maker": "BMW",
+      "model": "520D",
+      "worker": "대표",
+      "priority": "보통",
+      "due": "",
+      "work": "",
+      "expectedSales": 396000,
+      "partsCost": 150000,
+      "paymentMethod": "카드",
+      "updatedAt": "2026. 6. 24. 오후 3:28:50",
+      "updatedMs": 1782282530075,
+      "createdAt": "2026. 6. 24. 오후 3:28:50",
+      "createdMs": 1782282530075,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 24. 오후 3:28:50",
+          "from": "",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "completedAt": "2026. 6. 24. 오후 3:28:50"
+      },
+      "ledgerTransferred": false
+    },
+    {
+      "id": "1782362179465e3e3b7477e458",
+      "jobNo": "2026-0625-03",
+      "date": "2026-06-25",
+      "time": "13:25",
+      "kind": "예약입고",
+      "status": "완료",
+      "carNo": "11어1660",
+      "maker": "KGM",
+      "model": "티볼리",
+      "worker": "이부장",
+      "priority": "보통",
+      "due": "",
+      "work": "에어컨불량ㅇ,에어컨콘덴셔누설,에어컨콤프레셔교환",
+      "expectedSales": 600000,
+      "partsCost": 100000,
+      "paymentMethod": "현금",
+      "updatedAt": "2026. 6. 25. 오후 1:36:28",
+      "updatedMs": 1782362188754,
+      "createdAt": "2026. 6. 25. 오후 1:36:19",
+      "createdMs": 1782362179466,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 25. 오후 1:36:19",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오후 1:36:28",
+          "from": "미입고",
+          "to": "완료",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "completedAt": "2026. 6. 25. 오후 1:36:28"
+      },
+      "ledgerTransferred": true,
+      "ledgerTransferredAt": "2026. 6. 25. 오후 1:36:28",
+      "ledgerTransferId": "LT-2026-0625-03"
+    },
+    {
+      "id": "178236233612067ac48c1445178",
+      "jobNo": "2026-0625-04",
+      "date": "2026-06-25",
+      "time": "13:36",
+      "kind": "현장입고",
+      "status": "출고대기",
+      "carNo": "179다6660",
+      "maker": "FORD",
+      "model": "익스플로러",
+      "worker": "대표",
+      "priority": "보통",
+      "due": "",
+      "work": "하체손상",
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "updatedAt": "2026. 6. 26. 오후 6:58:53",
+      "updatedMs": 1782467933688,
+      "createdAt": "2026. 6. 25. 오후 1:38:56",
+      "createdMs": 1782362336120,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 25. 오후 1:38:56",
+          "from": "",
+          "to": "점검중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 26. 오후 6:58:51",
+          "from": "점검중",
+          "to": "작업완료",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 26. 오후 6:58:53",
+          "from": "작업완료",
+          "to": "출고대기",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "workDoneAt": "2026. 6. 26. 오후 6:58:51",
+        "releaseWaitAt": "2026. 6. 26. 오후 6:58:53"
+      },
+      "ledgerTransferred": false
+    },
+    {
+      "id": "17823646956095e36aae3d30ae8",
+      "jobNo": "2026-0625-05",
+      "date": "2026-06-25",
+      "time": "14:17",
+      "kind": "현장입고",
+      "status": "작업중",
+      "carNo": "56오1376",
+      "maker": "KIA",
+      "model": "쏘렌토",
+      "worker": "대표",
+      "priority": "보통",
+      "due": "",
+      "work": "매연불합격",
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "updatedAt": "2026. 6. 26. 오후 12:44:29",
+      "updatedMs": 1782445469310,
+      "createdAt": "2026. 6. 25. 오후 2:18:15",
+      "createdMs": 1782364695609,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 25. 오후 2:18:15",
+          "from": "",
+          "to": "점검대기",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 25. 오후 5:36:20",
+          "from": "점검대기",
+          "to": "점검중",
+          "by": "ysmts"
+        },
+        {
+          "at": "2026. 6. 26. 오후 12:44:29",
+          "from": "점검중",
+          "to": "작업중",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {
+        "workStartAt": "2026. 6. 26. 오후 12:44:29"
+      },
+      "ledgerTransferred": false
+    },
+    {
+      "id": "1782376364669809b51a6a7ff",
+      "jobNo": "2026-0703-01",
+      "date": "2026-07-03",
+      "time": "10:01",
+      "kind": "예약입고",
+      "status": "미입고",
+      "carNo": "98조7722",
+      "maker": "IVECO",
+      "model": "아리아모빌캠핑카",
+      "worker": "대표",
+      "priority": "보통",
+      "due": "",
+      "work": "전면유리교환",
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "updatedAt": "2026. 6. 25. 오후 5:32:44",
+      "updatedMs": 1782376364669,
+      "createdAt": "2026. 6. 25. 오후 5:32:44",
+      "createdMs": 1782376364669,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 25. 오후 5:32:44",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {},
+      "ledgerTransferred": false
+    },
+    {
+      "id": "1782376560555904249fd3fbb6",
+      "jobNo": "2026-0625-06",
+      "date": "2026-06-29",
+      "time": "11:00",
+      "kind": "예약입고",
+      "status": "미입고",
+      "carNo": "807너9630",
+      "maker": "IVECO",
+      "model": "로젠바우어소방장비차량",
+      "worker": "대표",
+      "priority": "보통",
+      "due": "",
+      "work": "브레이크등 키를 빼도 계속 점등됨 \n삼성쪽에서 일정 확인하여 전화주기로함",
+      "expectedSales": 0,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "updatedAt": "2026. 6. 26. 오전 10:14:32",
+      "updatedMs": 1782436472387,
+      "createdAt": "2026. 6. 25. 오후 5:36:00",
+      "createdMs": 1782376560555,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 25. 오후 5:36:00",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {},
+      "ledgerTransferred": false
+    },
+    {
+      "id": "1782448157919a9c33c47661aa",
+      "jobNo": "2026-0629-01",
+      "date": "2026-06-29",
+      "time": "11:00",
+      "kind": "예약입고",
+      "status": "미입고",
+      "carNo": "38누2523",
+      "maker": "BMW",
+      "model": "미니쿠퍼",
+      "worker": "대표",
+      "priority": "보통",
+      "due": "",
+      "work": "삼성화재 정밀진단 점검 차량",
+      "expectedSales": 30000,
+      "partsCost": 0,
+      "paymentMethod": "카드",
+      "updatedAt": "2026. 6. 26. 오후 1:29:17",
+      "updatedMs": 1782448157920,
+      "createdAt": "2026. 6. 26. 오후 1:29:17",
+      "createdMs": 1782448157920,
+      "statusHistory": [
+        {
+          "at": "2026. 6. 26. 오후 1:29:17",
+          "from": "",
+          "to": "미입고",
+          "by": "ysmts"
+        }
+      ],
+      "milestones": {},
+      "ledgerTransferred": false
+    }
+  ],
+  "messages": [
+    {
+      "id": "e605d503-e2da-4d6e-b86d-e1a83c19e4e1",
+      "vehicleId": "94fa49a3-7369-477f-8de3-b0448280680e",
+      "type": "memo",
+      "channel": "전체공지",
+      "body": "긴급 확인 바랍니다.",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 22. 오후 2:12:58",
+      "createdMs": 1782105178662,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 22. 오후 2:16:15",
+      "doneAt": "2026. 6. 22. 오후 2:13:51"
+    },
+    {
+      "id": "26a60e9c-7118-4744-9601-46bf56894271",
+      "vehicleId": "2f99e065-a8f3-43da-9380-46f96db11af0",
+      "type": "memo",
+      "channel": "전체공지",
+      "body": "시운전 후 결과 남겨주세요.",
+      "state": "완료",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 22. 오후 2:41:30",
+      "createdMs": 1782106890423,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 22. 오후 2:41:41",
+      "doneAt": "2026. 6. 22. 오후 2:41:41"
+    },
+    {
+      "id": "17821070507206cc2b0e0e809c8",
+      "vehicleId": "ce05c00b-517a-42e6-935c-62c572def03c",
+      "type": "memo",
+      "channel": "전체공지",
+      "body": "점검 결과 확인 바랍니다.",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 22. 오후 2:44:10",
+      "createdMs": 1782107050720,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 22. 오후 2:44:21",
+      "doneAt": ""
+    },
+    {
+      "id": "baf014c7-7917-4d84-bfb5-2fd4e537705c",
+      "vehicleId": "8a09aeca-bd3f-41c1-babf-5164fac53b81",
+      "type": "memo",
+      "channel": "전체공지",
+      "body": "시운전 후 결과 남겨주세요.",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 22. 오후 2:46:46",
+      "createdMs": 1782107206369,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 22. 오후 2:47:01",
+      "doneAt": ""
+    },
+    {
+      "id": "1782108653233df1fb7433efb38",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "type": "memo",
+      "channel": "전체공지",
+      "body": "명세서의 내용을 모두 차주에게 전달하고 모두 ok한건가요",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 22. 오후 3:10:53",
+      "createdMs": 1782108653233,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 22. 오후 3:09:31",
+      "doneAt": ""
+    },
+    {
+      "id": "1782108592475acbc27c6aa603",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "type": "memo",
+      "channel": "전체공지",
+      "body": "네 차주분이 명세서 확인하고 작업진행하신다고 하셨습니다.",
+      "state": "처리중",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 22. 오후 3:09:52",
+      "createdMs": 1782108592475,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 22. 오후 3:10:09",
+      "doneAt": "2026. 6. 22. 오후 3:10:01"
+    },
+    {
+      "id": "54704f4d-c81d-4727-a9a2-c2797e4eceb4",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "type": "memo",
+      "channel": "전체공지",
+      "body": "차량별 출고가 되기 전까지 모든 일정은 해당차량에 메모됩니다",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 22. 오후 3:11:57",
+      "createdMs": 1782108717742,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 22. 오후 3:12:18",
+      "doneAt": ""
+    },
+    {
+      "id": "c44177a1-fea5-46cc-a55b-49fbe7167562",
+      "vehicleId": "17821080990151442433800deb8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "점검 결과 확인 바랍니다.",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 22. 오후 8:34:29",
+      "createdMs": 1782128069267,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 22. 오후 8:49:50",
+      "doneAt": ""
+    },
+    {
+      "id": "17821289244433a1144a97f89",
+      "vehicleId": "17821080990151442433800deb8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "작업 시작 바랍니다.",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 22. 오후 8:48:44",
+      "createdMs": 1782128924443,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 22. 오후 8:49:48",
+      "doneAt": ""
+    },
+    {
+      "id": "17821290739795910e840648c1",
+      "vehicleId": "17821080990151442433800deb8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "부품 도착했습니다. 작업 진행 바랍니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 22. 오후 8:51:13",
+      "createdMs": 1782129073979,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "17821290994994819297a6ee6c",
+      "vehicleId": "17821080990151442433800deb8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "출고 준비 바랍니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 22. 오후 8:51:39",
+      "createdMs": 1782129099499,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "178212984139691b94b9642d468",
+      "vehicleId": "17821080990151442433800deb8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "점검 결과 확인 바랍니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 22. 오후 9:04:01",
+      "createdMs": 1782129841396,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "17821619455165bfb8c12ce955",
+      "vehicleId": "17821080990151442433800deb8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "작업 시작 바랍니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 5:59:05",
+      "createdMs": 1782161945516,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "d630900b-2294-4fb4-8a32-5f5494890976",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "고객님의 대응입니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 6:32:40",
+      "createdMs": 1782163960444,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "e597afa2-e57a-4968-a0e6-a8a121f2dabe",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "작업 시작해요.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 6:32:51",
+      "createdMs": 1782163971592,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "6fa49fa3-36f3-46e1-b7f2-3eeaf9767850",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "점검 결과를 확인하세요.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 6:33:47",
+      "createdMs": 1782164027424,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "6ffaec09-e7c2-4ee8-9133-2ccaaea4c489",
+      "vehicleId": "17821080990151442433800deb8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "작업 시작해요.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 6:38:46",
+      "createdMs": 1782164326966,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "4398db51-6d03-41b6-b2b2-46cf3c06089b",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "작업 시작 바랍니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 6:43:38",
+      "createdMs": 1782164618005,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "6224d977-f702-4d5b-a2d2-d0169a9c97a8",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "고객 승인 대기중입니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 6:43:54",
+      "createdMs": 1782164634495,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "cad069b9-f332-40b8-97cb-76fa8bf59d75",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "점검 결과 확인 바랍니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 6:44:53",
+      "createdMs": 1782164693549,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "02711ff9-9124-457a-98e9-d5e303a3fe96",
+      "vehicleId": "17821080990151442433800deb8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "고객 승인 대기중입니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 6:46:30",
+      "createdMs": 1782164790210,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "ece1bba1-ac3a-4cf3-8b8d-6ea885e115c8",
+      "vehicleId": "17821080990151442433800deb8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "부품 도착했습니다. 작업 진행 바랍니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 6:47:59",
+      "createdMs": 1782164879721,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "178216507673040b900da5f8eb8",
+      "vehicleId": "17821080990151442433800deb8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "고객 승인 대기중입니다.",
+      "state": "완료",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 6:51:16",
+      "createdMs": 1782165076730,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 23. 오전 6:49:47",
+      "doneAt": "2026. 6. 23. 오전 6:49:47"
+    },
+    {
+      "id": "5ef48469-0626-4359-8a4d-d080d395b0a3",
+      "vehicleId": "17821080990151442433800deb8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "점검 결과 확인 바랍니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 6:56:17",
+      "createdMs": 1782165377097,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "17821768218128c6ead21182b5",
+      "vehicleId": "17821767802217eb8854e65c9f",
+      "type": "작업일지",
+      "channel": "A동",
+      "body": "모닝 차량 입고하였습니다. 확인 부탁드립니다.",
+      "state": "종결",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 10:07:01",
+      "createdMs": 1782176821812,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 23. 오전 10:09:06",
+      "doneAt": "2026. 6. 23. 오전 11:02:48"
+    },
+    {
+      "id": "17821796665128e3c6457a0a7c8",
+      "vehicleId": "17821791309498e4f3991135ba8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "비가오면 운전석쪽이랑 운전석뒷쪽 트렁크 스페어타이어 있는쪽에 물이 많다고함\n점검 일정 문의 주셨습니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 10:54:26",
+      "createdMs": 1782179666512,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "1782180187107bb04cfe7ad0ad",
+      "vehicleId": "17821791309498e4f3991135ba8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "해당차량은 누수의 원인을 찾으려면 시간이 많이 소요됨 2일정도 맡기실수있다면 입고 하라고 하세요",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 11:03:07",
+      "createdMs": 1782180187107,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 23. 오전 11:01:32",
+      "doneAt": ""
+    },
+    {
+      "id": "1782182231167b1c6c31a0cfe3",
+      "vehicleId": "1782181046186072707de216e8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "제네시스 금일 오후 작업가능한지 문의 주셨습니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 11:37:11",
+      "createdMs": 1782182231167,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "1782182882358de1fd9fd794f18",
+      "vehicleId": "1782181046186072707de216e8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "금일은 점검 부터",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오전 11:48:02",
+      "createdMs": 1782182882358,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 23. 오전 11:55:04",
+      "doneAt": ""
+    },
+    {
+      "id": "1782187255205320ec76f9c4b98",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "금일 점검 문의 주셨는데 오시라고 해도 될까요?!",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오후 1:00:55",
+      "createdMs": 1782187255205,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 23. 오후 1:04:35",
+      "doneAt": ""
+    },
+    {
+      "id": "17821875268053deb8a8b5c3f6",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "네",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오후 1:05:26",
+      "createdMs": 1782187526805,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 23. 오후 1:16:34",
+      "doneAt": ""
+    },
+    {
+      "id": "1782188882702ac23c48947fae8",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "금일은 시간이 안되셔서 내일 오후4시 점검 예약 잡았습니다.",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오후 1:28:02",
+      "createdMs": 1782188882702,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 23. 오후 1:28:12",
+      "doneAt": ""
+    },
+    {
+      "id": "1782190954776daf78f2fd8c3b",
+      "vehicleId": "1782181046186072707de216e8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "제네시스 입고 되었습니다. 점검일정으로 통화할때 전화를 다시 주시기로 하셨었는데 전화를 안주시고 직접 찾아오셨습니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오후 2:02:34",
+      "createdMs": 1782190954776,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "178219115626082b766663ed898",
+      "vehicleId": "1782181046186072707de216e8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "차주분내려오시라고하세요",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오후 2:05:56",
+      "createdMs": 1782191156260,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 23. 오후 2:04:58",
+      "doneAt": ""
+    },
+    {
+      "id": "1782191061903591ec2383519d",
+      "vehicleId": "1782181046186072707de216e8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "금일 차량을 맡기고 내일 오일류, 운전석쪽 고무를 같이 교환하고싶다고 합니다. 일단 점검후 안내드리겠다고 말씀 드렸습니다. 고객님은 고객대기실에 계십니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오후 2:04:21",
+      "createdMs": 1782191061903,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "1782192658063868ae2af24f67",
+      "vehicleId": "17821074923902f63ad5610eaa8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "해당차량 타업체 수리 이력 카톡보내줘요",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오후 2:30:58",
+      "createdMs": 1782192658063,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 23. 오후 2:29:54",
+      "doneAt": ""
+    },
+    {
+      "id": "178219391243553d363e7128b08",
+      "vehicleId": "17821938112449db03bcd14bb1",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "입고되었습니다.\n엔진오일교환\n에어컨안나옴 점검\n에어컨필터교환\nofmb007 ,afmb015,cfmb002 (MBCF008재고없음)",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 23. 오후 2:51:52",
+      "createdMs": 1782193912435,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "82320f70-bef2-4fe8-b8d6-c4565b217a8f",
+      "vehicleId": "178210769754758e99f991cb89",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "차량전체점검요망",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 24. 오전 8:54:54",
+      "createdMs": 1782258894106,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "d3b7ad2f-c20d-4f2e-9b65-b0ebf2b3439c",
+      "vehicleId": "178210769754758e99f991cb89",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "작업완료 차주 통화하세",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 24. 오전 10:42:38",
+      "createdMs": 1782265358821,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "17822654071244548b4b1d22268",
+      "vehicleId": "178210786290691763e93c80e7",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "x6 작업완료 시점 확인 부탁드립니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 24. 오전 10:43:27",
+      "createdMs": 1782265407124,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "17822655850984a3eea4a550b78",
+      "vehicleId": "178210769754758e99f991cb89",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "전화 안받으셔서 문자 남겨놓았습니다",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 24. 오전 10:46:25",
+      "createdMs": 1782265585098,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "1782266180357c54f6c47969c28",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "금일 몇시까지 오시면 되는지 전화 주셨습니다.",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 24. 오전 10:56:20",
+      "createdMs": 1782266180357,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "17822821598547958e1ed281b2",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "차주분 오시는 시간도 있어서 완료시점 확인해달라고 하셨습니다.",
+      "state": "종결",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 24. 오후 3:22:39",
+      "createdMs": 1782282159854,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 24. 오후 3:25:09",
+      "doneAt": "2026. 6. 24. 오후 3:25:09"
+    },
+    {
+      "id": "1782282205646fca886d73b4698",
+      "vehicleId": "1782181046186072707de216e8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "출고 몇시에 가능한지 확인해달라고 하셨습니다~",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 24. 오후 3:23:25",
+      "createdMs": 1782282205646,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    },
+    {
+      "id": "17822839460288111e33b73195",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "c220d 입고하였습니다.",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 24. 오후 3:52:26",
+      "createdMs": 1782283946028,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 24. 오후 3:55:35",
+      "doneAt": ""
+    },
+    {
+      "id": "17822844494263e2276be9bb388",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "로커암커버 어셈블리 교환 예상됨 부품조회 하고 차주 내려오라고 하세요",
+      "state": "확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 24. 오후 4:00:49",
+      "createdMs": 1782284449426,
+      "ackBy": "ysmts",
+      "ackAt": "2026. 6. 24. 오후 4:00:50",
+      "doneAt": ""
+    },
+    {
+      "id": "73f4023e-d957-4654-85e9-714efd24a064",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "type": "작업일지",
+      "channel": "전체공지",
+      "body": "출고준비중",
+      "state": "미확인",
+      "writer": "ysmts",
+      "createdAt": "2026. 6. 26. 오전 7:11:56",
+      "createdMs": 1782425516922,
+      "ackBy": "",
+      "ackAt": "",
+      "doneAt": ""
+    }
+  ],
+  "logs": [
+    {
+      "id": "9f24531d-8dc6-4063-aefe-8494850a5496",
+      "at": "2026. 6. 22. 오후 2:09:14",
+      "vehicleId": "2f99e065-a8f3-43da-9380-46f96db11af0",
+      "jobNo": "2026-0622-01",
+      "carNo": "1234",
+      "type": "차량등록",
+      "body": "접수대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "45d81a24-ee9c-4037-b115-60e762db3215",
+      "at": "2026. 6. 22. 오후 2:09:25",
+      "vehicleId": "8a09aeca-bd3f-41c1-babf-5164fac53b81",
+      "jobNo": "2026-0622-02",
+      "carNo": "5484",
+      "type": "차량등록",
+      "body": "접수대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "16a622ea-b542-43f0-8ef4-4c3f5e3ddd80",
+      "at": "2026. 6. 22. 오후 2:12:12",
+      "vehicleId": "94fa49a3-7369-477f-8de3-b0448280680e",
+      "jobNo": "2026-0622-03",
+      "carNo": "2547",
+      "type": "차량등록",
+      "body": "접수대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "4906a6cc-5e92-4591-bef6-36a05165db70",
+      "at": "2026. 6. 22. 오후 2:12:58",
+      "vehicleId": "94fa49a3-7369-477f-8de3-b0448280680e",
+      "jobNo": "2026-0622-03",
+      "carNo": "2547",
+      "type": "메시지전송",
+      "body": "[일반메모] 전체공지 / 긴급 확인 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "c4c7f442-5454-4cdf-804b-55b93207fa15",
+      "at": "2026. 6. 22. 오후 2:13:51",
+      "vehicleId": "94fa49a3-7369-477f-8de3-b0448280680e",
+      "jobNo": "2026-0622-03",
+      "carNo": "2547",
+      "type": "메시지완료",
+      "body": "긴급 확인 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "178210537559866017b9720c838",
+      "at": "2026. 6. 22. 오후 2:16:15",
+      "vehicleId": "94fa49a3-7369-477f-8de3-b0448280680e",
+      "jobNo": "2026-0622-03",
+      "carNo": "2547",
+      "type": "메시지확인",
+      "body": "긴급 확인 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "341604b7-1e59-4ef9-9c21-40f874b71825",
+      "at": "2026. 6. 22. 오후 2:14:54",
+      "vehicleId": "2f99e065-a8f3-43da-9380-46f96db11af0",
+      "jobNo": "2026-0622-01",
+      "carNo": "1234",
+      "type": "상태변경",
+      "body": "접수대기 → 점검중",
+      "by": "ysmts"
+    },
+    {
+      "id": "07c89289-663c-43ec-8a4e-c2effdf2bcd4",
+      "at": "2026. 6. 22. 오후 2:14:58",
+      "vehicleId": "8a09aeca-bd3f-41c1-babf-5164fac53b81",
+      "jobNo": "2026-0622-02",
+      "carNo": "5484",
+      "type": "상태변경",
+      "body": "접수대기 → 작업중",
+      "by": "ysmts"
+    },
+    {
+      "id": "3ac77398-c91e-4cec-938d-0f792fe84cd6",
+      "at": "2026. 6. 22. 오후 2:15:02",
+      "vehicleId": "94fa49a3-7369-477f-8de3-b0448280680e",
+      "jobNo": "2026-0622-03",
+      "carNo": "2547",
+      "type": "상태변경",
+      "body": "접수대기 → 점검대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "8a0fed1f-670d-4a26-96ce-655bdc149f22",
+      "at": "2026. 6. 22. 오후 2:19:23",
+      "vehicleId": "94fa49a3-7369-477f-8de3-b0448280680e",
+      "jobNo": "2026-0622-03",
+      "carNo": "2547",
+      "type": "상태변경",
+      "body": "점검대기 → 출고",
+      "by": "ysmts"
+    },
+    {
+      "id": "a1d3e288-c6e7-455e-9beb-40b9cb4fdb31",
+      "at": "2026. 6. 22. 오후 2:19:32",
+      "vehicleId": "8a09aeca-bd3f-41c1-babf-5164fac53b81",
+      "jobNo": "2026-0622-02",
+      "carNo": "5484",
+      "type": "상태변경",
+      "body": "작업중 → 작업대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "94c25f82-c9cc-4ec4-b1e1-3a3e1d129839",
+      "at": "2026. 6. 22. 오후 2:41:30",
+      "vehicleId": "2f99e065-a8f3-43da-9380-46f96db11af0",
+      "jobNo": "2026-0622-01",
+      "carNo": "1234",
+      "type": "메시지전송",
+      "body": "[일반메모] 전체공지 / 시운전 후 결과 남겨주세요.",
+      "by": "ysmts"
+    },
+    {
+      "id": "2fd826f9-7f85-4a3a-b73e-b001b5830fa3",
+      "at": "2026. 6. 22. 오후 2:41:41",
+      "vehicleId": "2f99e065-a8f3-43da-9380-46f96db11af0",
+      "jobNo": "2026-0622-01",
+      "carNo": "1234",
+      "type": "메시지완료",
+      "body": "시운전 후 결과 남겨주세요.",
+      "by": "ysmts"
+    },
+    {
+      "id": "47345985-69ee-4413-bd1a-8c6a13c569c5",
+      "at": "2026. 6. 22. 오후 2:42:12",
+      "vehicleId": "ce05c00b-517a-42e6-935c-62c572def03c",
+      "jobNo": "2026-0622-04",
+      "carNo": "2584",
+      "type": "차량등록",
+      "body": "접수대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821070507205dd06ca35bc048",
+      "at": "2026. 6. 22. 오후 2:44:10",
+      "vehicleId": "ce05c00b-517a-42e6-935c-62c572def03c",
+      "jobNo": "2026-0622-04",
+      "carNo": "2584",
+      "type": "메시지전송",
+      "body": "[일반메모] 전체공지 / 점검 결과 확인 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "d97e364d-67d5-4601-b4cd-8e7e858f85c5",
+      "at": "2026. 6. 22. 오후 2:42:42",
+      "vehicleId": "ce05c00b-517a-42e6-935c-62c572def03c",
+      "jobNo": "2026-0622-04",
+      "carNo": "2584",
+      "type": "메시지확인",
+      "body": "점검 결과 확인 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821070619705e27ad1e4b4ba8",
+      "at": "2026. 6. 22. 오후 2:44:21",
+      "vehicleId": "ce05c00b-517a-42e6-935c-62c572def03c",
+      "jobNo": "2026-0622-04",
+      "carNo": "2584",
+      "type": "메시지확인",
+      "body": "점검 결과 확인 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821071822811dfdaf552f9ab8",
+      "at": "2026. 6. 22. 오후 2:46:22",
+      "vehicleId": "1782107182281a13d6c4613d7a",
+      "jobNo": "2026-0622-05",
+      "carNo": "5884",
+      "type": "차량등록",
+      "body": "접수대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "3dea881d-edeb-4f12-aabe-972790820587",
+      "at": "2026. 6. 22. 오후 2:45:56",
+      "vehicleId": "2f99e065-a8f3-43da-9380-46f96db11af0",
+      "jobNo": "2026-0622-01",
+      "carNo": "1234",
+      "type": "상태변경",
+      "body": "점검중 → 출고대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "1415e2bb-0f84-4aae-9a9d-ebb1979ba2e4",
+      "at": "2026. 6. 22. 오후 2:46:40",
+      "vehicleId": "8a09aeca-bd3f-41c1-babf-5164fac53b81",
+      "jobNo": "2026-0622-02",
+      "carNo": "5484",
+      "type": "상태변경",
+      "body": "작업대기 → 작업중",
+      "by": "ysmts"
+    },
+    {
+      "id": "d11ce6a2-f5bd-433f-b651-d96301b86229",
+      "at": "2026. 6. 22. 오후 2:46:46",
+      "vehicleId": "8a09aeca-bd3f-41c1-babf-5164fac53b81",
+      "jobNo": "2026-0622-02",
+      "carNo": "5484",
+      "type": "메시지전송",
+      "body": "[일반메모] 전체공지 / 시운전 후 결과 남겨주세요.",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782107221936870203d81bc72",
+      "at": "2026. 6. 22. 오후 2:47:01",
+      "vehicleId": "8a09aeca-bd3f-41c1-babf-5164fac53b81",
+      "jobNo": "2026-0622-02",
+      "carNo": "5484",
+      "type": "메시지확인",
+      "body": "시운전 후 결과 남겨주세요.",
+      "by": "ysmts"
+    },
+    {
+      "id": "d446ef8c-79dd-42f5-8380-837bed18c7b1",
+      "at": "2026. 6. 22. 오후 2:49:16",
+      "vehicleId": "2f99e065-a8f3-43da-9380-46f96db11af0",
+      "jobNo": "2026-0622-01",
+      "carNo": "1234",
+      "type": "상태변경",
+      "body": "출고대기 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "6e3ca630-6e14-46be-9e8d-4976ae1c2236",
+      "at": "2026. 6. 22. 오후 2:49:19",
+      "vehicleId": "8a09aeca-bd3f-41c1-babf-5164fac53b81",
+      "jobNo": "2026-0622-02",
+      "carNo": "5484",
+      "type": "상태변경",
+      "body": "작업중 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "bcc4097b-dff0-4f52-add9-9bd5639e3ed3",
+      "at": "2026. 6. 22. 오후 2:49:21",
+      "vehicleId": "94fa49a3-7369-477f-8de3-b0448280680e",
+      "jobNo": "2026-0622-03",
+      "carNo": "2547",
+      "type": "상태변경",
+      "body": "점검대기 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "90be6cd0-dd20-412f-8bba-356ad8e624b5",
+      "at": "2026. 6. 22. 오후 2:49:22",
+      "vehicleId": "ce05c00b-517a-42e6-935c-62c572def03c",
+      "jobNo": "2026-0622-04",
+      "carNo": "2584",
+      "type": "상태변경",
+      "body": "접수대기 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "f2ce432b-3912-46c8-8d0a-60b396fac68e",
+      "at": "2026. 6. 22. 오후 2:49:25",
+      "vehicleId": "1782107182281a13d6c4613d7a",
+      "jobNo": "2026-0622-05",
+      "carNo": "5884",
+      "type": "상태변경",
+      "body": "접수대기 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782107492391a46e220857556",
+      "at": "2026. 6. 22. 오후 2:51:32",
+      "vehicleId": "17821074923902f63ad5610eaa8",
+      "jobNo": "2026-0623-01",
+      "carNo": "98너7997",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782107561661b4eefa1c864ba8",
+      "at": "2026. 6. 22. 오후 2:52:41",
+      "vehicleId": "1782107561661481aa92620e248",
+      "jobNo": "2026-0622-06",
+      "carNo": "45우5450",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782107656062e096261bf4d6b8",
+      "at": "2026. 6. 22. 오후 2:54:16",
+      "vehicleId": "1782107656062bbfa1d175e66d",
+      "jobNo": "2026-0624-01",
+      "carNo": "45저0910",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821076975470d4af91aa99758",
+      "at": "2026. 6. 22. 오후 2:54:57",
+      "vehicleId": "178210769754758e99f991cb89",
+      "jobNo": "2026-0624-02",
+      "carNo": "42러5637",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782107765155294ab2db55d128",
+      "at": "2026. 6. 22. 오후 2:56:05",
+      "vehicleId": "1782107765155e140b19a3cfc48",
+      "jobNo": "2026-0625-01",
+      "carNo": "160조2097",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "178210786290601d8914c5e9b38",
+      "at": "2026. 6. 22. 오후 2:57:42",
+      "vehicleId": "178210786290691763e93c80e7",
+      "jobNo": "2026-0619-01",
+      "carNo": "29러3702",
+      "type": "차량등록",
+      "body": "작업중",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821079347373556226a614e48",
+      "at": "2026. 6. 22. 오후 2:58:54",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "차량등록",
+      "body": "작업중",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782108025800a2483dd530251",
+      "at": "2026. 6. 22. 오후 3:00:25",
+      "vehicleId": "1782108025800ea068e39e1e028",
+      "jobNo": "2026-0618-01",
+      "carNo": "981구2911",
+      "type": "차량등록",
+      "body": "작업중",
+      "by": "ysmts"
+    },
+    {
+      "id": "178210809901508ad0931967628",
+      "at": "2026. 6. 22. 오후 3:01:39",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "차량등록",
+      "body": "작업중",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782108653233d6747a28d866c8",
+      "at": "2026. 6. 22. 오후 3:10:53",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지전송",
+      "body": "[일반메모] 전체공지 / 명세서의 내용을 모두 차주에게 전달하고 모두 ok한건가요",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782108571469e21275db903358",
+      "at": "2026. 6. 22. 오후 3:09:31",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지확인",
+      "body": "명세서의 내용을 모두 차주에게 전달하고 모두 ok한건가요",
+      "by": "ysmts"
+    },
+    {
+      "id": "d913b863-fde3-44c7-8fad-ffcdaaa7c766",
+      "at": "2026. 6. 22. 오후 3:09:47",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지확인",
+      "body": "명세서의 내용을 모두 차주에게 전달하고 모두 ok한건가요",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782108592475a1d0c350d20b5",
+      "at": "2026. 6. 22. 오후 3:09:52",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지전송",
+      "body": "[일반메모] 전체공지 / 네 차주분이 명세서 확인하고 작업진행하신다고 하셨습니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "d9f86881-c803-46ec-a94c-636d4b1654d5",
+      "at": "2026. 6. 22. 오후 3:10:01",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지완료",
+      "body": "네 차주분이 명세서 확인하고 작업진행하신다고 하셨습니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821086094901d7987d6f1dea",
+      "at": "2026. 6. 22. 오후 3:10:09",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지확인",
+      "body": "네 차주분이 명세서 확인하고 작업진행하신다고 하셨습니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "6b7e9dd2-78e7-4621-b4c3-87e9ebc5db4b",
+      "at": "2026. 6. 22. 오후 3:11:57",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지전송",
+      "body": "[일반메모] 전체공지 / 차량별 출고가 되기 전까지 모든 일정은 해당차량에 메모됩니다",
+      "by": "ysmts"
+    },
+    {
+      "id": "d82197d4-33ad-4d2c-8659-80793895a606",
+      "at": "2026. 6. 22. 오후 3:12:00",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지처리중",
+      "body": "차량별 출고가 되기 전까지 모든 일정은 해당차량에 메모됩니다",
+      "by": "ysmts"
+    },
+    {
+      "id": "178210882156157978c3d649cb",
+      "at": "2026. 6. 22. 오후 3:13:41",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지확인",
+      "body": "차량별 출고가 되기 전까지 모든 일정은 해당차량에 메모됩니다",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782108738786072e446b078c68",
+      "at": "2026. 6. 22. 오후 3:12:18",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지확인",
+      "body": "차량별 출고가 되기 전까지 모든 일정은 해당차량에 메모됩니다",
+      "by": "ysmts"
+    },
+    {
+      "id": "419d5153-a386-46c6-a092-d214c978a231",
+      "at": "2026. 6. 22. 오후 3:12:45",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지처리중",
+      "body": "네 차주분이 명세서 확인하고 작업진행하신다고 하셨습니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782109057429dec844653559b8",
+      "at": "2026. 6. 22. 오후 3:17:37",
+      "vehicleId": "1782108025800ea068e39e1e028",
+      "jobNo": "2026-0618-01",
+      "carNo": "981구2911",
+      "type": "상태변경",
+      "body": "작업중 → 출고대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782109082816d60ed45e436b38",
+      "at": "2026. 6. 22. 오후 3:18:02",
+      "vehicleId": "1782108025800ea068e39e1e028",
+      "jobNo": "2026-0618-01",
+      "carNo": "981구2911",
+      "type": "상태변경",
+      "body": "출고대기 → 작업완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "3e1291e1-5295-41b6-b02f-f93d7a9f5b1d",
+      "at": "2026. 6. 22. 오전 10:31:09",
+      "vehicleId": "34c8cde7-aedb-4ec4-a462-8d59be4c814a",
+      "jobNo": "2026-0622-02",
+      "carNo": "1234",
+      "type": "차량등록",
+      "body": "접수대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "00f2c352-08d0-4397-af90-f73fcd0916c4",
+      "at": "2026. 6. 22. 오후 1:22:17",
+      "vehicleId": "d4b52527-62e3-451b-b490-469edc34b3ee",
+      "jobNo": "2026-0622-03",
+      "carNo": "1458",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "178211057187543269ad696dd7",
+      "at": "2026. 6. 22. 오후 3:42:51",
+      "vehicleId": "d4b52527-62e3-451b-b490-469edc34b3ee",
+      "jobNo": "2026-0622-03",
+      "carNo": "1458",
+      "type": "상태변경",
+      "body": "미입고 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "c98d8ac9-6e36-476d-be91-e51ff7d91117",
+      "at": "2026. 6. 22. 오후 8:34:29",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 점검 결과 확인 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782128822523ff9cdca49d9848",
+      "at": "2026. 6. 22. 오후 8:47:02",
+      "vehicleId": "1782108025800ea068e39e1e028",
+      "jobNo": "2026-0618-01",
+      "carNo": "981구2911",
+      "type": "상태변경",
+      "body": "작업완료 → 출고",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782128876979ef19fb730e00b",
+      "at": "2026. 6. 22. 오후 8:47:56",
+      "vehicleId": "34c8cde7-aedb-4ec4-a462-8d59be4c814a",
+      "jobNo": "2026-0622-02",
+      "carNo": "1234",
+      "type": "상태변경",
+      "body": "접수대기 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "178212889005985eb5b175a5888",
+      "at": "2026. 6. 22. 오후 8:48:10",
+      "vehicleId": "34c8cde7-aedb-4ec4-a462-8d59be4c814a",
+      "jobNo": "2026-0622-02",
+      "carNo": "1234",
+      "type": "상태변경",
+      "body": "완료 → 접수대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "178212892444389f64f9b6117e",
+      "at": "2026. 6. 22. 오후 8:48:44",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 작업 시작 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821289880918121eb9d7e8f7",
+      "at": "2026. 6. 22. 오후 8:49:48",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "메시지확인",
+      "body": "작업 시작 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782128990459f9e0d5fa8db9",
+      "at": "2026. 6. 22. 오후 8:49:50",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "메시지확인",
+      "body": "점검 결과 확인 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821290739796162b45b66e4c",
+      "at": "2026. 6. 22. 오후 8:51:13",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 부품 도착했습니다. 작업 진행 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "178212909949950b4aeebfbc61",
+      "at": "2026. 6. 22. 오후 8:51:39",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 출고 준비 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782129841396c7044cd51b0338",
+      "at": "2026. 6. 22. 오후 9:04:01",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 점검 결과 확인 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782161873205d59768bf57f3d8",
+      "at": "2026. 6. 23. 오전 5:57:53",
+      "vehicleId": "34c8cde7-aedb-4ec4-a462-8d59be4c814a",
+      "jobNo": "2026-0622-02",
+      "carNo": "1234",
+      "type": "상태변경",
+      "body": "접수대기 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782161945516d520a252916aa",
+      "at": "2026. 6. 23. 오전 5:59:05",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 작업 시작 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "20ab2049-1bbd-46ea-9a13-61eab8454ff0",
+      "at": "2026. 6. 23. 오전 6:32:40",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 고객님의 대응입니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "673c383f-7783-4247-8b99-121582fad50e",
+      "at": "2026. 6. 23. 오전 6:32:51",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 작업 시작해요.",
+      "by": "ysmts"
+    },
+    {
+      "id": "a5b6109e-3d93-4d20-bb1e-090938c764e3",
+      "at": "2026. 6. 23. 오전 6:33:47",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 점검 결과를 확인하세요.",
+      "by": "ysmts"
+    },
+    {
+      "id": "3d99b9b0-9abe-42da-b3e7-f9706444c7a6",
+      "at": "2026. 6. 23. 오전 6:36:55",
+      "vehicleId": "34c8cde7-aedb-4ec4-a462-8d59be4c814a",
+      "jobNo": "2026-0622-02",
+      "carNo": "1234",
+      "type": "차량삭제",
+      "body": "삭제 처리",
+      "by": "ysmts"
+    },
+    {
+      "id": "876285ac-a9de-4a8a-89c5-aa47ce1ce36c",
+      "at": "2026. 6. 23. 오전 6:37:10",
+      "vehicleId": "d4b52527-62e3-451b-b490-469edc34b3ee",
+      "jobNo": "2026-0622-03",
+      "carNo": "1458",
+      "type": "차량삭제",
+      "body": "삭제 처리",
+      "by": "ysmts"
+    },
+    {
+      "id": "219ae112-fc6d-4b05-b291-e47b6f111078",
+      "at": "2026. 6. 23. 오전 6:38:46",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 작업 시작해요.",
+      "by": "ysmts"
+    },
+    {
+      "id": "c82f91b6-9dce-4497-ae1e-da2c74a51f9d",
+      "at": "2026. 6. 23. 오전 6:43:38",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 작업 시작 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "6e761ba5-40af-4ff3-acb0-8a38fc8cfe62",
+      "at": "2026. 6. 23. 오전 6:43:54",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 고객 승인 대기중입니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "3ccc10b1-86a8-4f6e-98f4-ea9070b390aa",
+      "at": "2026. 6. 23. 오전 6:44:53",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 점검 결과 확인 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "ab78af79-d16b-4c70-87d4-a303002e7e9f",
+      "at": "2026. 6. 23. 오전 6:46:30",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 고객 승인 대기중입니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "592cfea9-e975-4033-9971-d1a0acc769b3",
+      "at": "2026. 6. 23. 오전 6:47:59",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 부품 도착했습니다. 작업 진행 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782165076730e7560d1dde969",
+      "at": "2026. 6. 23. 오전 6:51:16",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 고객 승인 대기중입니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "5dda6beb-9f40-4c49-b69e-a2387e1c584c",
+      "at": "2026. 6. 23. 오전 6:49:47",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "메시지완료",
+      "body": "고객 승인 대기중입니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "d87809b2-a8f9-4fec-b0e2-c3e4e507995d",
+      "at": "2026. 6. 23. 오전 6:56:17",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 점검 결과 확인 바랍니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "cb9babb5-b660-441e-ae10-662a78830ad0",
+      "at": "2026. 6. 23. 오전 7:08:02",
+      "vehicleId": "1782107561661481aa92620e248",
+      "jobNo": "2026-0622-06",
+      "carNo": "45우5450",
+      "type": "상태변경",
+      "body": "미입고 → 접수대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "51f1fa6c-fb8f-4e49-9cfd-9d7ae51f58fb",
+      "at": "2026. 6. 23. 오전 7:08:25",
+      "vehicleId": "1782107561661481aa92620e248",
+      "jobNo": "2026-0622-06",
+      "carNo": "45우5450",
+      "type": "상태변경",
+      "body": "접수대기 → 점검대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "da92aae5-1bce-4020-a257-eea582cbf778",
+      "at": "2026. 6. 23. 오전 7:08:40",
+      "vehicleId": "11105dfd-742a-427d-9aca-0efac46cc0d9",
+      "jobNo": "2026-0622-01",
+      "carNo": "98구0757",
+      "type": "상태변경",
+      "body": "점검대기 → 미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782168546923087d0d783a74a8",
+      "at": "2026. 6. 23. 오전 7:49:06",
+      "vehicleId": "17821074923902f63ad5610eaa8",
+      "jobNo": "2026-0623-01",
+      "carNo": "98너7997",
+      "type": "상태변경",
+      "body": "미입고 → 접수대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "178217294668626b0f5a088b56",
+      "at": "2026. 6. 23. 오전 9:02:26",
+      "vehicleId": "17821074923902f63ad5610eaa8",
+      "jobNo": "2026-0623-01",
+      "carNo": "98너7997",
+      "type": "상태변경",
+      "body": "접수대기 → 점검중",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782173810661795e10b5b38b6",
+      "at": "2026. 6. 23. 오전 9:16:50",
+      "vehicleId": "1782107561661481aa92620e248",
+      "jobNo": "2026-0622-06",
+      "carNo": "45우5450",
+      "type": "상태변경",
+      "body": "점검대기 → 점검중",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821738329516dd31dee4baf38",
+      "at": "2026. 6. 23. 오전 9:17:12",
+      "vehicleId": "1782107561661481aa92620e248",
+      "jobNo": "2026-0622-06",
+      "carNo": "45우5450",
+      "type": "상태변경",
+      "body": "점검중 → 작업중",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821767802217ab2ffbb0ff12",
+      "at": "2026. 6. 23. 오전 10:06:20",
+      "vehicleId": "17821767802217eb8854e65c9f",
+      "jobNo": "2026-0623-02",
+      "carNo": "15주2148",
+      "type": "차량등록",
+      "body": "점검대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821768218122237e1e1175ad",
+      "at": "2026. 6. 23. 오전 10:07:01",
+      "vehicleId": "17821767802217eb8854e65c9f",
+      "jobNo": "2026-0623-02",
+      "carNo": "15주2148",
+      "type": "메시지전송",
+      "body": "[작업일지] A동 / 모닝 차량 입고하였습니다. 확인 부탁드립니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "178217694661378768f0804f76",
+      "at": "2026. 6. 23. 오전 10:09:06",
+      "vehicleId": "17821767802217eb8854e65c9f",
+      "jobNo": "2026-0623-02",
+      "carNo": "15주2148",
+      "type": "메시지확인",
+      "body": "모닝 차량 입고하였습니다. 확인 부탁드립니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782179130950f89bfcf8b6925",
+      "at": "2026. 6. 23. 오전 10:45:30",
+      "vehicleId": "17821791309498e4f3991135ba8",
+      "jobNo": "2026-0623-03",
+      "carNo": "41조1272",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782179666512f2e267447b6978",
+      "at": "2026. 6. 23. 오전 10:54:26",
+      "vehicleId": "17821791309498e4f3991135ba8",
+      "jobNo": "2026-0623-03",
+      "carNo": "41조1272",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 비가오면 운전석쪽이랑 운전석뒷쪽 트렁크 스페어타이어 있는쪽에 물이 많다고함\n점검 일정 문의 주셨습니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "178217999484966c5f5484503",
+      "at": "2026. 6. 23. 오전 10:59:54",
+      "vehicleId": "17821767802217eb8854e65c9f",
+      "jobNo": "2026-0623-02",
+      "carNo": "15주2148",
+      "type": "상태변경",
+      "body": "점검대기 → 작업완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821800446681c2630ad00dd98",
+      "at": "2026. 6. 23. 오전 11:00:44",
+      "vehicleId": "17821767802217eb8854e65c9f",
+      "jobNo": "2026-0623-02",
+      "carNo": "15주2148",
+      "type": "메시지완료",
+      "body": "모닝 차량 입고하였습니다. 확인 부탁드립니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782180061028bed44752e10e08",
+      "at": "2026. 6. 23. 오전 11:01:01",
+      "vehicleId": "17821767802217eb8854e65c9f",
+      "jobNo": "2026-0623-02",
+      "carNo": "15주2148",
+      "type": "메시지종결",
+      "body": "모닝 차량 입고하였습니다. 확인 부탁드립니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "178218018710797e1ec88c577f",
+      "at": "2026. 6. 23. 오전 11:03:07",
+      "vehicleId": "17821791309498e4f3991135ba8",
+      "jobNo": "2026-0623-03",
+      "carNo": "41조1272",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 해당차량은 누수의 원인을 찾으려면 시간이 많이 소요됨 2일정도 맡기실수있다면 입고 하라고 하세요",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782180092604b96490d564a8f",
+      "at": "2026. 6. 23. 오전 11:01:32",
+      "vehicleId": "17821791309498e4f3991135ba8",
+      "jobNo": "2026-0623-03",
+      "carNo": "41조1272",
+      "type": "메시지확인",
+      "body": "해당차량은 누수의 원인을 찾으려면 시간이 많이 소요됨 2일정도 맡기실수있다면 입고 하라고 하세요",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821800946288d3080e9409f68",
+      "at": "2026. 6. 23. 오전 11:01:34",
+      "vehicleId": "17821767802217eb8854e65c9f",
+      "jobNo": "2026-0623-02",
+      "carNo": "15주2148",
+      "type": "메시지완료",
+      "body": "모닝 차량 입고하였습니다. 확인 부탁드립니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782180163579706eb0bcb9c53",
+      "at": "2026. 6. 23. 오전 11:02:43",
+      "vehicleId": "17821767802217eb8854e65c9f",
+      "jobNo": "2026-0623-02",
+      "carNo": "15주2148",
+      "type": "메시지완료",
+      "body": "모닝 차량 입고하였습니다. 확인 부탁드립니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782180165395f436f421cecb58",
+      "at": "2026. 6. 23. 오전 11:02:45",
+      "vehicleId": "17821767802217eb8854e65c9f",
+      "jobNo": "2026-0623-02",
+      "carNo": "15주2148",
+      "type": "메시지완료",
+      "body": "모닝 차량 입고하였습니다. 확인 부탁드립니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "178218016824387d9c816a086e8",
+      "at": "2026. 6. 23. 오전 11:02:48",
+      "vehicleId": "17821767802217eb8854e65c9f",
+      "jobNo": "2026-0623-02",
+      "carNo": "15주2148",
+      "type": "메시지종결",
+      "body": "모닝 차량 입고하였습니다. 확인 부탁드립니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "178218104618727eb5bc00fd37",
+      "at": "2026. 6. 23. 오전 11:17:26",
+      "vehicleId": "1782181046186072707de216e8",
+      "jobNo": "2026-0623-04",
+      "carNo": "53구4190",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "9d7ff52a-f23f-442e-b3f4-7225bffa1bc7",
+      "at": "2026. 6. 23. 오전 11:27:14",
+      "vehicleId": "17821767802217eb8854e65c9f",
+      "jobNo": "2026-0623-02",
+      "carNo": "15주2148",
+      "type": "상태변경",
+      "body": "작업완료 → 출고",
+      "by": "ysmts"
+    },
+    {
+      "id": "178218223116723a4c9438d8a7",
+      "at": "2026. 6. 23. 오전 11:37:11",
+      "vehicleId": "1782181046186072707de216e8",
+      "jobNo": "2026-0623-04",
+      "carNo": "53구4190",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 제네시스 금일 오후 작업가능한지 문의 주셨습니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "178218228583168ece76e67e7d",
+      "at": "2026. 6. 23. 오전 11:38:05",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821828823580eca89d0e689d",
+      "at": "2026. 6. 23. 오전 11:48:02",
+      "vehicleId": "1782181046186072707de216e8",
+      "jobNo": "2026-0623-04",
+      "carNo": "53구4190",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 금일은 점검 부터",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782183304460d1add9128d8668",
+      "at": "2026. 6. 23. 오전 11:55:04",
+      "vehicleId": "1782181046186072707de216e8",
+      "jobNo": "2026-0623-04",
+      "carNo": "53구4190",
+      "type": "메시지확인",
+      "body": "금일은 점검 부터",
+      "by": "ysmts"
+    },
+    {
+      "id": "9456f889-0ee6-4297-a830-84af56ab4e12",
+      "at": "2026. 6. 23. 오후 12:50:30",
+      "vehicleId": "c08dfdf9-be06-429a-9846-da63ad89d504",
+      "jobNo": "2026-0622-07",
+      "carNo": "1234",
+      "type": "차량등록",
+      "body": "접수대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "20d57f80-298a-402c-98dc-0d37cb92f069",
+      "at": "2026. 6. 23. 오후 12:51:17",
+      "vehicleId": "c08dfdf9-be06-429a-9846-da63ad89d504",
+      "jobNo": "2026-0622-07",
+      "carNo": "1234",
+      "type": "장부전송",
+      "body": "예상매출 1,200,000 / 부품원가 22,222 / 카드",
+      "by": "ysmts"
+    },
+    {
+      "id": "e17b1056-0cda-4f06-aee8-729d1026930c",
+      "at": "2026. 6. 23. 오후 12:51:17",
+      "vehicleId": "c08dfdf9-be06-429a-9846-da63ad89d504",
+      "jobNo": "2026-0622-07",
+      "carNo": "1234",
+      "type": "상태변경",
+      "body": "접수대기 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821872552059e354e4c6b6028",
+      "at": "2026. 6. 23. 오후 1:00:55",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 금일 점검 문의 주셨는데 오시라고 해도 될까요?!",
+      "by": "ysmts"
+    },
+    {
+      "id": "178218747506286e868ae73bf08",
+      "at": "2026. 6. 23. 오후 1:04:35",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "메시지확인",
+      "body": "금일 점검 문의 주셨는데 오시라고 해도 될까요?!",
+      "by": "ysmts"
+    },
+    {
+      "id": "178218752680564012e55d44fb",
+      "at": "2026. 6. 23. 오후 1:05:26",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 네",
+      "by": "ysmts"
+    },
+    {
+      "id": "178218819488484f544357d21d8",
+      "at": "2026. 6. 23. 오후 1:16:34",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "메시지확인",
+      "body": "네",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821888827020f6bddce928fb8",
+      "at": "2026. 6. 23. 오후 1:28:02",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 금일은 시간이 안되셔서 내일 오후4시 점검 예약 잡았습니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821888924286e0db4248423d",
+      "at": "2026. 6. 23. 오후 1:28:12",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "메시지확인",
+      "body": "금일은 시간이 안되셔서 내일 오후4시 점검 예약 잡았습니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "b81c8001-92d0-4ac5-95d3-6e23ad7e104a",
+      "at": "2026. 6. 23. 오후 1:28:27",
+      "vehicleId": "17821074923902f63ad5610eaa8",
+      "jobNo": "2026-0623-01",
+      "carNo": "98너7997",
+      "type": "상태변경",
+      "body": "점검중 → 작업중",
+      "by": "ysmts"
+    },
+    {
+      "id": "178219090709740f765a0b56fb",
+      "at": "2026. 6. 23. 오후 2:01:47",
+      "vehicleId": "1782181046186072707de216e8",
+      "jobNo": "2026-0623-04",
+      "carNo": "53구4190",
+      "type": "상태변경",
+      "body": "미입고 → 점검대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782190954776304d916b65b94",
+      "at": "2026. 6. 23. 오후 2:02:34",
+      "vehicleId": "1782181046186072707de216e8",
+      "jobNo": "2026-0623-04",
+      "carNo": "53구4190",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 제네시스 입고 되었습니다. 점검일정으로 통화할때 전화를 다시 주시기로 하셨었는데 전화를 안주시고 직접 찾아오셨습니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "178219115626072d6b57086b93",
+      "at": "2026. 6. 23. 오후 2:05:56",
+      "vehicleId": "1782181046186072707de216e8",
+      "jobNo": "2026-0623-04",
+      "carNo": "53구4190",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 차주분내려오시라고하세요",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821910619035066504f530fe8",
+      "at": "2026. 6. 23. 오후 2:04:21",
+      "vehicleId": "1782181046186072707de216e8",
+      "jobNo": "2026-0623-04",
+      "carNo": "53구4190",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 금일 차량을 맡기고 내일 오일류, 운전석쪽 고무를 같이 교환하고싶다고 합니다. 일단 점검후 안내드리겠다고 말씀 드렸습니다. 고객님은 고객대기실에 계십니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "178219109819112fbf6c8f779e8",
+      "at": "2026. 6. 23. 오후 2:04:58",
+      "vehicleId": "1782181046186072707de216e8",
+      "jobNo": "2026-0623-04",
+      "carNo": "53구4190",
+      "type": "메시지확인",
+      "body": "차주분내려오시라고하세요",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821926580635a1e958ef31b6",
+      "at": "2026. 6. 23. 오후 2:30:58",
+      "vehicleId": "17821074923902f63ad5610eaa8",
+      "jobNo": "2026-0623-01",
+      "carNo": "98너7997",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 해당차량 타업체 수리 이력 카톡보내줘요",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821925948000aa74bafed0578",
+      "at": "2026. 6. 23. 오후 2:29:54",
+      "vehicleId": "17821074923902f63ad5610eaa8",
+      "jobNo": "2026-0623-01",
+      "carNo": "98너7997",
+      "type": "메시지확인",
+      "body": "해당차량 타업체 수리 이력 카톡보내줘요",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782193727209e8144028fd469",
+      "at": "2026. 6. 23. 오후 2:48:47",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "상태변경",
+      "body": "미입고 → 점검중",
+      "by": "ysmts"
+    },
+    {
+      "id": "178219375879935fd054ff0c2b8",
+      "at": "2026. 6. 23. 오후 2:49:18",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "상태변경",
+      "body": "점검중 → 작업대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782193760087956f124f142b",
+      "at": "2026. 6. 23. 오후 2:49:20",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "상태변경",
+      "body": "작업대기 → 작업중",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821938112440d0b28fae8b66",
+      "at": "2026. 6. 23. 오후 2:50:11",
+      "vehicleId": "17821938112449db03bcd14bb1",
+      "jobNo": "2026-0623-06",
+      "carNo": "66머9383",
+      "type": "차량등록",
+      "body": "작업대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782193912435beb5efb0171a2",
+      "at": "2026. 6. 23. 오후 2:51:52",
+      "vehicleId": "17821938112449db03bcd14bb1",
+      "jobNo": "2026-0623-06",
+      "carNo": "66머9383",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 입고되었습니다.\n엔진오일교환\n에어컨안나옴 점검\n에어컨필터교환\nofmb007 ,afmb015,cfmb002 (MBCF008재고없음)",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782194028432133dbb6d68fca",
+      "at": "2026. 6. 23. 오후 2:53:48",
+      "vehicleId": "17821938112449db03bcd14bb1",
+      "jobNo": "2026-0623-06",
+      "carNo": "66머9383",
+      "type": "상태변경",
+      "body": "작업대기 → 작업중",
+      "by": "ysmts"
+    },
+    {
+      "id": "17821941852314acaa1d7078f7",
+      "at": "2026. 6. 23. 오후 2:56:25",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "상태변경",
+      "body": "작업중 → 미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782196721132034e1897827b1",
+      "at": "2026. 6. 23. 오후 3:38:41",
+      "vehicleId": "17821938112449db03bcd14bb1",
+      "jobNo": "2026-0623-06",
+      "carNo": "66머9383",
+      "type": "상태변경",
+      "body": "작업중 → 미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782200463082bb564b5e828ea8",
+      "at": "2026. 6. 23. 오후 4:41:03",
+      "vehicleId": "1782200463082ed37ad2052c158",
+      "jobNo": "2026-0624-03",
+      "carNo": "경기80자2085",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782200526427a78c5d2eaf4d7",
+      "at": "2026. 6. 23. 오후 4:42:06",
+      "vehicleId": "1782200526427ea3b082849448",
+      "jobNo": "2026-0625-02",
+      "carNo": "98너7323",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "17822051486127115ca29f20388",
+      "at": "2026. 6. 23. 오후 5:59:08",
+      "vehicleId": "1782107561661481aa92620e248",
+      "jobNo": "2026-0622-06",
+      "carNo": "45우5450",
+      "type": "상태변경",
+      "body": "작업중 → 출고대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "17822562013510f8c6bf1515b48",
+      "at": "2026. 6. 24. 오전 8:10:01",
+      "vehicleId": "178210769754758e99f991cb89",
+      "jobNo": "2026-0624-02",
+      "carNo": "42러5637",
+      "type": "상태변경",
+      "body": "미입고 → 점검대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "178225761655161dc46aa6dcd2",
+      "at": "2026. 6. 24. 오전 8:33:36",
+      "vehicleId": "178210769754758e99f991cb89",
+      "jobNo": "2026-0624-02",
+      "carNo": "42러5637",
+      "type": "상태변경",
+      "body": "점검대기 → 작업중",
+      "by": "ysmts"
+    },
+    {
+      "id": "29b07f02-e878-435d-a590-00585a072234",
+      "at": "2026. 6. 24. 오전 8:41:17",
+      "vehicleId": "1782200463082ed37ad2052c158",
+      "jobNo": "2026-0624-03",
+      "carNo": "경기80자2085",
+      "type": "상태변경",
+      "body": "미입고 → 출고",
+      "by": "ysmts"
+    },
+    {
+      "id": "0ed4f7d2-066d-4188-a761-5684e524cf71",
+      "at": "2026. 6. 24. 오전 8:54:54",
+      "vehicleId": "178210769754758e99f991cb89",
+      "jobNo": "2026-0624-02",
+      "carNo": "42러5637",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 차량전체점검요망",
+      "by": "ysmts"
+    },
+    {
+      "id": "17822601061936bdddb4ba4372",
+      "at": "2026. 6. 24. 오전 9:15:06",
+      "vehicleId": "1782107561661481aa92620e248",
+      "jobNo": "2026-0622-06",
+      "carNo": "45우5450",
+      "type": "장부전송",
+      "body": "예상매출 1,101,000 / 부품원가 331,000 / 현금",
+      "by": "ysmts"
+    },
+    {
+      "id": "178226010619362412aaf7fa93",
+      "at": "2026. 6. 24. 오전 9:15:06",
+      "vehicleId": "1782107561661481aa92620e248",
+      "jobNo": "2026-0622-06",
+      "carNo": "45우5450",
+      "type": "상태변경",
+      "body": "출고대기 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "b5f67a5d-645f-4b1b-9eee-c0245e783e2d",
+      "at": "2026. 6. 24. 오전 10:42:14",
+      "vehicleId": "178210769754758e99f991cb89",
+      "jobNo": "2026-0624-02",
+      "carNo": "42러5637",
+      "type": "상태변경",
+      "body": "작업중 → 작업완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "deb1b670-8994-41d3-962c-f79d0bb3f141",
+      "at": "2026. 6. 24. 오전 10:42:38",
+      "vehicleId": "178210769754758e99f991cb89",
+      "jobNo": "2026-0624-02",
+      "carNo": "42러5637",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 작업완료 차주 통화하세",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782265407124aabe310b67e5b",
+      "at": "2026. 6. 24. 오전 10:43:27",
+      "vehicleId": "178210786290691763e93c80e7",
+      "jobNo": "2026-0619-01",
+      "carNo": "29러3702",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / x6 작업완료 시점 확인 부탁드립니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782265585098eba3295cbc3fd",
+      "at": "2026. 6. 24. 오전 10:46:25",
+      "vehicleId": "178210769754758e99f991cb89",
+      "jobNo": "2026-0624-02",
+      "carNo": "42러5637",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 전화 안받으셔서 문자 남겨놓았습니다",
+      "by": "ysmts"
+    },
+    {
+      "id": "17822661803575cfdf50319853",
+      "at": "2026. 6. 24. 오전 10:56:20",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 금일 몇시까지 오시면 되는지 전화 주셨습니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782273830689aff42812c0cf6",
+      "at": "2026. 6. 24. 오후 1:03:50",
+      "vehicleId": "17822738306892baa52c71624c8",
+      "jobNo": "2026-0624-04",
+      "carNo": "85우0904",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "17822738668887876ee59d4d54",
+      "at": "2026. 6. 24. 오후 1:04:26",
+      "vehicleId": "17822738668880591d1bd3075",
+      "jobNo": "2026-0624-04",
+      "carNo": "984도7252",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "17822821598540a6373d3010128",
+      "at": "2026. 6. 24. 오후 3:22:39",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 차주분 오시는 시간도 있어서 완료시점 확인해달라고 하셨습니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782282205646902556c4c019a8",
+      "at": "2026. 6. 24. 오후 3:23:25",
+      "vehicleId": "1782181046186072707de216e8",
+      "jobNo": "2026-0623-04",
+      "carNo": "53구4190",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 출고 몇시에 가능한지 확인해달라고 하셨습니다~",
+      "by": "ysmts"
+    },
+    {
+      "id": "17822823099132bf1a92b1cbcd",
+      "at": "2026. 6. 24. 오후 3:25:09",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지종결",
+      "body": "차주분 오시는 시간도 있어서 완료시점 확인해달라고 하셨습니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782282530075a2532faaf1cf",
+      "at": "2026. 6. 24. 오후 3:28:50",
+      "vehicleId": "17822825300749e565460918348",
+      "jobNo": "2026-0624-05",
+      "carNo": "36두3815",
+      "type": "차량등록",
+      "body": "완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782283069005b290b94b629cd8",
+      "at": "2026. 6. 24. 오후 3:37:49",
+      "vehicleId": "1782181046186072707de216e8",
+      "jobNo": "2026-0623-04",
+      "carNo": "53구4190",
+      "type": "상태변경",
+      "body": "점검대기 → 작업중",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782283911612b6dc19158a728",
+      "at": "2026. 6. 24. 오후 3:51:51",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "상태변경",
+      "body": "미입고 → 점검대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "17822839460285a421adf97a7c8",
+      "at": "2026. 6. 24. 오후 3:52:26",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / c220d 입고하였습니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "17822841356274a8656fe2be778",
+      "at": "2026. 6. 24. 오후 3:55:35",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "메시지확인",
+      "body": "c220d 입고하였습니다.",
+      "by": "ysmts"
+    },
+    {
+      "id": "17822844494274150387b87b25",
+      "at": "2026. 6. 24. 오후 4:00:49",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 로커암커버 어셈블리 교환 예상됨 부품조회 하고 차주 내려오라고 하세요",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782284450553b93737c0111ee",
+      "at": "2026. 6. 24. 오후 4:00:50",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "메시지확인",
+      "body": "로커암커버 어셈블리 교환 예상됨 부품조회 하고 차주 내려오라고 하세요",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782288055555124e6284858fb",
+      "at": "2026. 6. 24. 오후 5:00:55",
+      "vehicleId": "178210786290691763e93c80e7",
+      "jobNo": "2026-0619-01",
+      "carNo": "29러3702",
+      "type": "정산정보저장",
+      "body": "예상매출 1,000,000 / 부품원가 241,000 / 카드",
+      "by": "ysmts"
+    },
+    {
+      "id": "17822880584356de70f37c911",
+      "at": "2026. 6. 24. 오후 5:00:58",
+      "vehicleId": "178210786290691763e93c80e7",
+      "jobNo": "2026-0619-01",
+      "carNo": "29러3702",
+      "type": "장부전송",
+      "body": "예상매출 1,000,000 / 부품원가 241,000 / 카드",
+      "by": "ysmts"
+    },
+    {
+      "id": "17822880584354c0825dfa170f",
+      "at": "2026. 6. 24. 오후 5:00:58",
+      "vehicleId": "178210786290691763e93c80e7",
+      "jobNo": "2026-0619-01",
+      "carNo": "29러3702",
+      "type": "상태변경",
+      "body": "작업중 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "088360d7-e6c1-4dba-83bd-6d9a005303a3",
+      "at": "2026. 6. 24. 오후 5:52:25",
+      "vehicleId": "1782182285831fc86a0365f27e8",
+      "jobNo": "2026-0623-05",
+      "carNo": "06수6418",
+      "type": "상태변경",
+      "body": "점검대기 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "178229161821607a3f705948ca8",
+      "at": "2026. 6. 24. 오후 6:00:18",
+      "vehicleId": "178210769754758e99f991cb89",
+      "jobNo": "2026-0624-02",
+      "carNo": "42러5637",
+      "type": "장부전송",
+      "body": "예상매출 396,000 / 부품원가 89,000 / 카드",
+      "by": "ysmts"
+    },
+    {
+      "id": "178229161821685c6bef355da48",
+      "at": "2026. 6. 24. 오후 6:00:18",
+      "vehicleId": "178210769754758e99f991cb89",
+      "jobNo": "2026-0624-02",
+      "carNo": "42러5637",
+      "type": "상태변경",
+      "body": "작업완료 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782291637657f959cb396d7ff",
+      "at": "2026. 6. 24. 오후 6:00:37",
+      "vehicleId": "1782107656062bbfa1d175e66d",
+      "jobNo": "2026-0624-01",
+      "carNo": "45저0910",
+      "type": "상태변경",
+      "body": "미입고 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "eb216f79-25bf-4a78-8cd4-4b71de2e9671",
+      "at": "2026. 6. 25. 오전 9:17:49",
+      "vehicleId": "1782200526427ea3b082849448",
+      "jobNo": "2026-0625-02",
+      "carNo": "98너7323",
+      "type": "상태변경",
+      "body": "미입고 → 점검중",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782347125143c7827d60e1028",
+      "at": "2026. 6. 25. 오전 9:25:25",
+      "vehicleId": "17821791309498e4f3991135ba8",
+      "jobNo": "2026-0623-03",
+      "carNo": "41조1272",
+      "type": "상태변경",
+      "body": "미입고 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "17823602496853470025c961bb8",
+      "at": "2026. 6. 25. 오후 1:04:09",
+      "vehicleId": "1782181046186072707de216e8",
+      "jobNo": "2026-0623-04",
+      "carNo": "53구4190",
+      "type": "장부전송",
+      "body": "예상매출 775,500 / 부품원가 220,500 / 카드",
+      "by": "ysmts"
+    },
+    {
+      "id": "178236024968514f2b6aff5c83",
+      "at": "2026. 6. 25. 오후 1:04:09",
+      "vehicleId": "1782181046186072707de216e8",
+      "jobNo": "2026-0623-04",
+      "carNo": "53구4190",
+      "type": "상태변경",
+      "body": "작업중 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "d4203c1d-16fc-4dad-82cb-fb8f98a7b3cd",
+      "at": "2026. 6. 25. 오후 1:20:02",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "상태변경",
+      "body": "작업중 → 작업완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "34b35c77-c359-40c0-8130-37afbef53a88",
+      "at": "2026. 6. 25. 오후 1:20:30",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "상태변경",
+      "body": "작업중 → 작업완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "178236217946670ad1a3920e81",
+      "at": "2026. 6. 25. 오후 1:36:19",
+      "vehicleId": "1782362179465e3e3b7477e458",
+      "jobNo": "2026-0625-03",
+      "carNo": "11어1660",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "178236218875479d63c3a12a37",
+      "at": "2026. 6. 25. 오후 1:36:28",
+      "vehicleId": "1782362179465e3e3b7477e458",
+      "jobNo": "2026-0625-03",
+      "carNo": "11어1660",
+      "type": "장부전송",
+      "body": "예상매출 600,000 / 부품원가 100,000 / 현금",
+      "by": "ysmts"
+    },
+    {
+      "id": "17823621887544260c9758f7a98",
+      "at": "2026. 6. 25. 오후 1:36:28",
+      "vehicleId": "1782362179465e3e3b7477e458",
+      "jobNo": "2026-0625-03",
+      "carNo": "11어1660",
+      "type": "상태변경",
+      "body": "미입고 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "178236233612009be7fb8e629d",
+      "at": "2026. 6. 25. 오후 1:38:56",
+      "vehicleId": "178236233612067ac48c1445178",
+      "jobNo": "2026-0625-04",
+      "carNo": "179다6660",
+      "type": "차량등록",
+      "body": "점검중",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782364265071f4d68395708508",
+      "at": "2026. 6. 25. 오후 2:11:05",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "장부전송",
+      "body": "예상매출 572,000 / 부품원가 0 / 카드",
+      "by": "ysmts"
+    },
+    {
+      "id": "17823642650719ea7de8adf9b7",
+      "at": "2026. 6. 25. 오후 2:11:05",
+      "vehicleId": "17821080990151442433800deb8",
+      "jobNo": "2026-0520-01",
+      "carNo": "85더0575",
+      "type": "상태변경",
+      "body": "작업완료 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "a64c4140-69b7-4ac9-8f5c-73f328e4ad24",
+      "at": "2026. 6. 25. 오후 2:11:45",
+      "vehicleId": "1782107765155e140b19a3cfc48",
+      "jobNo": "2026-0625-01",
+      "carNo": "160조2097",
+      "type": "상태변경",
+      "body": "미입고 → 작업중",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782364695609e9bedf5017cb48",
+      "at": "2026. 6. 25. 오후 2:18:15",
+      "vehicleId": "17823646956095e36aae3d30ae8",
+      "jobNo": "2026-0625-05",
+      "carNo": "56오1376",
+      "type": "차량등록",
+      "body": "점검대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "17823663504083eda42d8570828",
+      "at": "2026. 6. 25. 오후 2:45:50",
+      "vehicleId": "17822738306892baa52c71624c8",
+      "jobNo": "2026-0624-04",
+      "carNo": "85오0904",
+      "type": "상태변경",
+      "body": "미입고 → 점검중",
+      "by": "ysmts"
+    },
+    {
+      "id": "a97acff7-c7f9-423c-ae11-0085f81963b6",
+      "at": "2026. 6. 25. 오후 4:17:31",
+      "vehicleId": "17821938112449db03bcd14bb1",
+      "jobNo": "2026-0623-06",
+      "carNo": "66머9383",
+      "type": "상태변경",
+      "body": "미입고 → 작업중",
+      "by": "ysmts"
+    },
+    {
+      "id": "f25e5175-615e-474b-86f1-533143680d95",
+      "at": "2026. 6. 25. 오후 4:17:42",
+      "vehicleId": "17822738668880591d1bd3075",
+      "jobNo": "2026-0624-04",
+      "carNo": "984도7252",
+      "type": "상태변경",
+      "body": "미입고 → 점검중",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782376364669127da88de2547",
+      "at": "2026. 6. 25. 오후 5:32:44",
+      "vehicleId": "1782376364669809b51a6a7ff",
+      "jobNo": "2026-0703-01",
+      "carNo": "98조7722",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782376560555e5b343b021d178",
+      "at": "2026. 6. 25. 오후 5:36:00",
+      "vehicleId": "1782376560555904249fd3fbb6",
+      "jobNo": "2026-0625-06",
+      "carNo": "807너9630",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "17823765802279472567a031be8",
+      "at": "2026. 6. 25. 오후 5:36:20",
+      "vehicleId": "17823646956095e36aae3d30ae8",
+      "jobNo": "2026-0625-05",
+      "carNo": "56오1376",
+      "type": "상태변경",
+      "body": "점검대기 → 점검중",
+      "by": "ysmts"
+    },
+    {
+      "id": "178237746595446accccfdf033",
+      "at": "2026. 6. 25. 오후 5:51:05",
+      "vehicleId": "17822738306892baa52c71624c8",
+      "jobNo": "2026-0624-04",
+      "carNo": "85오0904",
+      "type": "상태변경",
+      "body": "점검중 → 작업대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "17823774813300949a29e222258",
+      "at": "2026. 6. 25. 오후 5:51:21",
+      "vehicleId": "17821938112449db03bcd14bb1",
+      "jobNo": "2026-0623-06",
+      "carNo": "66머9383",
+      "type": "상태변경",
+      "body": "작업중 → 작업완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782377489890e8d395d48cbeb8",
+      "at": "2026. 6. 25. 오후 5:51:29",
+      "vehicleId": "17821938112449db03bcd14bb1",
+      "jobNo": "2026-0623-06",
+      "carNo": "66머9383",
+      "type": "상태변경",
+      "body": "작업완료 → 출고대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "17823782660424ce84de2c48c98",
+      "at": "2026. 6. 25. 오후 6:04:26",
+      "vehicleId": "1782107765155e140b19a3cfc48",
+      "jobNo": "2026-0625-01",
+      "carNo": "160조2097",
+      "type": "장부전송",
+      "body": "예상매출 198,000 / 부품원가 70,000 / 카드",
+      "by": "ysmts"
+    },
+    {
+      "id": "178237826604276794c2357717",
+      "at": "2026. 6. 25. 오후 6:04:26",
+      "vehicleId": "1782107765155e140b19a3cfc48",
+      "jobNo": "2026-0625-01",
+      "carNo": "160조2097",
+      "type": "상태변경",
+      "body": "작업중 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "178237855111171fdb49127763",
+      "at": "2026. 6. 25. 오후 6:09:11",
+      "vehicleId": "17821938112449db03bcd14bb1",
+      "jobNo": "2026-0623-06",
+      "carNo": "66머9383",
+      "type": "장부전송",
+      "body": "예상매출 457,600 / 부품원가 221,000 / 카드",
+      "by": "ysmts"
+    },
+    {
+      "id": "178237855111189ac9323b0cd98",
+      "at": "2026. 6. 25. 오후 6:09:11",
+      "vehicleId": "17821938112449db03bcd14bb1",
+      "jobNo": "2026-0623-06",
+      "carNo": "66머9383",
+      "type": "상태변경",
+      "body": "출고대기 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "c627917c-13e1-4806-8277-da53e5fc3ccc",
+      "at": "2026. 6. 26. 오전 7:08:11",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "상태변경",
+      "body": "작업완료 → 출고대기",
+      "by": "ysmts"
+    },
+    {
+      "id": "922ff4b9-37a7-45a4-8311-b1412c27cc3c",
+      "at": "2026. 6. 26. 오전 7:11:56",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "메시지전송",
+      "body": "[작업일지] 전체공지 / 출고준비중",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782436388285b894fa90f496d",
+      "at": "2026. 6. 26. 오전 10:13:08",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "장부전송",
+      "body": "예상매출 1,479,500 / 부품원가 0 / 카드",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782436388285ac785863468d38",
+      "at": "2026. 6. 26. 오전 10:13:08",
+      "vehicleId": "1782107934737a41f0ba1695f2",
+      "jobNo": "2026-0617-01",
+      "carNo": "68라0847",
+      "type": "상태변경",
+      "body": "출고대기 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "17824454693147abb07374e67d",
+      "at": "2026. 6. 26. 오후 12:44:29",
+      "vehicleId": "17823646956095e36aae3d30ae8",
+      "jobNo": "2026-0625-05",
+      "carNo": "56오1376",
+      "type": "상태변경",
+      "body": "점검중 → 작업중",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782448157920b1763e8edcd788",
+      "at": "2026. 6. 26. 오후 1:29:17",
+      "vehicleId": "1782448157919a9c33c47661aa",
+      "jobNo": "2026-0629-01",
+      "carNo": "38누2523",
+      "type": "차량등록",
+      "body": "미입고",
+      "by": "ysmts"
+    },
+    {
+      "id": "1782453332860df22e09b1fabc",
+      "at": "2026. 6. 26. 오후 2:55:32",
+      "vehicleId": "1782200526427ea3b082849448",
+      "jobNo": "2026-0625-02",
+      "carNo": "98너7323",
+      "type": "장부전송",
+      "body": "예상매출 914,155 / 부품원가 270,621 / 카드",
+      "by": "ysmts"
+    },
+    {
+      "id": "178245333286046f101f48b6588",
+      "at": "2026. 6. 26. 오후 2:55:32",
+      "vehicleId": "1782200526427ea3b082849448",
+      "jobNo": "2026-0625-02",
+      "carNo": "98너7323",
+      "type": "상태변경",
+      "body": "점검중 → 완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "4171c0c7-ace8-4bc8-b640-f95fe1051853",
+      "at": "2026. 6. 26. 오후 6:58:51",
+      "vehicleId": "178236233612067ac48c1445178",
+      "jobNo": "2026-0625-04",
+      "carNo": "179다6660",
+      "type": "상태변경",
+      "body": "점검중 → 작업완료",
+      "by": "ysmts"
+    },
+    {
+      "id": "a492ada2-d88e-480d-b20e-3c5ba51d7fae",
+      "at": "2026. 6. 26. 오후 6:58:53",
+      "vehicleId": "178236233612067ac48c1445178",
+      "jobNo": "2026-0625-04",
+      "carNo": "179다6660",
+      "type": "상태변경",
+      "body": "작업완료 → 출고대기",
+      "by": "ysmts"
+    }
+  ],
+  "templates": [],
+  "audit": [],
+  "handovers": [
+    {
+      "id": "aacc29e6-e25e-4f26-a7ea-2409e9f9b517",
+      "vehicleId": "11105dfd-742a-427d-9aca-0efac46cc0d9",
+      "type": "다음작업",
+      "title": "DPF 차압 확인",
+      "body": "입고 후 차압센서 데이터 확인. 필요 시 강제재생 전 누설 확인.",
+      "needAck": true,
+      "writer": "시스템",
+      "createdAt": "2026. 6. 22. 오전 10:30:43",
+      "readBy": "",
+      "readAt": ""
+    }
+  ],
+  "options": {
+    "kinds": [
+      "예약입고",
+      "현장입고",
+      "일반업무"
+    ],
+    "statuses": [
+      "미입고",
+      "접수대기",
+      "점검대기",
+      "점검중",
+      "작업대기",
+      "작업중",
+      "작업완료",
+      "출고대기",
+      "출고",
+      "완료"
+    ],
+    "workers": [
+      "사무실",
+      "대표",
+      "이부장"
+    ],
+    "makers": [
+      "IVECO",
+      "BMW",
+      "BENZ",
+      "AUDI",
+      "VW",
+      "HYUNDAI",
+      "KIA",
+      "LAND ROVER",
+      "MASERATI"
+    ],
+    "workItems": [
+      "엔진오일",
+      "DPF 점검",
+      "진단점검",
+      "브레이크",
+      "하체점검",
+      "전기장치",
+      "시운전",
+      "운행점검"
+    ],
+    "priorities": [
+      "긴급",
+      "높음",
+      "보통",
+      "낮음"
+    ],
+    "messageChannels": [
+      "전체공지",
+      "사무실",
+      "A동",
+      "B동",
+      "C동"
+    ],
+    "messageTemplates": [
+      "작업 시작 바랍니다.",
+      "점검 결과 확인 바랍니다.",
+      "부품 도착했습니다. 작업 진행 바랍니다.",
+      "고객 승인 대기중입니다.",
+      "시운전 후 결과 남겨주세요.",
+      "출고 준비 바랍니다.",
+      "긴급 확인 바랍니다."
+    ],
+    "messageTypes": [
+      "작업일지",
+      "고객협의",
+      "추가발견",
+      "출고메모",
+      "일반메모"
+    ],
+    "handoverTypes": [
+      "특이사항",
+      "다음작업",
+      "부품대기",
+      "고객연락",
+      "시운전",
+      "출고주의"
+    ]
+  },
+  "updatedAt": "2026. 6. 28. 오후 8:51:37",
+  "ledgerTransfers": [
+    {
+      "source": "업무관제센터",
+      "sourceJobNo": "2026-0622-07",
+      "sourceVehicleId": "c08dfdf9-be06-429a-9846-da63ad89d504",
+      "type": "매출",
+      "date": "2026-06-23",
+      "inDate": "2026-06-22",
+      "outDate": "2026-06-23",
+      "carNo": "1234",
+      "maker": "BENZ",
+      "model": "1234",
+      "repair": "",
+      "amount": 1200000,
+      "partsCost": 22222,
+      "outCost": 0,
+      "payment": "카드",
+      "customer": "일반고객",
+      "account": "",
+      "vatType": "과세",
+      "status": "입금예정",
+      "paymentStatus": "입금예정",
+      "workStatus": "출고완료",
+      "flowStatus": "출고완료",
+      "cardFee": 18000,
+      "expectedAmount": 1182000,
+      "memo": "업무관제에서 전송됨",
+      "id": "LT-2026-0622-07",
+      "transferredAt": "2026. 6. 23. 오후 12:51:17",
+      "transferredBy": "ysmts"
+    },
+    {
+      "source": "업무관제센터",
+      "sourceJobNo": "2026-0622-06",
+      "sourceVehicleId": "1782107561661481aa92620e248",
+      "type": "매출",
+      "date": "2026-06-24",
+      "inDate": "2026-06-23",
+      "outDate": "2026-06-24",
+      "carNo": "45우5450",
+      "maker": "BMW",
+      "model": "520D",
+      "repair": "#3749\n엔진미션마운트 \n플렉시블조인트 \n특별히 문제가 있지않고 예방적 차원에서 교환원함 \nBMOF020\nBMAF041\n6/17 선입금 40만원 완료",
+      "amount": 1101000,
+      "partsCost": 331000,
+      "outCost": 0,
+      "payment": "현금",
+      "customer": "일반고객",
+      "account": "",
+      "vatType": "과세",
+      "status": "입금완료",
+      "paymentStatus": "입금완료",
+      "workStatus": "출고완료",
+      "flowStatus": "출고완료",
+      "cardFee": 0,
+      "expectedAmount": 1101000,
+      "memo": "업무관제에서 전송됨",
+      "id": "LT-2026-0622-06",
+      "transferredAt": "2026. 6. 24. 오전 9:15:06",
+      "transferredBy": "ysmts"
+    },
+    {
+      "source": "업무관제센터",
+      "sourceJobNo": "2026-0619-01",
+      "sourceVehicleId": "178210786290691763e93c80e7",
+      "type": "매출",
+      "date": "2026-06-24",
+      "inDate": "2026-06-19",
+      "outDate": "2026-06-24",
+      "carNo": "29러3702",
+      "maker": "BMW",
+      "model": "X6",
+      "repair": "냉각수누,앞쇼바교환문의",
+      "amount": 1000000,
+      "partsCost": 241000,
+      "outCost": 0,
+      "payment": "카드",
+      "customer": "일반고객",
+      "account": "",
+      "vatType": "과세",
+      "status": "입금예정",
+      "paymentStatus": "입금예정",
+      "workStatus": "출고완료",
+      "flowStatus": "출고완료",
+      "cardFee": 15000,
+      "expectedAmount": 985000,
+      "memo": "업무관제에서 전송됨",
+      "id": "LT-2026-0619-01",
+      "transferredAt": "2026. 6. 24. 오후 5:00:58",
+      "transferredBy": "ysmts"
+    },
+    {
+      "source": "업무관제센터",
+      "sourceJobNo": "2026-0624-02",
+      "sourceVehicleId": "178210769754758e99f991cb89",
+      "type": "매출",
+      "date": "2026-06-24",
+      "inDate": "2026-06-24",
+      "outDate": "2026-06-24",
+      "carNo": "42러5637",
+      "maker": "VW",
+      "model": "CC",
+      "repair": "전후패드교환",
+      "amount": 396000,
+      "partsCost": 89000,
+      "outCost": 0,
+      "payment": "카드",
+      "customer": "일반고객",
+      "account": "",
+      "vatType": "과세",
+      "status": "입금예정",
+      "paymentStatus": "입금예정",
+      "workStatus": "출고완료",
+      "flowStatus": "출고완료",
+      "cardFee": 5940,
+      "expectedAmount": 390060,
+      "memo": "업무관제에서 전송됨",
+      "id": "LT-2026-0624-02",
+      "transferredAt": "2026. 6. 24. 오후 6:00:18",
+      "transferredBy": "ysmts"
+    },
+    {
+      "source": "업무관제센터",
+      "sourceJobNo": "2026-0623-04",
+      "sourceVehicleId": "1782181046186072707de216e8",
+      "type": "매출",
+      "date": "2026-06-25",
+      "inDate": "2026-06-23",
+      "outDate": "2026-06-25",
+      "carNo": "53구4190",
+      "maker": "HYUNDAI",
+      "model": "제네시스",
+      "repair": "오일류 교환 \n엔진 미션 브레이크, tc , 디퍼런셜 전후 \n운전석쪽에서 바람소리가남 \n고무몰딩교환원함\n견적문의",
+      "amount": 775500,
+      "partsCost": 220500,
+      "outCost": 0,
+      "payment": "카드",
+      "customer": "일반고객",
+      "account": "",
+      "vatType": "과세",
+      "status": "입금예정",
+      "paymentStatus": "입금예정",
+      "workStatus": "출고완료",
+      "flowStatus": "출고완료",
+      "cardFee": 11633,
+      "expectedAmount": 763867,
+      "memo": "업무관제에서 전송됨",
+      "id": "LT-2026-0623-04",
+      "transferredAt": "2026. 6. 25. 오후 1:04:09",
+      "transferredBy": "ysmts"
+    },
+    {
+      "source": "업무관제센터",
+      "sourceJobNo": "2026-0625-03",
+      "sourceVehicleId": "1782362179465e3e3b7477e458",
+      "type": "매출",
+      "date": "2026-06-25",
+      "inDate": "2026-06-25",
+      "outDate": "2026-06-25",
+      "carNo": "11어1660",
+      "maker": "KGM",
+      "model": "티볼리",
+      "repair": "에어컨불량ㅇ,에어컨콘덴셔누설,에어컨콤프레셔교환",
+      "amount": 600000,
+      "partsCost": 100000,
+      "outCost": 0,
+      "payment": "현금",
+      "customer": "일반고객",
+      "account": "",
+      "vatType": "과세",
+      "status": "입금완료",
+      "paymentStatus": "입금완료",
+      "workStatus": "출고완료",
+      "flowStatus": "출고완료",
+      "cardFee": 0,
+      "expectedAmount": 600000,
+      "memo": "업무관제에서 전송됨",
+      "id": "LT-2026-0625-03",
+      "transferredAt": "2026. 6. 25. 오후 1:36:28",
+      "transferredBy": "ysmts"
+    },
+    {
+      "source": "업무관제센터",
+      "sourceJobNo": "2026-0520-01",
+      "sourceVehicleId": "17821080990151442433800deb8",
+      "type": "매출",
+      "date": "2026-06-25",
+      "inDate": "2026-05-20",
+      "outDate": "2026-06-25",
+      "carNo": "85더0575",
+      "maker": "HYUNDAI",
+      "model": "포터2냉동탑차",
+      "repair": "브레이크 밟을때 마지막에 밟으면 확 서버리는 느낌이 있음\n브레이등 안나옴",
+      "amount": 572000,
+      "partsCost": 0,
+      "outCost": 0,
+      "payment": "카드",
+      "customer": "일반고객",
+      "account": "",
+      "vatType": "과세",
+      "status": "입금예정",
+      "paymentStatus": "입금예정",
+      "workStatus": "출고완료",
+      "flowStatus": "출고완료",
+      "cardFee": 8580,
+      "expectedAmount": 563420,
+      "memo": "업무관제에서 전송됨",
+      "id": "LT-2026-0520-01",
+      "transferredAt": "2026. 6. 25. 오후 2:11:05",
+      "transferredBy": "ysmts"
+    },
+    {
+      "source": "업무관제센터",
+      "sourceJobNo": "2026-0625-01",
+      "sourceVehicleId": "1782107765155e140b19a3cfc48",
+      "type": "매출",
+      "date": "2026-06-25",
+      "inDate": "2026-06-25",
+      "outDate": "2026-06-25",
+      "carNo": "160조2097",
+      "maker": "볼보",
+      "model": "볼보XC90D5",
+      "repair": "엔진오일교환,펄스누설,ETOF057,ETAF090",
+      "amount": 198000,
+      "partsCost": 70000,
+      "outCost": 0,
+      "payment": "카드",
+      "customer": "일반고객",
+      "account": "",
+      "vatType": "과세",
+      "status": "입금예정",
+      "paymentStatus": "입금예정",
+      "workStatus": "출고완료",
+      "flowStatus": "출고완료",
+      "cardFee": 2970,
+      "expectedAmount": 195030,
+      "memo": "업무관제에서 전송됨",
+      "id": "LT-2026-0625-01",
+      "transferredAt": "2026. 6. 25. 오후 6:04:26",
+      "transferredBy": "ysmts"
+    },
+    {
+      "source": "업무관제센터",
+      "sourceJobNo": "2026-0623-06",
+      "sourceVehicleId": "17821938112449db03bcd14bb1",
+      "type": "매출",
+      "date": "2026-06-25",
+      "inDate": "2026-06-25",
+      "outDate": "2026-06-25",
+      "carNo": "66머9383",
+      "maker": "BENZ",
+      "model": "c200",
+      "repair": "엔진오일교환\n에어컨안나옴 점검\n에어컨필터교환\nofmb007 ,afmb015,cfmb002 / 실내 에어컨필터 재고없음 (MBCF008)",
+      "amount": 457600,
+      "partsCost": 221000,
+      "outCost": 0,
+      "payment": "카드",
+      "customer": "일반고객",
+      "account": "",
+      "vatType": "과세",
+      "status": "입금예정",
+      "paymentStatus": "입금예정",
+      "workStatus": "출고완료",
+      "flowStatus": "출고완료",
+      "cardFee": 6864,
+      "expectedAmount": 450736,
+      "memo": "업무관제에서 전송됨",
+      "id": "LT-2026-0623-06",
+      "transferredAt": "2026. 6. 25. 오후 6:09:11",
+      "transferredBy": "ysmts"
+    },
+    {
+      "source": "업무관제센터",
+      "sourceJobNo": "2026-0617-01",
+      "sourceVehicleId": "1782107934737a41f0ba1695f2",
+      "type": "매출",
+      "date": "2026-06-26",
+      "inDate": "2026-06-17",
+      "outDate": "2026-06-26",
+      "carNo": "68라0847",
+      "maker": "쉐보레",
+      "model": "트랙스",
+      "repair": "엔진오일교환, 벨트소음,전체점검, 외판수리 견적 필요\n핸들이 오른쪽으로 기우는 증상있음 \n*** 스프린터 차주의 세컨카****\n엔진오일\n하체점검\n시운전",
+      "amount": 1479500,
+      "partsCost": 0,
+      "outCost": 0,
+      "payment": "카드",
+      "customer": "일반고객",
+      "account": "",
+      "vatType": "과세",
+      "status": "입금예정",
+      "paymentStatus": "입금예정",
+      "workStatus": "출고완료",
+      "flowStatus": "출고완료",
+      "cardFee": 22193,
+      "expectedAmount": 1457307,
+      "memo": "업무관제에서 전송됨",
+      "id": "LT-2026-0617-01",
+      "transferredAt": "2026. 6. 26. 오전 10:13:08",
+      "transferredBy": "ysmts"
+    },
+    {
+      "source": "업무관제센터",
+      "sourceJobNo": "2026-0625-02",
+      "sourceVehicleId": "1782200526427ea3b082849448",
+      "type": "매출",
+      "date": "2026-06-26",
+      "inDate": "2026-06-25",
+      "outDate": "2026-06-26",
+      "carNo": "98너7323",
+      "maker": "IVECO",
+      "model": "지씨티캠핑카",
+      "repair": "요소수 센서 경고등점등으로 차량 주행하다가 리밋이 걸리더니 20km 밖에 안나감 청주에서 해제를함 \n경고등재점등/ 수요일 저녁에 차량 세워두기로함",
+      "amount": 914155,
+      "partsCost": 270621,
+      "outCost": 0,
+      "payment": "카드",
+      "customer": "일반고객",
+      "account": "",
+      "vatType": "과세",
+      "status": "입금예정",
+      "paymentStatus": "입금예정",
+      "workStatus": "출고완료",
+      "flowStatus": "출고완료",
+      "cardFee": 13712,
+      "expectedAmount": 900443,
+      "memo": "업무관제에서 전송됨",
+      "id": "LT-2026-0625-02",
+      "transferredAt": "2026. 6. 26. 오후 2:55:32",
+      "transferredBy": "ysmts"
+    }
+  ],
+  "clients": [
+    {
+      "ip": "127.0.0.1",
+      "user": "127.0.0.1",
+      "lastSeen": "2026-06-27 19:05:59"
+    },
+    {
+      "ip": "10.10.10.198",
+      "user": "10.10.10.198",
+      "lastSeen": "2026-06-27 19:06:03"
+    }
+  ],
+  "savePath": "\\\\SVR-DC7CM66A0RF\\WorkImages\\오토피트플랫폼\\06 MODULES\\CONTROL\\03 DATA\\ysmts_work_vehicle_v25.json",
+  "fileName": "ysmts_work_vehicle_v25.json",
+  "client": {
+    "user": "ysmts",
+    "at": "2026. 6. 28. 오후 8:51:37"
+  },
+  "serverSavedAt": "2026-06-28 20:51:37"
+}

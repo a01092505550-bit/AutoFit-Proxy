@@ -1,0 +1,14 @@
+{
+  "version": "R8",
+  "port": 8788,
+  "web_folder": "01 WEB",
+  "server_folder": "02 SERVER",
+  "data_folder": "03 DATA",
+  "backup_folder": "04 BACKUP",
+  "quantity_adjust_types": [
+    "입고",
+    "출고",
+    "실사묶음",
+    "관리자조정"
+  ]
+}

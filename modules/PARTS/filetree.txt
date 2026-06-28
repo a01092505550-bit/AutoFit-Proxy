@@ -1,0 +1,46 @@
+HDD_Data 볼륨에 대한 폴더 경로의 목록입니다.
+볼륨 일련 번호는 7A81-69F2입니다.
+Z:.
+|   filetree.txt
+|   
++---01 WEB
+|       index.html
+|       
++---02 SERVER
+|   |   parts_audit_sessions.json
+|   |   parts_history.json
+|   |   parts_inventory.json
+|   |   settings.json
+|   |   START_YSM_PARTS_SERVER.bat
+|   |   ysm_parts_storage_engine_R7.py
+|   |   ysm_parts_storage_engine_R8.py
+|   |   
+|   \---backup
++---03 DATA
+|       parts_audit_sessions .json
+|       parts_audit_sessions.json
+|       parts_history.json
+|       parts_inventory.json
+|       settings.json
+|       
++---04 BACKUP
+|   |   parts_inventory_backup_20260627_150409.json
+|   |   
+|   \---2026-06
+|           parts_audit_sessions_20260628_114116.json
+|           parts_audit_sessions_20260628_114116_audit_session_created.json
+|           parts_history_20260628_114116.json
+|           parts_history_20260628_114116_audit_session_created.json
+|           parts_inventory_20260628_114115.json
+|           parts_inventory_20260628_114116_audit_session_created.json
+|           settings_20260628_114116_audit_session_created.json
+|           
++---05 DOCS
+|       SYSTEM_INFO.txt
+|       SYSTEM_INFO_R8.txt
+|       수입차부품정보.xlsx
+|       
+\---99 TEMP
+    \---_REMOVED
+        +---DATA
+        \---DOCS
